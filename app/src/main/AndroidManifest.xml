@@ -24,7 +24,8 @@
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".options"
-            android:label="@string/title_activity_options"></activity>
+            android:label="@string/title_activity_options" />
+        <activity android:name=".BaseActivity"></activity>
     </application>
 
 </manifest>
