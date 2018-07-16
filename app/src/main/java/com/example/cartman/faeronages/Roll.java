@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class Roll extends AppCompatActivity {
+public class Roll extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
