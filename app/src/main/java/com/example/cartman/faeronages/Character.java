@@ -3,14 +3,21 @@ package com.example.cartman.faeronages;
 import java.util.Random;
 
 public class Character {
-    private Random random=new Random();
-    private int str=0;
-    private int con=0;
-    private int intll=0;
-    private int dex=0;
-    private int cha=0;
+    private static Random random=new Random();
+    private  int str=0;
+    private  int con=0;
+    private  int intll=0;
+    private  int dex=0;
+    private  int cha=0;
 
-    public Character(){
+    Character(){
+        str=random.nextInt(15)+5;
+        con=random.nextInt(15)+5;
+        intll=random.nextInt(15)+5;
+        dex=random.nextInt(15)+5;
+        cha=random.nextInt(15)+5;
+    }
+    public void roll(){
         str=random.nextInt(15)+5;
         con=random.nextInt(15)+5;
         intll=random.nextInt(15)+5;
