@@ -1,5 +1,6 @@
 package com.example.cartman.faeronages;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,26 +22,25 @@ public class Roll extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Random random=new Random();
+                Character character=new Character();
                 TextView textViewSTR=(TextView) findViewById(R.id.textViewSTR);
-                int str=random.nextInt(15)+5;
-                textViewSTR.setText(Integer.toString(str));
+                textViewSTR.setText(character.getStr());
                 TextView textViewCON=(TextView) findViewById(R.id.textViewCON);
-                int con=random.nextInt(15)+5;
-                textViewCON.setText(Integer.toString(con));
+                textViewCON.setText(character.getCon());
                 TextView textViewINT=(TextView) findViewById(R.id.textViewINT);
-                int intll=random.nextInt(15)+5;
-                textViewINT.setText(Integer.toString(intll));
+                textViewINT.setText(character.getIntll());
                 TextView textViewDEX=(TextView) findViewById(R.id.textViewDEX);
-                int dex=random.nextInt(15)+5;
-                textViewDEX.setText(Integer.toString(dex));
+                textViewDEX.setText(character.getDex());
                 TextView textViewCHA=(TextView) findViewById(R.id.textViewCHA);
-                int cha=random.nextInt(15)+5;
-                textViewCHA.setText(Integer.toString(cha));
+                textViewCHA.setText(character.getCha());
             }
+
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(Roll.this,RoleCreation.class);
+                startActivity(intent);
             }
         });
     }

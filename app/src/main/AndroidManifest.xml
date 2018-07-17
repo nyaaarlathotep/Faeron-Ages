@@ -25,7 +25,8 @@
         <activity
             android:name=".options"
             android:label="@string/title_activity_options" />
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".RoleCreation"></activity>
     </application>
 
 </manifest>
