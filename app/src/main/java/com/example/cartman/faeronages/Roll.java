@@ -3,6 +3,7 @@ package com.example.cartman.faeronages;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,31 +16,29 @@ public class Roll extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roll);
-        final Character character=new Character();
 
         Button button1 =(Button) findViewById(R.id.button);
         Button button2 =(Button) findViewById(R.id.button2);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                character.roll();
+                Character.roll();
                 TextView textViewSTR=(TextView) findViewById(R.id.textViewSTR);
-                textViewSTR.setText(Character.getStr());
+                textViewSTR.setText(Integer.toString(Character.getStr()));
                 TextView textViewCON=(TextView) findViewById(R.id.textViewCON);
-                textViewCON.setText(Character.getCon());
+                textViewCON.setText(Character.getCon()+"");
                 TextView textViewINT=(TextView) findViewById(R.id.textViewINT);
-                textViewINT.setText(Character.getIntll());
+                textViewINT.setText(Character.getIntll()+"");
                 TextView textViewDEX=(TextView) findViewById(R.id.textViewDEX);
-                textViewDEX.setText(Character.getDex());
+                textViewDEX.setText(Character.getDex()+"");
                 TextView textViewCHA=(TextView) findViewById(R.id.textViewCHA);
-                textViewCHA.setText(Character.getCha());
+                textViewCHA.setText(Character.getCha()+"");
             }
 
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent=new Intent(Roll.this,RoleCreation.class);
                 startActivity(intent);
             }

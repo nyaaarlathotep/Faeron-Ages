@@ -4,39 +4,32 @@ import java.util.Random;
 
 public class Character {
     private static Random random=new Random();
-    private  int str=0;
-    private  int con=0;
-    private  int intll=0;
-    private  int dex=0;
-    private  int cha=0;
+    private static int str=0;
+    private static int con=0;
+    private static int intll=0;
+    private static int dex=0;
+    private static int cha=0;
 
-    Character(){
+    public static void roll(){
         str=random.nextInt(15)+5;
         con=random.nextInt(15)+5;
         intll=random.nextInt(15)+5;
         dex=random.nextInt(15)+5;
         cha=random.nextInt(15)+5;
     }
-    public void roll(){
-        str=random.nextInt(15)+5;
-        con=random.nextInt(15)+5;
-        intll=random.nextInt(15)+5;
-        dex=random.nextInt(15)+5;
-        cha=random.nextInt(15)+5;
-    }
-    public int getStr(){
+    public static int getStr(){
         return str;
     }
-    public int getCon(){
+    public static int getCon(){
         return con;
     }
-    public int getIntll(){
+    public static int getIntll(){
         return intll;
     }
-    public int getDex(){
+    public static int getDex(){
         return dex;
     }
-    public int getCha(){
+    public static int getCha(){
         return cha;
     }
 }
