@@ -11,6 +11,7 @@ public class Character {
     private static int cha=0;
     private static int age=0;
     private static String race="human";
+    private static String name="slenderMan";
 
     public static void roll(){
         str=random.nextInt(15)+5;
@@ -20,12 +21,16 @@ public class Character {
         cha=random.nextInt(15)+5;
     }
 
-    public static void setAge(int aAge){
-        age=aAge;
+    public static void setAge(String aAge){
+        age=Integer.getInteger(aAge);
     }
     public static void setRace(String aRace){
         race=aRace;
     }
+    public static void setName(String aName){
+        name=aName;
+    }
+
     public static int getStr(){
         return str;
     }

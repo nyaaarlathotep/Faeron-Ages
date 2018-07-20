@@ -21,6 +21,14 @@
     <string name="age">年龄</string>
     <string name="name">名字</string>
     <string name="race">种族</string>
+    <!-- Strings of race -->
+    <string name="Humans">人类</string>
+    <string name="Dwarves">矮人</string>
+    <string name="Elf">精灵</string>
+    <string name="Gnome">侏儒</string>
+    <string name="HalfOrc">半兽人</string>
+    <string name="HalfLing">半身人</string>
+
     <string name="faith">信仰</string>
     <!-- Strings related to Settings -->
 
