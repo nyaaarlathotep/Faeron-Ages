@@ -9,6 +9,8 @@ public class Character {
     private static int intll=0;
     private static int dex=0;
     private static int cha=0;
+    private static int age=0;
+    private static String race="human";
 
     public static void roll(){
         str=random.nextInt(15)+5;
@@ -16,6 +18,13 @@ public class Character {
         intll=random.nextInt(15)+5;
         dex=random.nextInt(15)+5;
         cha=random.nextInt(15)+5;
+    }
+
+    public static void setAge(int aAge){
+        age=aAge;
+    }
+    public static void setRace(String aRace){
+        race=aRace;
     }
     public static int getStr(){
         return str;
