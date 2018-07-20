@@ -104,4 +104,6 @@
     <string name="title_activity_options">options</string>
     <string name="beginAdventure">now begin!</string>
     <string name="what">\?</string>
+    <string name="defaultNamw">Bhaal</string>
+    <string name="defaultAge">21</string>
 </resources>
