@@ -19,8 +19,6 @@ public class RoleCreation extends BaseActivity {
         Button buttonRace=(Button)findViewById(R.id.chooseRace);
         Button buttonFaith=(Button)findViewById(R.id.chooseFaith);
         Button buttonGo=(Button)findViewById(R.id.go);
-        final EditText ageText=(EditText)findViewById(R.id.editText);
-        final EditText nameText=(EditText)findViewById(R.id.editText2);
 
         buttonRace.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -36,11 +34,11 @@ public class RoleCreation extends BaseActivity {
         });
         buttonGo.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+                EditText ageText=(EditText)findViewById(R.id.editText);
+                EditText nameText=(EditText)findViewById(R.id.editText2);
                 Intent intent=new Intent(RoleCreation.this,eventlogAndClock.class);
-                String name = nameText.getText().toString();
-                String age=ageText.getText().toString();
-                Character.setAge(age);
-                Character.setName(name);
+                Character.setName(ageText.getText().toString());
+                Character.setAge(nameText.getText().toString());
                 startActivity(intent);
             }
         });
