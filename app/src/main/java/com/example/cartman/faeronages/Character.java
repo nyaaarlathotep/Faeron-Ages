@@ -9,9 +9,10 @@ public class Character {
     private static int intll=0;
     private static int dex=0;
     private static int cha=0;
-    private static int age=0;
+    private static int age=17;
     private static String race="human";
-    private static String name="slenderMan";
+    private static String name="Bhaal";
+    private static String faith="Vecna";
 
     public static void roll(){
         str=random.nextInt(15)+5;
@@ -24,7 +25,7 @@ public class Character {
 
 
     public static void setAge(String aAge){
-        age=Integer.getInteger(aAge);
+        age=Integer.parseInt(aAge);
     }
     public static void setRace(String aRace){
         race=aRace;
@@ -32,6 +33,7 @@ public class Character {
     public static void setName(String aName){
         name=aName;
     }
+    public static void setFaith(String aFaith){faith=aFaith;}
 
     public static String getRace(){return race;
     }
@@ -50,4 +52,6 @@ public class Character {
     public static int getCha(){
         return cha;
     }
+    public static String getName(){return name;}
+    public static String getFaith(){return faith;}
 }
