@@ -21,6 +21,8 @@ public class Character {
         cha=random.nextInt(15)+5;
     }
 
+
+
     public static void setAge(String aAge){
         age=Integer.getInteger(aAge);
     }
@@ -31,6 +33,8 @@ public class Character {
         name=aName;
     }
 
+    public static String getRace(){return race;
+    }
     public static int getStr(){
         return str;
     }
