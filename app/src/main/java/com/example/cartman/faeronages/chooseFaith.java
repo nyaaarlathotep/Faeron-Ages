@@ -23,18 +23,18 @@ public class chooseFaith extends BaseActivity {
         setContentView(R.layout.activity_choose_faith);
 
         mRB1= (RadioButton)findViewById(R.id.Boccob);
-        mRB2= (RadioButton)findViewById(R.id.St_Cuthbert);
-        mRB3= (RadioButton)findViewById(R.id.Olidammara);
-        mRB4= (RadioButton)findViewById(R.id.Heironeous);
-        mRB5= (RadioButton)findViewById(R.id.CorellonLarethian);
-        mRB6= (RadioButton)findViewById(R.id.gnome);
+        mRB2= (RadioButton)findViewById(R.id.CorellonLarethian);
+        mRB3= (RadioButton)findViewById(R.id.Heironeous);
+        mRB4= (RadioButton)findViewById(R.id.St_Cuthbert);
+        mRB5= (RadioButton)findViewById(R.id.Olidammara);
+        mRB6= (RadioButton)findViewById(R.id.Pelor);
         button=(Button)findViewById(R.id.faithBack);
 
         mRB1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setFaith(mRB1.getText() + "");
+                    Character.setFaith("魔法之神博卡布");
                 }
             }
         });
@@ -42,7 +42,7 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setFaith(mRB2.getText() + "");
+                    Character.setFaith("精灵之神柯瑞隆·拉瑞斯安");
                 }
             }
         });
@@ -50,7 +50,7 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setFaith(mRB3.getText() + "");
+                    Character.setFaith("勇者之神海若尼斯");
                 }
             }
         });
@@ -58,7 +58,7 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setFaith(mRB4.getText() + "");
+                    Character.setFaith("惩罚之神圣·库斯伯特");
                 }
             }
         });
@@ -66,18 +66,20 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    Character.setFaith(mRB5.getText() + "");
+                    Character.setFaith("游荡者之神渥利达马拉");
                 }
             }
         });
         mRB6.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    Character.setFaith(mRB6.getText() + "");
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    Character.setFaith("太阳神培罗");
                 }
             }
         });
+
+
 
 
         button.setOnClickListener(new View.OnClickListener() {
