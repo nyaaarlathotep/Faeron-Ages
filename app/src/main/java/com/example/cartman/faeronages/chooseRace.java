@@ -8,13 +8,12 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 
 public class chooseRace extends BaseActivity {
-
-   RadioButton mRB1;
-   RadioButton mRB2;
-   RadioButton mRB3;
-   RadioButton mRB4;
+    RadioButton mRB1;
+    RadioButton mRB2;
+    RadioButton mRB3;
+    RadioButton mRB4;
     RadioButton mRB5;
-   RadioButton mRB6;
+    RadioButton mRB6;
     Button button;
 
 

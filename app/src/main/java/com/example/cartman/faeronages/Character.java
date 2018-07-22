@@ -54,4 +54,5 @@ public class Character {
     }
     public static String getName(){return name;}
     public static String getFaith(){return faith;}
+    public static int getAge(){return age;}
 }

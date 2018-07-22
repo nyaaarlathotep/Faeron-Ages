@@ -16,6 +16,7 @@ public class Roll extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roll);
+        Character.roll();
 
         Button button1 =(Button) findViewById(R.id.button);
         Button button2 =(Button) findViewById(R.id.button2);

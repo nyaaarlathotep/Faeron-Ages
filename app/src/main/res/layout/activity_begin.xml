@@ -36,7 +36,7 @@
 
     <Button
         android:id="@+id/buttonOptions"
-        android:layout_width="114dp"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -66,17 +66,14 @@
         android:id="@+id/buttonQuit"
         android:layout_width="116dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="@string/quit_game"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAchieve"
-        app:layout_constraintVertical_bias="0.253" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAchieve" />
 
 </android.support.constraint.ConstraintLayout>

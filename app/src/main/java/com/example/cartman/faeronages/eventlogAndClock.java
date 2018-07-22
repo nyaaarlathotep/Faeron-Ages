@@ -1,10 +1,9 @@
 package com.example.cartman.faeronages;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-public class eventlogAndClock extends AppCompatActivity {
+public class eventlogAndClock extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,5 +13,7 @@ public class eventlogAndClock extends AppCompatActivity {
         Log.d("rrrrrace",Character.getRace());
         Log.d("nnnnname",Character.getName());
         Log.d("ffffaith",Character.getFaith());
+
+
     }
 }
