@@ -29,7 +29,8 @@
         <activity android:name=".RoleCreation" />
         <activity android:name=".chooseRace" />
         <activity android:name=".chooseFaith" />
-        <activity android:name=".eventlogAndClock"></activity>
+        <activity android:name=".eventlogAndClock" />
+        <activity android:name=".chooseJob"></activity>
     </application>
 
 </manifest>

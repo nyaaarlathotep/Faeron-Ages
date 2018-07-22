@@ -22,19 +22,19 @@ public class chooseRace extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_race);
-       mRB1= (RadioButton)findViewById(R.id.Boccob);
-       mRB2= (RadioButton)findViewById(R.id.St_Cuthbert);
-       mRB3= (RadioButton)findViewById(R.id.Olidammara);
-       mRB4= (RadioButton)findViewById(R.id.Heironeous);
-      mRB5= (RadioButton)findViewById(R.id.CorellonLarethian);
+       mRB1= (RadioButton)findViewById(R.id.human);
+       mRB2= (RadioButton)findViewById(R.id.halfLing);
+       mRB3= (RadioButton)findViewById(R.id.halfOrc);
+       mRB4= (RadioButton)findViewById(R.id.dwarves);
+      mRB5= (RadioButton)findViewById(R.id.elf);
        mRB6= (RadioButton)findViewById(R.id.gnome);
-      button=(Button)findViewById(R.id.button3);
+      button=(Button)findViewById(R.id.raceBack);
 
         mRB1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setRace(mRB1.getText() + "");
+                    Character.setRace(races.human);
                 }
             }
         });
@@ -42,7 +42,7 @@ public class chooseRace extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setRace(mRB2.getText() + "");
+                    Character.setRace(races.halfLing);
                 }
             }
         });
@@ -50,7 +50,7 @@ public class chooseRace extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setRace(mRB3.getText() + "");
+                    Character.setRace(races.halfOrc);
                 }
             }
         });
@@ -58,7 +58,7 @@ public class chooseRace extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setRace(mRB4.getText() + "");
+                    Character.setRace(races.dwarves);
                 }
             }
         });
@@ -66,7 +66,7 @@ public class chooseRace extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    Character.setRace(mRB5.getText() + "");
+                    Character.setRace(races.elf);
                 }
             }
         });
@@ -74,13 +74,14 @@ public class chooseRace extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setRace(mRB6.getText() + "");
+                    Character.setRace(races.gnome);
                 }
             }
         });
 
 
         button.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v){
                 Intent intent=new Intent(chooseRace.this,RoleCreation.class);
                 startActivity(intent);

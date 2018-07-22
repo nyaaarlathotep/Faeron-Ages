@@ -10,9 +10,10 @@ public class Character {
     private static int dex=0;
     private static int cha=0;
     private static int age=17;
-    private static String race="human";
     private static String name="Bhaal";
-    private static String faith="Vecna";
+    private static jobs job=jobs.fighter;
+    private static faiths faith=faiths.Pelor;
+    private static races race=races.human;
 
     public static void roll(){
         str=random.nextInt(15)+5;
@@ -27,32 +28,37 @@ public class Character {
     public static void setAge(String aAge){
         age=Integer.parseInt(aAge);
     }
-    public static void setRace(String aRace){
+    public static void setRace(races aRace){
         race=aRace;
     }
     public static void setName(String aName){
         name=aName;
     }
-    public static void setFaith(String aFaith){faith=aFaith;}
+    public static void setFaith(faiths aFaith){
+        faith=aFaith;
+    }
+    public static void setJob(jobs aJob){
+        job=aJob;
+    }
 
-    public static String getRace(){return race;
+    public static races getRace(){return race;
     }
-    public static int getStr(){
-        return str;
+    public static jobs getJob(){
+        return job;}
+    public static int getStr(){return str;
     }
-    public static int getCon(){
-        return con;
+    public static int getCon(){return con;
     }
-    public static int getIntll(){
-        return intll;
+    public static int getIntll(){return intll;
     }
-    public static int getDex(){
-        return dex;
+    public static int getDex(){return dex;
     }
-    public static int getCha(){
-        return cha;
+    public static int getCha(){return cha;
     }
-    public static String getName(){return name;}
-    public static String getFaith(){return faith;}
-    public static int getAge(){return age;}
+    public static String getName(){return name;
+    }
+    public static faiths getFaith(){return faith;
+    }
+    public static int getAge(){return age;
+    }
 }

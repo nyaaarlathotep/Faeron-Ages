@@ -1,13 +1,14 @@
 package com.example.cartman.faeronages;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 
-public class chooseFaith extends BaseActivity {
+public class chooseJob extends BaseActivity {
 
     RadioButton mRB1;
     RadioButton mRB2;
@@ -15,26 +16,28 @@ public class chooseFaith extends BaseActivity {
     RadioButton mRB4;
     RadioButton mRB5;
     RadioButton mRB6;
+    RadioButton mRB7;
     Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_faith);
+        setContentView(R.layout.activity_choose_job);
 
-        mRB1= (RadioButton)findViewById(R.id.Boccob);
-        mRB2= (RadioButton)findViewById(R.id.CorellonLarethian);
-        mRB3= (RadioButton)findViewById(R.id.Heironeous);
-        mRB4= (RadioButton)findViewById(R.id.StCuthbert);
-        mRB5= (RadioButton)findViewById(R.id.Olidammara);
-        mRB6= (RadioButton)findViewById(R.id.Pelor);
-        button=(Button)findViewById(R.id.faithBack);
+        mRB1= (RadioButton)findViewById(R.id.fighter);
+        mRB2= (RadioButton)findViewById(R.id.sorcerer);
+        mRB3= (RadioButton)findViewById(R.id.cleric);
+        mRB4= (RadioButton)findViewById(R.id.rogue);
+        mRB5= (RadioButton)findViewById(R.id.druid);
+        mRB6= (RadioButton)findViewById(R.id.bard);
+        mRB7=(RadioButton)findViewById(R.id.paladin);
+        button=(Button)findViewById(R.id.jobBack);
 
         mRB1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setFaith(faiths.Boccob);
+                    Character.setJob(jobs.fighter);
                 }
             }
         });
@@ -42,7 +45,8 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setFaith(faiths.CorellonLarethian);
+                    Character.setJob(jobs.sorcerer);
+
                 }
             }
         });
@@ -50,7 +54,7 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setFaith(faiths.Heironeous);
+                    Character.setJob(jobs.cleric);
                 }
             }
         });
@@ -58,7 +62,8 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Character.setFaith(faiths.StCuthbert);
+                    Character.setJob(jobs.rogue);
+
                 }
             }
         });
@@ -66,7 +71,8 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    Character.setFaith(faiths.Olidammara);
+                    Character.setJob(jobs.druid);
+
                 }
             }
         });
@@ -74,7 +80,17 @@ public class chooseFaith extends BaseActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
-                    Character.setFaith(faiths.Pelor);
+                    Character.setJob(jobs.bard);
+
+                }
+            }
+        });
+        mRB7.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    Character.setJob(jobs.paladin);
+
                 }
             }
         });
@@ -83,11 +99,13 @@ public class chooseFaith extends BaseActivity {
 
 
         button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                Intent intent=new Intent(chooseFaith.this,RoleCreation.class);
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(chooseJob.this,RoleCreation.class);
                 startActivity(intent);
-
             }
         });
+
+
     }
 }

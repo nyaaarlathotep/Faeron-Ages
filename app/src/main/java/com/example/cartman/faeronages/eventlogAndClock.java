@@ -10,10 +10,10 @@ public class eventlogAndClock extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventlog_and_clock);
 
-        Log.d("rrrrrace",Character.getRace());
+        Log.d("rrrrrace",Character.getRace().toString());
         Log.d("nnnnname",Character.getName());
-        Log.d("ffffaith",Character.getFaith());
-
+        Log.d("ffffaith",Character.getFaith().toString());
+        Log.d("jjjjob",Character.getJob().toString());
 
     }
 }
