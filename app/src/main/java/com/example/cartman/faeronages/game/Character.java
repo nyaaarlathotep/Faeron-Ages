@@ -1,4 +1,8 @@
-package com.example.cartman.faeronages;
+package com.example.cartman.faeronages.game;
+
+import com.example.cartman.faeronages.game.faiths;
+import com.example.cartman.faeronages.game.jobs;
+import com.example.cartman.faeronages.game.races;
 
 import java.util.Random;
 
@@ -14,6 +18,9 @@ public class Character {
     private static jobs job=jobs.fighter;
     private static faiths faith=faiths.Pelor;
     private static races race=races.human;
+    private static maps whereImGoing=maps.beginnersGuide;
+
+    private static int level=0;
 
     public static void roll(){
         str=random.nextInt(15)+5;
@@ -41,6 +48,8 @@ public class Character {
         job=aJob;
     }
 
+    public static maps getWhereImGoing(){ return whereImGoing;
+    }
     public static races getRace(){return race;
     }
     public static jobs getJob(){

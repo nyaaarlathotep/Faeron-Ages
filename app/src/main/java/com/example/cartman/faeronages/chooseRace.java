@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 
+import com.example.cartman.faeronages.game.Character;
+import com.example.cartman.faeronages.game.races;
+
 public class chooseRace extends BaseActivity {
     RadioButton mRB1;
     RadioButton mRB2;

@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.cartman.faeronages.game.Character;
+import com.example.cartman.faeronages.game.faiths;
+import com.example.cartman.faeronages.game.jobs;
+
 
 public class RoleCreation extends BaseActivity {
     EditText ageText;

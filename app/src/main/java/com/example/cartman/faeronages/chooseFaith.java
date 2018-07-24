@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 
+import com.example.cartman.faeronages.game.Character;
+import com.example.cartman.faeronages.game.faiths;
+
 public class chooseFaith extends BaseActivity {
 
     RadioButton mRB1;

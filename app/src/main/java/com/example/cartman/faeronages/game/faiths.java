@@ -1,4 +1,4 @@
-package com.example.cartman.faeronages;
+package com.example.cartman.faeronages.game;
 
 public enum faiths {
     Boccob,//魔法之神博卡布

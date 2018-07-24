@@ -1,4 +1,4 @@
-package com.example.cartman.faeronages;
+package com.example.cartman.faeronages.game;
 
 public enum jobs {
     rogue, //游荡者

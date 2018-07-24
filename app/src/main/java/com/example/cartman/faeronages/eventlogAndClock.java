@@ -6,12 +6,19 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.cartman.faeronages.game.Adventure;
+import com.example.cartman.faeronages.game.Character;
+
 import java.lang.ref.WeakReference;
 
 public class eventlogAndClock extends BaseActivity {
 
     TextView textView;
+    TextView log1;
+    TextView log2;
+    TextView log3;
     MHandler handler;
+    Adventure adventure;
     private boolean ifStop=true;
     private int count;
 
@@ -21,15 +28,19 @@ public class eventlogAndClock extends BaseActivity {
         super.onCreate(savedInstanceState);
 
 
-        Log.d("rrrrrace",Character.getRace().toString());
+        Log.d("rrrrrace", Character.getRace().toString());
         Log.d("nnnnname",Character.getName());
         Log.d("ffffaith",Character.getFaith().toString());
         Log.d("jjjjob",Character.getJob().toString());
 
+        adventure=new Adventure(Character.getWhereImGoing());
+
 
         setContentView(R.layout.activity_eventlog_and_clock);
         textView=(TextView)findViewById(R.id.timer) ;
-
+        log1=(TextView)findViewById(R.id.log1) ;
+        log2=(TextView)findViewById(R.id.log2) ;
+        log3=(TextView)findViewById(R.id.log3);
 
         handler=new MHandler(this);
         Message message=new Message();
@@ -69,8 +80,10 @@ public class eventlogAndClock extends BaseActivity {
             eventlogAndClock theClass = eventlogAndClock.get();
             switch (msg.what) {
                 case 0: {
-                    //使用theClass访问外部类成员和方法
+                    //使用theClass访问外部类成员和方法9
                     theClass.textView.setText(String.valueOf(msg.arg1));
+                    theClass.log1.setText(theClass.adventure.smallFight());
+
                     break;
                 }
                 default: {
