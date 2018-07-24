@@ -65,10 +65,12 @@ public class eventlogAndClock extends BaseActivity {
 
         @Override
         public void handleMessage(android.os.Message msg) {
+            super.handleMessage(msg);
             eventlogAndClock theClass = eventlogAndClock.get();
             switch (msg.what) {
                 case 0: {
                     //使用theClass访问外部类成员和方法
+                    theClass.textView.setText(String.valueOf(msg.arg1));
                     break;
                 }
                 default: {

@@ -3,6 +3,8 @@ package com.example.cartman.faeronages;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.cartman.faeronages.game.ActivityCollector;
+
 public class BaseActivity extends AppCompatActivity {
 
     @Override

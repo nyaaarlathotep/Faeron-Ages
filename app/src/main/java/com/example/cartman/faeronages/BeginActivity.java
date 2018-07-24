@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.cartman.faeronages.game.ActivityCollector;
+
 public class BeginActivity extends BaseActivity {
 
     @Override
