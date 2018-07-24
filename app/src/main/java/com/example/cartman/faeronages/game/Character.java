@@ -32,6 +32,8 @@ public class Character {
 
 
 
+    // get set 方法
+
     public static void setAge(String aAge){
         age=Integer.parseInt(aAge);
     }
