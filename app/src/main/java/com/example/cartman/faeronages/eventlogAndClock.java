@@ -33,7 +33,7 @@ public class eventlogAndClock extends BaseActivity {
         Log.d("ffffaith",Character.getFaith().toString());
         Log.d("jjjjob",Character.getJob().toString());
 
-        adventure=new Adventure(Character.getWhereImGoing());
+        adventure=new Adventure(Character.getMonsters());
 
 
         setContentView(R.layout.activity_eventlog_and_clock);

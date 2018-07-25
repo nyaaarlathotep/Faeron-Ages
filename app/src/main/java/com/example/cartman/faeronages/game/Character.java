@@ -1,9 +1,7 @@
 package com.example.cartman.faeronages.game;
 
-import com.example.cartman.faeronages.game.faiths;
-import com.example.cartman.faeronages.game.jobs;
-import com.example.cartman.faeronages.game.races;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Character {
@@ -18,9 +16,11 @@ public class Character {
     private static jobs job=jobs.fighter;
     private static faiths faith=faiths.Pelor;
     private static races race=races.human;
-    private static maps whereImGoing=maps.beginnersGuide;
+    private static String whereImGoing="beginnersGuide";
+    public static ArrayList<String> bag=new ArrayList<>();
 
-    private static int level=0;
+
+    private static int level=1;
 
     public static void roll(){
         str=random.nextInt(15)+5;
@@ -30,6 +30,12 @@ public class Character {
         cha=random.nextInt(15)+5;
     }
 
+    public static void harvestTrophy(String trophy){
+        if(bag.size()
+                <20) {
+            bag.add(trophy);
+        }
+    }
 
 
     // get set 方法
@@ -50,7 +56,18 @@ public class Character {
         job=aJob;
     }
 
-    public static maps getWhereImGoing(){ return whereImGoing;
+    public static String[] getMonsters(){
+        switch (whereImGoing){
+            case "beginnersGuide":return data.beginnersGuide;
+            case "fungalWastes":return data.fungalWastes;
+            case "restingYards":return data.restingYards;
+            case "limbo":return data.limbo;
+            case " mechanus":return data.mechanus;
+            case "shore":return data.shore;
+            case "slum":return data.slum;
+            case "barrenPlain":return data.barrenPlain;
+        }
+        return null;
     }
     public static races getRace(){return race;
     }
