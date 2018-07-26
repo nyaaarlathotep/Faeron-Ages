@@ -1,9 +1,11 @@
 package com.example.cartman.faeronages;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.cartman.faeronages.game.Adventure;
@@ -18,49 +20,51 @@ public class eventlogAndClock extends BaseActivity {
     TextView log1;
     TextView log2;
     TextView log3;
+    Button A;
+    Button B;
     MHandler handler;
     Adventure adventure;
     String timeUsed;
     int fightCounter=0;
+    static boolean needStop=false;
 
 //    counted in second
-    int AdventureTime= data.adventureTime();
+    int adventureTime= data.adventureTime();
     int timeUsedInSec=0;
 
     private boolean ifStop=true;
-    private int count;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_eventlog_and_clock);
 
+//        test character
         Log.d("rrrrrace", Character.getRace().toString());
         Log.d("nnnnname",Character.getName());
         Log.d("ffffaith",Character.getFaith().toString());
         Log.d("jjjjob",Character.getJob().toString());
 
+
         adventure=new Adventure(Character.getMonsters());
-
-
-        setContentView(R.layout.activity_eventlog_and_clock);
         time=(TextView)findViewById(R.id.timer) ;
         log1=(TextView)findViewById(R.id.log1) ;
         log2=(TextView)findViewById(R.id.log2) ;
         log3=(TextView) findViewById(R.id.log3);
+        A=(Button)findViewById(R.id.iChooseA);
+        B=(Button)findViewById(R.id.iChooseB);
 
         handler=new MHandler(this);
         Message message=new Message();
         handler.handleMessage(message);
 
+
         new Thread(new Runnable() {
             @Override
             public void run() {
-                count=0;
                 while(ifStop){
-                    count++;
                     Message msg=new Message();
-                    msg.arg1=count;
                     handler.sendMessage(msg);
                     try {
                         Thread.sleep(1000);
@@ -68,8 +72,11 @@ public class eventlogAndClock extends BaseActivity {
                         e.printStackTrace();
                     }
                 }
+                Intent intent=new Intent(eventlogAndClock.this,town.class);
+                startActivity(intent);
             }
         }).start();
+
 
     }
 
@@ -88,9 +95,10 @@ public class eventlogAndClock extends BaseActivity {
             switch (msg.what) {
                 case 0: {
                     //使用theClass访问外部类成员和方法
-                    theClass.addTimeUsed();    //计时函数
-                    theClass.updateUI();  //更新UI线程的数据
-
+                    theClass.addTimeUsed();    //计时
+                    if(!needStop) {
+                        theClass.updateUI();  //更新UI
+                    }
 
                     break;
                 }
@@ -101,27 +109,33 @@ public class eventlogAndClock extends BaseActivity {
         }
 
     }
+
+
     private void updateUI() {
         time.setText(timeUsed);
         if(fightCounter>=5){
             log1.setText(adventure.smallFight());
             fightCounter=0;
         }
-
+        if(adventureTime==timeUsedInSec){
+            log2.setText(data.home);
+            ifStop=false;
+        }
     }
 
     public void addTimeUsed() {
-        timeUsedInSec = timeUsedInSec + 1;
+
         fightCounter=fightCounter+1;
-        timeUsed = this.getMin() + ":" + this.getSec();
+        timeUsed = getMin() + ":" + getSec();
+        timeUsedInSec = timeUsedInSec + 1;
     }
 
     public CharSequence getMin() {
-        return String.valueOf((AdventureTime-timeUsedInSec)/ 60);
+        return String.valueOf((adventureTime-timeUsedInSec)/ 60);
     }
 
     public CharSequence getSec() {
-        return String.valueOf((AdventureTime-timeUsedInSec)% 60);
+        return String.valueOf((adventureTime-timeUsedInSec)% 60);
     }
 
 }
