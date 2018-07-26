@@ -26,7 +26,9 @@ public class Adventure {
             return "正在疯狂的逃跑";
         }
         if(harvest){
-            Character.harvestTrophy(monsters[mon].split(" ")[1]);
+            if(monsters[mon].split(" ").length>1) {
+                Character.harvestTrophy(monsters[mon].split(" ")[1]);
+            }
         }
         return "正在和" + data.monsterDescription[des] + monsters[mon].split(" ")[0] + "战斗";
 

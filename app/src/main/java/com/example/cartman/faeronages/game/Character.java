@@ -23,11 +23,11 @@ public class Character {
     private static int level=1;
 
     public static void roll(){
-        str=random.nextInt(15)+5;
-        con=random.nextInt(15)+5;
-        intll=random.nextInt(15)+5;
-        dex=random.nextInt(15)+5;
-        cha=random.nextInt(15)+5;
+        str=random.nextInt(4)+8;
+        con=random.nextInt(4)+8;
+        intll=random.nextInt(4)+8;
+        dex=random.nextInt(4)+8;
+        cha=random.nextInt(4)+8;
     }
 
     public static void harvestTrophy(String trophy){
@@ -56,6 +56,7 @@ public class Character {
         job=aJob;
     }
 
+    public static String getWhereImGoing(){return whereImGoing;}
     public static String[] getMonsters(){
         switch (whereImGoing){
             case "beginnersGuide":return data.beginnersGuide;
@@ -89,4 +90,5 @@ public class Character {
     }
     public static int getAge(){return age;
     }
+    public static int getLevel(){return level;}
 }

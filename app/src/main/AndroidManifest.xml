@@ -30,7 +30,7 @@
         <activity android:name=".chooseRace" />
         <activity android:name=".chooseFaith" />
         <activity android:name=".eventlogAndClock" />
-        <activity android:name=".chooseJob"></activity>
+        <activity android:name=".chooseJob"/>
     </application>
 
 </manifest>
