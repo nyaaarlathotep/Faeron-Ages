@@ -18,18 +18,11 @@ public class data {
     public static String[] barrenPlain=new String[]{};
     public static String home="may be it's time to go homee";
     public static int adventureTime(){
-        switch (Character.getWhereImGoing()){
-            case "beginnersGuide":return 30;
-            case "fungalWastes":return 600+bonusTime() ;
-            case "restingYards":return 600+bonusTime() ;
-            case "limbo":return 600+bonusTime() ;
-            case "mechanus":return 600+bonusTime() ;
-            case "shore":return 600+bonusTime() ;
-            case "slum":return 600+bonusTime() ;
-            case "barrenPlain":
-                return 600+bonusTime() ;
+        switch (Character.getLevel()){
+            case 1:return 300;
+            default:return 600+bonusTime();
         }
-        return 0;
+
     }
     private static int bonusTime(){
         if(Character.getLevel()<=10){

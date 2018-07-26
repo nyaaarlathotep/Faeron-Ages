@@ -1,12 +1,16 @@
 package com.example.cartman.faeronages.game;
 
+import com.example.cartman.faeronages.game.creatures.Boss;
+
 import java.util.Random;
 
 public class Adventure {
 
     private String[] monsters;
-    public Adventure(String[] aMonsters){
+    private Boss boss;
+    public Adventure(String[] aMonsters, Boss aBoss){
         monsters=aMonsters;
+        boss=aBoss;
     }
 
 
@@ -14,6 +18,7 @@ public class Adventure {
         Random random=new Random();
         data data=new data();
 
+        boss.investigate();
         int des = random.nextInt(data.monsterDescription.length + 17);
         int mon=random.nextInt(monsters.length);
         boolean harvest=random.nextInt(10)>8;
@@ -34,5 +39,7 @@ public class Adventure {
 
     }
 
-
+    public String bossTrack(){
+        return boss.track();
+    }
 }

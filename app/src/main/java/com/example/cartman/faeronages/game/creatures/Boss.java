@@ -7,8 +7,8 @@ public abstract class Boss {
     public boolean isOption2;
 
     private int health;
-    public abstract String track1();
-    public abstract String detailInfo1();
-    public abstract String detailInfo2();
-    public abstract String talk();
+    public abstract String track();
+    public abstract String detailInfo();
+    public abstract String specialEvent();
+    public abstract void investigate();
 }

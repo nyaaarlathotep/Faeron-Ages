@@ -1,6 +1,8 @@
 package com.example.cartman.faeronages.game;
 
 
+import com.example.cartman.faeronages.game.creatures.bigPig;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,7 +18,7 @@ public class Character {
     private static jobs job=jobs.fighter;
     private static faiths faith=faiths.Pelor;
     private static races race=races.human;
-    private static String whereImGoing="beginnersGuide";
+    private static Adventure nextAdventure=new Adventure(data.beginnersGuide,new bigPig());
     public static ArrayList<String> bag=new ArrayList<>();
 
 
@@ -56,19 +58,8 @@ public class Character {
         job=aJob;
     }
 
-    public static String getWhereImGoing(){return whereImGoing;}
-    public static String[] getMonsters(){
-        switch (whereImGoing){
-            case "beginnersGuide":return data.beginnersGuide;
-            case "fungalWastes":return data.fungalWastes;
-            case "restingYards":return data.restingYards;
-            case "limbo":return data.limbo;
-            case " mechanus":return data.mechanus;
-            case "shore":return data.shore;
-            case "slum":return data.slum;
-            case "barrenPlain":return data.barrenPlain;
-        }
-        return null;
+    public static Adventure getAdventure(){
+        return nextAdventure;
     }
     public static races getRace(){return race;
     }

@@ -25,7 +25,6 @@ public class eventlogAndClock extends BaseActivity {
     MHandler handler;
     Adventure adventure;
     String timeUsed;
-    int fightCounter=0;
     static boolean needStop=false;
 
 //    counted in second
@@ -46,8 +45,7 @@ public class eventlogAndClock extends BaseActivity {
         Log.d("ffffaith",Character.getFaith().toString());
         Log.d("jjjjob",Character.getJob().toString());
 
-
-        adventure=new Adventure(Character.getMonsters());
+        adventure=Character.getAdventure();
         time=(TextView)findViewById(R.id.timer) ;
         log1=(TextView)findViewById(R.id.log1) ;
         log2=(TextView)findViewById(R.id.log2) ;
@@ -72,8 +70,7 @@ public class eventlogAndClock extends BaseActivity {
                         e.printStackTrace();
                     }
                 }
-                Intent intent=new Intent(eventlogAndClock.this,town.class);
-                startActivity(intent);
+
             }
         }).start();
 
@@ -113,19 +110,18 @@ public class eventlogAndClock extends BaseActivity {
 
     private void updateUI() {
         time.setText(timeUsed);
-        if(fightCounter>=5){
+        if(timeUsedInSec%5==0){
             log1.setText(adventure.smallFight());
-            fightCounter=0;
+            log2.setText(adventure.bossTrack());
         }
         if(adventureTime==timeUsedInSec){
             log2.setText(data.home);
             ifStop=false;
         }
+
     }
 
     public void addTimeUsed() {
-
-        fightCounter=fightCounter+1;
         timeUsed = getMin() + ":" + getSec();
         timeUsedInSec = timeUsedInSec + 1;
     }
