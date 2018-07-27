@@ -96,7 +96,6 @@ public class eventlogAndClock extends BaseActivity {
                     if(!needStop) {
                         theClass.updateUI();  //更新UI
                     }
-
                     break;
                 }
                 default: {
@@ -110,15 +109,16 @@ public class eventlogAndClock extends BaseActivity {
 
     private void updateUI() {
         time.setText(timeUsed);
-        if(timeUsedInSec%5==0){
+        if(timeUsedInSec%10==0){
             log1.setText(adventure.smallFight());
             log2.setText(adventure.bossTrack());
+        }else if((timeUsedInSec-5)%10==0){
+            log1.setText(adventure.hangOut());
         }
         if(adventureTime==timeUsedInSec){
             log2.setText(data.home);
             ifStop=false;
         }
-
     }
 
     public void addTimeUsed() {
