@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class eventlogAndClock extends BaseActivity {
     Adventure adventure;
     String timeUsed;
     static boolean needStop=false;
+    boolean buttonAble=false;
 
 //    counted in second
     int adventureTime;
@@ -59,11 +61,38 @@ public class eventlogAndClock extends BaseActivity {
         handler.handleMessage(message);
 
 
+        A.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if(buttonAble){
+                    if(!adventure.knowBoss()){
+                        Intent intent=new Intent(eventlogAndClock.this,town.class);
+                        startActivity(intent);
+                    }
+
+
+                }
+            }
+        });
+        B.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if(buttonAble){
+                    if(!adventure.knowBoss()){
+                        Intent intent=new Intent(eventlogAndClock.this,town.class);
+                        startActivity(intent);
+                    }
+
+
+                }
+            }
+        });
+
         new Thread(new Runnable() {
             @Override
             public void run() {
+
                 while(ifStop){
                     Message msg=new Message();
+                    msg.what=0;
                     handler.sendMessage(msg);
                     try {
                         Thread.sleep(1000);
@@ -72,9 +101,8 @@ public class eventlogAndClock extends BaseActivity {
                     }
                 }
                 while (!ifStop){
-                    if(!adventure.knowBoss()){
-                        log1.setText("");
-                    }
+                    Message msg=new Message();
+                    msg.what=1;
                 }
             }
         }).start();
@@ -95,10 +123,15 @@ public class eventlogAndClock extends BaseActivity {
             switch (msg.what) {
                 case 0: {
                     //使用theClass访问外部类成员和方法
-                    if(!needStop) {
-                        theClass.updateUI();  //更新UI
+                            if (!needStop) {
+                                theClass.updateUI();  //更新UI
+                                theClass.addTimeUsed();    //计时
+
+                            }
+                            break;
                     }
-                    theClass.addTimeUsed();    //计时
+                case 1:{
+                    theClass.bossFight();
                     break;
                 }
                 default: {
@@ -127,7 +160,7 @@ public class eventlogAndClock extends BaseActivity {
             log1.setText(Character.showBag());
         }
         if(adventureTime==timeUsedInSec){
-            time.setText(data.home);
+            time.setText("wryyyyyy!");
             ifStop=false;
         }
     }
@@ -145,4 +178,14 @@ public class eventlogAndClock extends BaseActivity {
         return String.valueOf((adventureTime-timeUsedInSec)% 60);
     }
 
+    private void bossFight(){
+        if(!adventure.knowBoss()){
+            log1.setText("是时候回去处理怪物素材，更新升级装备了");
+            buttonAble=true;
+            log2.setText("A:回去");
+            log3.setText("B:回去");
+        }else {
+
+        }
+    }
 }

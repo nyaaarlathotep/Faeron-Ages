@@ -37,7 +37,7 @@ public class beginnersGuide extends Place {
     }
 
     public int adventureTime(){
-        return 300;
+        return 30;
     }
     public boolean knowBoss(){
         return boss.spotted();

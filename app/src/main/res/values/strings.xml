@@ -123,4 +123,6 @@
     <string name="paladin">圣骑士</string>
     <string name="eventLog">Event Log</string>
     <string name="rua">rua</string>
+    <string name="A">A</string>
+    <string name="B">B</string>
 </resources>

@@ -22,7 +22,9 @@ public class Adventure {
             return "[害怕]正在迅速逃跑";
         }else {
             if(harvest){
-                Character.harvestTrophy(monster.split(" ")[1]);
+                if(monster.split(" ").length>1) {
+                    Character.harvestTrophy(monster.split(" ")[1]);
+                }
             }
             return "[战斗]正在与"+monster.split(" ")[0]+"战斗";
         }

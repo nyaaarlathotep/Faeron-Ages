@@ -69,7 +69,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="48dp"
         android:text="@string/rua"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,10 +83,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
         android:text="@string/eventLog"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toEndOf="@+id/progressBar"
         app:layout_constraintTop_toBottomOf="@+id/timer" />
 
@@ -97,7 +99,7 @@
         android:layout_marginLeft="56dp"
         android:layout_marginStart="56dp"
         android:layout_marginTop="48dp"
-        android:text="@string/rua"
+        android:text="@string/A"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/log3" />
 
@@ -108,7 +110,7 @@
         android:layout_marginEnd="65dp"
         android:layout_marginRight="65dp"
         android:layout_marginTop="48dp"
-        android:text="@string/rua"
+        android:text="@string/B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/log3" />
 
