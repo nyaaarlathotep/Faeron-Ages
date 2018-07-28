@@ -1,51 +1,43 @@
 package com.example.cartman.faeronages.game;
 
-import com.example.cartman.faeronages.game.creatures.Boss;
+
+import com.example.cartman.faeronages.game.maps.Place;
 
 import java.util.Random;
 
 public class Adventure {
 
-    private String[] monsters;
-    private Boss boss;
     private Random random=new Random();
-    public Adventure(String[] aMonsters, Boss aBoss){
-        monsters=aMonsters;
-        boss=aBoss;
+    private Place map;
+    public Adventure(Place Amap){
+        map=Amap;
     }
 
 
-    public String smallFight() {
-        data data=new data();
-
-        int des = random.nextInt(data.monsterDescription.length + 17);
-        int mon=random.nextInt(monsters.length);
+    public String smallFight(){
         boolean harvest=random.nextInt(10)>8;
-        if (des >= data.monsterDescription.length) {
-            if(harvest) {
-                if (monsters[mon].split(" ").length > 1) {
-                    Character.harvestTrophy(monsters[mon].split(" ")[1]);
-                }
+        boolean escape=data.d20(1);
+        String monster=map.smallMonster();
+        if(escape){
+            return "[害怕]正在迅速逃跑";
+        }else {
+            if(harvest){
+                Character.harvestTrophy(monster.split(" ")[1]);
             }
-            return "对战--与" + monsters[mon].split(" ")[0] + "战斗";
-        } else if (des > data.monsterDescription.length + 13) {
-            return "正在疯狂的逃跑";
+            return "[战斗]正在与"+monster.split(" ")[0]+"战斗";
         }
-        if(harvest){
-            if(monsters[mon].split(" ").length>1) {
-                Character.harvestTrophy(monsters[mon].split(" ")[1]);
-            }
         }
-        return "对战--与" + data.monsterDescription[des] + monsters[mon].split(" ")[0] + "战斗";
-
-    }
-
+        public  int getTime(){
+        return map.adventureTime();
+        }
     public String hangOut(){
         int number=random.nextInt(data.hangOut.length);
         return data.hangOut[number];
     }
-
-    public String bossTrack(){
-        return boss.track();
+    public void investigate(){
+        map.investigate();
+    }
+    public String environment(){
+        return map.environment();
     }
 }

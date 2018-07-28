@@ -28,7 +28,7 @@ public class eventlogAndClock extends BaseActivity {
     static boolean needStop=false;
 
 //    counted in second
-    int adventureTime= data.adventureTime();
+    int adventureTime;
     int timeUsedInSec=0;
 
     private boolean ifStop=true;
@@ -46,6 +46,7 @@ public class eventlogAndClock extends BaseActivity {
         Log.d("jjjjob",Character.getJob().toString());
 
         adventure=Character.getAdventure();
+        adventureTime=adventure.getTime();
         time=(TextView)findViewById(R.id.timer) ;
         log1=(TextView)findViewById(R.id.log1) ;
         log2=(TextView)findViewById(R.id.log2) ;
@@ -92,10 +93,10 @@ public class eventlogAndClock extends BaseActivity {
             switch (msg.what) {
                 case 0: {
                     //使用theClass访问外部类成员和方法
-                    theClass.addTimeUsed();    //计时
                     if(!needStop) {
                         theClass.updateUI();  //更新UI
                     }
+                    theClass.addTimeUsed();    //计时
                     break;
                 }
                 default: {
@@ -111,9 +112,18 @@ public class eventlogAndClock extends BaseActivity {
         time.setText(timeUsed);
         if(timeUsedInSec%10==0){
             log1.setText(adventure.smallFight());
-            log2.setText(adventure.bossTrack());
-        }else if((timeUsedInSec-5)%10==0){
+            log2.setText(adventure.environment());
+            log3.setText("我tm锤爆");
+        }else if(timeUsedInSec%15==0){
+            String hangOut=adventure.hangOut();
+            log3.setText("战斗结束");
             log1.setText(adventure.hangOut());
+            if(hangOut.split("]")[0].equals("[警戒")){
+                adventure.investigate();
+            }
+        }else if(timeUsedInSec%5==0){
+            log3.setText("战斗结束");
+            log1.setText(Character.showBag());
         }
         if(adventureTime==timeUsedInSec){
             log2.setText(data.home);

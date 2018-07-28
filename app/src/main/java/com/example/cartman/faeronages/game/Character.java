@@ -1,26 +1,30 @@
 package com.example.cartman.faeronages.game;
 
 
-import com.example.cartman.faeronages.game.creatures.bigPig;
+import android.util.Log;
+
+import com.example.cartman.faeronages.game.maps.beginnersGuide;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Character {
     private static Random random=new Random();
-    private static int str=0;
-    private static int con=0;
-    private static int intll=0;
-    private static int dex=0;
-    private static int cha=0;
+    private static int str=10;//力
+    private static int con=10;//体
+    private static int intll=10;//智
+    private static int dex=10;//敏
+    private static int cha=10;//魅
     private static int age=17;
     private static String name="Bhaal";
     private static jobs job=jobs.fighter;
     private static faiths faith=faiths.Pelor;
     private static races race=races.human;
-    private static Adventure nextAdventure=new Adventure(data.beginnersGuide,new bigPig());
+    private static Adventure nextAdventure=new Adventure(new beginnersGuide());
     public static ArrayList<String> bag=new ArrayList<>();
 
+    public static boolean fullBag=false;
+    public static boolean haveHarvested=false;
 
     private static int level=1;
 
@@ -33,9 +37,23 @@ public class Character {
     }
 
     public static void harvestTrophy(String trophy){
-        if(bag.size()
-                <20) {
+        if(bag.size() <20) {
             bag.add(trophy);
+            haveHarvested=true;
+            Log.d("ww",trophy);
+        }else {
+            fullBag=true;
+        }
+    }
+
+    public static String showBag() {
+        if (!haveHarvested) {
+            return "没能获得战利品";
+        } else if(fullBag){
+            return "包裹满了！";
+        }else{
+            haveHarvested=false;
+            return "获得战利品" + bag.get(bag.size() - 1);
         }
     }
 
