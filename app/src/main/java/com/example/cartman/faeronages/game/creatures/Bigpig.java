@@ -34,9 +34,7 @@ public class bigPig extends Boss {
     }
 
     public void beSeeked(){
-        Log.d("过了没？",13-Character.getDex()+"");
-        boolean seekSecceed=data.d20(13-Character.getDex());
-        Log.d("why?",seekSecceed+"");
+        boolean seekSecceed=data.d20(5+Character.getDex());
         if(seekSecceed){
             Log.d("过了没!","过了！");
             track=false;

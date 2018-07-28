@@ -31,7 +31,7 @@ public class data {
 
 
 
-    //数字越大越难通过
+    //数字越大→true
     public static boolean d20(int number){
         Random random=new Random();
         return number>=(random.nextInt(20)+1);
