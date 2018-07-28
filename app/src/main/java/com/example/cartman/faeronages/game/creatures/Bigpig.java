@@ -1,9 +1,6 @@
 package com.example.cartman.faeronages.game.creatures;
 
 
-
-import android.util.Log;
-
 import com.example.cartman.faeronages.game.data;
 import com.example.cartman.faeronages.game.Character;
 
@@ -36,7 +33,6 @@ public class bigPig extends Boss {
     public void beSeeked(){
         boolean seekSecceed=data.d20(5+Character.getDex());
         if(seekSecceed){
-            Log.d("过了没!","过了！");
             track=false;
         }
     }

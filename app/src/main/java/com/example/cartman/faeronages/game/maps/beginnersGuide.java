@@ -16,6 +16,8 @@ public class beginnersGuide extends Place {
     private Random random=new Random();
 
     public beginnersGuide(){}
+
+//    返回可能带有修饰的怪物
     public  String smallMonster() {
         int des = random.nextInt(monsterDescription.length + 17);
         int mon = random.nextInt(monsters.length);
