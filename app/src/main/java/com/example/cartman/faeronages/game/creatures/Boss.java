@@ -6,4 +6,5 @@ public abstract class Boss {
     public abstract String detailInfo();
     public abstract String specialEvent();
     public abstract void beSeeked();
+    public abstract boolean spotted();
 }

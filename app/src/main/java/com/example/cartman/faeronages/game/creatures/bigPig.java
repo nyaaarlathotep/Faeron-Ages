@@ -5,7 +5,7 @@ import com.example.cartman.faeronages.game.data;
 import com.example.cartman.faeronages.game.Character;
 
 public class bigPig extends Boss {
-    private boolean track=true;
+    private boolean spotTrack=false;
 
 
     public boolean isOption1Used;
@@ -16,7 +16,7 @@ public class bigPig extends Boss {
 
     }
     public String track(){
-        if(track) {
+        if(!spotTrack) {
             return "啊～，今天也是好天気☆～";
         }
         else {
@@ -26,6 +26,7 @@ public class bigPig extends Boss {
     public  String detailInfo(){
         return "经过你敏锐的调查，你发现这个庞然大物的脚印似乎有些深浅不一，它的腿部好像受伤了";
     }
+
     public  String specialEvent(){
         return "";
     }
@@ -33,7 +34,10 @@ public class bigPig extends Boss {
     public void beSeeked(){
         boolean seekSecceed=data.d20(5+Character.getDex());
         if(seekSecceed){
-            track=false;
+            spotTrack=true;
         }
+    }
+    public boolean spotted(){
+        return spotTrack;
     }
 }

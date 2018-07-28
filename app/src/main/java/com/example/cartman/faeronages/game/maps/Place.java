@@ -5,4 +5,5 @@ public abstract class Place {
     public abstract String smallMonster();
     public abstract String environment();
     public abstract void investigate();
+    public abstract boolean knowBoss();
 }

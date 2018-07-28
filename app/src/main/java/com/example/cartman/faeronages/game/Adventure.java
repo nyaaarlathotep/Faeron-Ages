@@ -30,14 +30,21 @@ public class Adventure {
         public  int getTime(){
         return map.adventureTime();
         }
-    public String hangOut(){
+
+        public String hangOut(){
         int number=random.nextInt(data.hangOut.length);
         return data.hangOut[number];
     }
+
     public void investigate(){
         map.investigate();
     }
+
     public String environment(){
         return map.environment();
+    }
+
+    public boolean knowBoss(){
+        return map.knowBoss();
     }
 }

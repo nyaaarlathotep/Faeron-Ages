@@ -99,5 +99,6 @@ public class Character {
     }
     public static int getAge(){return age;
     }
-    public static int getLevel(){return level;}
+    public static int getLevel(){
+        return level;}
 }

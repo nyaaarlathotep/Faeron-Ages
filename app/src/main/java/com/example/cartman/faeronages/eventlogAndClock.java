@@ -71,11 +71,13 @@ public class eventlogAndClock extends BaseActivity {
                         e.printStackTrace();
                     }
                 }
-
+                while (!ifStop){
+                    if(!adventure.knowBoss()){
+                        log1.setText("");
+                    }
+                }
             }
         }).start();
-
-
     }
 
 
@@ -104,7 +106,6 @@ public class eventlogAndClock extends BaseActivity {
                 }
             }
         }
-
     }
 
 
@@ -126,7 +127,7 @@ public class eventlogAndClock extends BaseActivity {
             log1.setText(Character.showBag());
         }
         if(adventureTime==timeUsedInSec){
-            log2.setText(data.home);
+            time.setText(data.home);
             ifStop=false;
         }
     }
