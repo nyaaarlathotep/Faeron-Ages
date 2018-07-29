@@ -47,7 +47,11 @@ public class bigPig extends Boss {
                 }
             }
             case 3:{
-                
+                if(choices[0]){
+                    if(choices[1]){
+                        return "被攻击了猪头的老母猪真陷入暴怒，你用自己的生命开了次玩笑";
+                    }
+                }
             }
         }
         return "越界";
