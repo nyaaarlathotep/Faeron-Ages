@@ -1,6 +1,8 @@
 package com.example.cartman.faeronages.game;
 
 
+import android.util.Log;
+
 import com.example.cartman.faeronages.game.maps.Place;
 
 import java.util.Random;
@@ -48,5 +50,22 @@ public class Adventure {
 
     public boolean knowBoss(){
         return map.knowBoss();
+    }
+
+    public String battleInfo(){
+        return map.battleInfo();
+    }
+
+    public String battleChoiceContent(boolean choice){
+        return map.battleChoiceContent(choice);
+    }
+
+    public void iChooseA(){
+        Log.d("iChooseA","a");
+        map.bossChoose(true);
+    }
+    public void iChooseB(){
+        Log.d("iChooseB","b");
+        map.bossChoose(false);
     }
 }

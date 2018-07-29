@@ -6,4 +6,7 @@ public abstract class Place {
     public abstract String environment();
     public abstract void investigate();
     public abstract boolean knowBoss();
+    public abstract String battleInfo();
+    public abstract String battleChoiceContent(boolean choice);
+    public abstract void bossChoose(boolean choice);
 }

@@ -27,6 +27,8 @@ public class beginnersGuide extends Place {
             return monsterDescription[des] + monsters[mon];
         }
     }
+
+    @Override
     public void investigate(){
         boss.beSeeked();
     }
@@ -36,10 +38,32 @@ public class beginnersGuide extends Place {
         return boss.track();
     }
 
+    @Override
     public int adventureTime(){
-        return 30;
+        return 100;
     }
+
+    @Override
     public boolean knowBoss(){
         return boss.spotted();
+    }
+
+    @Override
+    public String battleInfo() {
+        return boss.battleInfo();
+    }
+
+    @Override
+    public String battleChoiceContent(boolean choice){
+        if(boss.battleChoiceContent(choice).equals("freeFight")){
+            return "freeFight";
+        }else {
+         return boss.battleChoiceContent(choice);
+        }
+    }
+
+    @Override
+    public void bossChoose(boolean choice) {
+        boss.bossChoose(choice);
     }
 }

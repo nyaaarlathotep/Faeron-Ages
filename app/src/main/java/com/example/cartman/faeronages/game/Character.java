@@ -2,9 +2,7 @@ package com.example.cartman.faeronages.game;
 
 
 import android.util.Log;
-
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
-
 import java.util.ArrayList;
 import java.util.Random;
 

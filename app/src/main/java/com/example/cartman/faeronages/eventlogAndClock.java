@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.cartman.faeronages.game.Adventure;
 import com.example.cartman.faeronages.game.Character;
-import com.example.cartman.faeronages.game.data;
 
 import java.lang.ref.WeakReference;
 
@@ -34,6 +33,7 @@ public class eventlogAndClock extends BaseActivity {
     int timeUsedInSec=0;
 
     private boolean ifStop=true;
+    private boolean free=false;
 
 
     @Override
@@ -67,6 +67,11 @@ public class eventlogAndClock extends BaseActivity {
                     if(!adventure.knowBoss()){
                         Intent intent=new Intent(eventlogAndClock.this,town.class);
                         startActivity(intent);
+                        free=true;
+                    }else {
+                        Log.d("aaa","aaa");
+                        adventure.iChooseA();
+                        buttonAble=false;
                     }
 
 
@@ -79,8 +84,12 @@ public class eventlogAndClock extends BaseActivity {
                     if(!adventure.knowBoss()){
                         Intent intent=new Intent(eventlogAndClock.this,town.class);
                         startActivity(intent);
+                        free=true;
+                    }else{
+                        Log.d("bbb","b");
+                        adventure.iChooseB();
+                        buttonAble=false;
                     }
-
 
                 }
             }
@@ -100,9 +109,19 @@ public class eventlogAndClock extends BaseActivity {
                         e.printStackTrace();
                     }
                 }
+
                 while (!ifStop){
                     Message msg=new Message();
                     msg.what=1;
+                    handler.sendMessage(msg);
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if(free){
+                        break;
+                    }
                 }
             }
         }).start();
@@ -180,12 +199,15 @@ public class eventlogAndClock extends BaseActivity {
 
     private void bossFight(){
         if(!adventure.knowBoss()){
-            log1.setText("是时候回去处理怪物素材，更新升级装备了");
+            log1.setText("是时候回到镇子处理怪物素材，更新升级装备了");
             buttonAble=true;
             log2.setText("A:回去");
             log3.setText("B:回去");
         }else {
-
+            buttonAble=true;
+            log1.setText(adventure.battleInfo());
+            log2.setText(adventure.battleChoiceContent(true));
+            log3.setText(adventure.battleChoiceContent(false));
         }
     }
 }
