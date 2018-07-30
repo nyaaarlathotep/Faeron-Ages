@@ -38,7 +38,7 @@ public class Character {
         if(bag.size() <20) {
             bag.add(trophy);
             haveHarvested=true;
-            Log.d("ww",trophy);
+            Log.d("Trophy",trophy);
         }else {
             fullBag=true;
         }
@@ -53,6 +53,10 @@ public class Character {
             haveHarvested=false;
             return "获得战利品" + bag.get(bag.size() - 1);
         }
+    }
+
+    public static void die(){
+
     }
 
 

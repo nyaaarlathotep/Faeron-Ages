@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.cartman.faeronages.game.Adventure;
 import com.example.cartman.faeronages.game.Character;
+import com.example.cartman.faeronages.game.data;
 
 import java.lang.ref.WeakReference;
 
@@ -150,7 +151,9 @@ public class eventlogAndClock extends BaseActivity {
                             break;
                     }
                 case 1:{
-                    theClass.bossFight();
+                    if(!theClass.buttonAble) {
+                        theClass.bossFight();
+                    }
                     break;
                 }
                 default: {
@@ -179,7 +182,7 @@ public class eventlogAndClock extends BaseActivity {
             log1.setText(Character.showBag());
         }
         if(adventureTime==timeUsedInSec){
-            time.setText("wryyyyyy!");
+            time.setText("骰子!");
             ifStop=false;
         }
     }
@@ -208,6 +211,10 @@ public class eventlogAndClock extends BaseActivity {
             log1.setText(adventure.battleInfo());
             log2.setText(adventure.battleChoiceContent(true));
             log3.setText(adventure.battleChoiceContent(false));
+            if(!data.d20haveShown) {
+                time.setText(data.showLastD20());
+                data.d20haveShown=true;
+            }
         }
     }
 }

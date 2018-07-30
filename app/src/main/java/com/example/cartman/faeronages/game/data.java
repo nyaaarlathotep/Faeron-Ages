@@ -4,6 +4,9 @@ package com.example.cartman.faeronages.game;
 import java.util.Random;
 
 public class data {
+
+    public static int d20=0;
+    public static boolean d20haveShown=true;
     public static String[] hangOut=new String[]{"[放松]正在和自己尬舞","[放松]正在和左手打架","[警戒]正在机敏的巡视四周","[警戒]正在灌木丛中躲藏","[愉悦]正在生吃史莱姆"
             ,"[放松]正在生吃马卡龙","[警戒]正在担忧接下来的战斗","[修整]正在检查装备","[修整]正在检查武器","[警戒]正在消除自己的踪迹","[修整]正在给伤口消毒","[修整]正在给伤口包扎",
             "这武器a下去怎么有爆炸的声音","[放松]正在洗脸","[警戒]正在搜寻猎物"};
@@ -31,9 +34,30 @@ public class data {
 
 
 
-    //数字越大→true
+    //数字越大→true→越容易成功
     public static boolean d20(int number){
         Random random=new Random();
         return number>=(random.nextInt(20)+1);
+    }
+
+    public static boolean shownD20(int number){
+        Random random=new Random();
+        d20=random.nextInt(20)+1;
+        d20haveShown=false;
+        return number>=(d20);
+    }
+
+    public static String showLastD20(){
+        d20haveShown=true;
+        if(d20==20){
+            return "[骰子]: 20 幸运女神在向你微笑";
+        }else if(d20==1){
+            return "[骰子]: 1 厄运女神如此厌恶你";
+        }else
+        return "[骰子] "+d20;
+    }
+
+    public static void die(){
+        
     }
 }
