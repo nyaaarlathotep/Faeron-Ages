@@ -63,7 +63,7 @@ public class beginnersGuide extends Place {
     }
 
     @Override
-    public void bossChoose(boolean choice) {
-        boss.bossChoose(choice);
+    public String bossChoose(boolean choice) {
+        return boss.bossChoose(choice);
     }
 }

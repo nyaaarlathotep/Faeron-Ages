@@ -7,5 +7,5 @@ public abstract class Boss {
     public abstract String battleChoiceContent(boolean choice);
     public abstract void beSeeked();
     public abstract boolean spotted();
-    public abstract void bossChoose(boolean choice);
+    public abstract String bossChoose(boolean choice);
 }

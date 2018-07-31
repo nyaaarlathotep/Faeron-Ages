@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.cartman.faeronages.game.Adventure;
 import com.example.cartman.faeronages.game.Character;
 import com.example.cartman.faeronages.game.data;
@@ -71,11 +70,12 @@ public class eventlogAndClock extends BaseActivity {
                         free=true;
                     }else {
                         Log.d("aaa","aaa");
-                        adventure.iChooseA();
+                        String ss=adventure.iChooseA();
                         buttonAble=false;
+                        if(ss.equals("end")){
+                            free=true;
+                        }
                     }
-
-
                 }
             }
         });
@@ -88,8 +88,11 @@ public class eventlogAndClock extends BaseActivity {
                         free=true;
                     }else{
                         Log.d("bbb","b");
-                        adventure.iChooseB();
+                        String ss=adventure.iChooseB();
                         buttonAble=false;
+                        if(ss.equals("end")){
+                            free=true;
+                        }
                     }
 
                 }
@@ -124,6 +127,7 @@ public class eventlogAndClock extends BaseActivity {
                         break;
                     }
                 }
+                Intent intent=new Intent(eventlogAndClock.this,town.class);
             }
         }).start();
     }

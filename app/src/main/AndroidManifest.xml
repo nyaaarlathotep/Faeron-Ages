@@ -32,6 +32,7 @@
         <activity android:name=".eventlogAndClock" />
         <activity android:name=".chooseJob" />
         <activity android:name=".town"/>
+
     </application>
 
 </manifest>

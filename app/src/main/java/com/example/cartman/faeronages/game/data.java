@@ -58,6 +58,6 @@ public class data {
     }
 
     public static void die(){
-        
+
     }
 }

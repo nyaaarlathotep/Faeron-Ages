@@ -8,5 +8,5 @@ public abstract class Place {
     public abstract boolean knowBoss();
     public abstract String battleInfo();
     public abstract String battleChoiceContent(boolean choice);
-    public abstract void bossChoose(boolean choice);
+    public abstract String bossChoose(boolean choice);
 }

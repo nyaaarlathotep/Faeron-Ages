@@ -60,12 +60,12 @@ public class Adventure {
         return map.battleChoiceContent(choice);
     }
 
-    public void iChooseA(){
+    public String iChooseA(){
         Log.d("iChooseA","a");
-        map.bossChoose(true);
+        return map.bossChoose(true);
     }
-    public void iChooseB(){
+    public String iChooseB(){
         Log.d("iChooseB","b");
-        map.bossChoose(false);
+        return map.bossChoose(false);
     }
 }

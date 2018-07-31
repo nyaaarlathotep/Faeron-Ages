@@ -151,12 +151,16 @@ public class bigPig extends Boss {
     }
 
     @Override
-    public void bossChoose(boolean choice) {
+    public String bossChoose(boolean choice) {
         Log.d("bossChoose",choice+"");
-        if(rounds==4&&choice){
-            Character.harvestTrophy("老母猪的大猪牙");
+        if(rounds==4){
+            if(choice) {
+                Character.harvestTrophy("老母猪的大猪牙");
+            }
+            return "end";
         }
         choices[rounds]=choice;
         rounds=rounds+1;
+        return "";
     }
 }
