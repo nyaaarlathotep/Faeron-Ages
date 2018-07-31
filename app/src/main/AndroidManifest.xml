@@ -31,8 +31,8 @@
         <activity android:name=".chooseFaith" />
         <activity android:name=".eventlogAndClock" />
         <activity android:name=".chooseJob" />
-        <activity android:name=".town"/>
-
+        <activity android:name=".town" />
+        <activity android:name=".character"></activity>
     </application>
 
 </manifest>
