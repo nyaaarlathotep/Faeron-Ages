@@ -32,7 +32,10 @@
         <activity android:name=".eventlogAndClock" />
         <activity android:name=".chooseJob" />
         <activity android:name=".town" />
-        <activity android:name=".character"></activity>
+        <activity android:name=".character" />
+        <activity android:name=".equipment" />
+        <activity android:name=".bag" />
+        <activity android:name=".spell"></activity>
     </application>
 
 </manifest>

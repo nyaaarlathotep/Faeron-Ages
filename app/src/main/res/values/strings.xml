@@ -126,4 +126,7 @@
     <string name="A">A</string>
     <string name="B">B</string>
     <string name="character">人物</string>
+    <string name="bag">背包</string>
+    <string name="equipment">装备</string>
+    <string name="spell">法术</string>
 </resources>

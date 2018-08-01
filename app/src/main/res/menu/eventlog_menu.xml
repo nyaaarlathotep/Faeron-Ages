@@ -3,7 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/option_normal_1"
-        android:icon="@mipmap/icons8_standing_man_filled"
+        android:icon="@mipmap/icons8_standing_man"
         android:title="@string/character"
-        app:showAsAction="withText|always"/>
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/option_normal_2"
+        android:icon="@mipmap/icons8_footman_32"
+        android:title="@string/equipment"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/option_normal_3"
+        android:icon="@mipmap/icons8_rucksack_50"
+        android:title="@string/bag"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/option_normal_4"
+        android:icon="@mipmap/fireball"
+        android:title="@string/spell"
+        app:showAsAction="ifRoom"/>
 </menu>

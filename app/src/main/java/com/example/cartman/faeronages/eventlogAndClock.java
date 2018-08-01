@@ -41,15 +41,36 @@ public class eventlogAndClock extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.eventlog_menu,menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.option_normal_1:{
+                Log.d("1","1");
                 Intent intent=new Intent(eventlogAndClock.this,character.class);
                 startActivity(intent);
+                break;
+            }
+            case R.id.option_normal_2:{
+                Log.d("2","2");
+                Intent intent=new Intent(eventlogAndClock.this,equipment.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.option_normal_3:{
+                Log.d("3","3");
+
+                Intent intent=new Intent(eventlogAndClock.this,bag.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.option_normal_4:{
+                Log.d("4","4");
+                Intent intent=new Intent(eventlogAndClock.this,spell.class);
+                startActivity(intent);
+                break;
             }
             default:
         }
