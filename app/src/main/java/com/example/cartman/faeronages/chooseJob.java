@@ -105,6 +105,7 @@ public class chooseJob extends BaseActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(chooseJob.this,RoleCreation.class);
                 startActivity(intent);
+                finish();
             }
         });
 

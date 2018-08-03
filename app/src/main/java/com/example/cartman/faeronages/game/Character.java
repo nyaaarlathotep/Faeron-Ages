@@ -30,15 +30,16 @@ public class Character {
     private static int level=1;
 
 //    装备
-    private static String helmet="";
-    private static String breastPlate="";
-    private static String leftHand="";
-    private static String rightHand="";
-    private static String legArmor="";
-    private static String[] rings=new String[]{"","","",""};
-    private static String neckLace="";
+    private static String helmet="破旧的头盔";
+    private static String breastPlate="破旧的鳞甲";
+    private static String rightHand="磨损的长剑";
+    private static String leftHand="磨损的小盾";
+    private static String legArmor="破旧的鳞甲";
+    private static String[] rings=new String[]{"祖传的生命戒指","","",""};
+    private static String neckLace="祖传的格挡项链";
 
 //     背包及金钱
+
     public static ArrayList<String> bag=new ArrayList<>();
     public static String[] specialBag=new String[5];
     private static int gold=0;
@@ -139,8 +140,10 @@ public class Character {
                 helmet="破旧的头环";
                 breastPlate="破旧的生皮甲";
                 rightHand="磨损的弯刀";
+                leftHand="";
                 legArmor="磨损的生皮甲";
                 neckLace="新鲜的花环";
+                rings=new String[]{"","","",""};
                 specialBag=new String[]{"鲁特琴","","","",""};
                 String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
                 bag=new ArrayList<>(Arrays.asList(bornItems));
@@ -148,9 +151,11 @@ public class Character {
             }
             case cleric:{
                 breastPlate="破旧的长袍";
+                rightHand="";
                 leftHand="老旧的木质节杖";
                 legArmor="破旧的绑腿";
                 rings[0]="老旧的神圣戒指";
+                neckLace="";
                 specialBag=new String[]{"木质圣徽","","","",""};
                 String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
                 bag=new ArrayList<>(Arrays.asList(bornItems));
@@ -160,8 +165,10 @@ public class Character {
                 helmet="破旧的头巾";
                 breastPlate="破旧的皮甲";
                 rightHand="磨损的匕首";
+                leftHand="";
                 legArmor="破旧的皮甲";
                 rings[0]="老旧的潜行戒指";
+                neckLace="";
                 String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把、游荡者工具、附盖提灯".split("、");
                 bag=new ArrayList<>(Arrays.asList(bornItems));
                 break;
@@ -170,6 +177,7 @@ public class Character {
                 helmet="破旧的头盔";
                 breastPlate="破旧的鳞甲";
                 rightHand="磨损的长剑";
+                leftHand="";
                 legArmor="破旧的鳞甲";
                 rings[0]="老旧的勇气戒指";
                 neckLace="祖传的重甲项链";
@@ -179,6 +187,7 @@ public class Character {
             }
             case sorcerer:{
                 breastPlate="破旧的长袍";
+                rightHand="";
                 leftHand="老旧的木质节杖";
                 legArmor="破旧的绑腿";
                 rings[0]="老旧的法术默发戒指";

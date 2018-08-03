@@ -32,7 +32,6 @@ public class RoleCreation extends BaseActivity {
        buttonJob=(Button)findViewById(R.id.chooseJob);
        buttonGo=(Button)findViewById(R.id.go);
 
-       Character.setJob(jobs.fighter);
 
         buttonRace.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

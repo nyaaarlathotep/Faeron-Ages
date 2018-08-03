@@ -89,6 +89,7 @@ public class chooseFaith extends BaseActivity {
             public void onClick(View v){
                 Intent intent=new Intent(chooseFaith.this,RoleCreation.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
