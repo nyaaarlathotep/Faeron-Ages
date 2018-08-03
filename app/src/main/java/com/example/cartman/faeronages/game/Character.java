@@ -7,24 +7,43 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Character {
-    private static Random random=new Random();
+
+//    一些任务的本质属性
+    private static String name="Bhaal";
+    private static jobs job=jobs.fighter;
+    private static faiths faith=faiths.Pelor;
+    private static races race=races.human;
+
+//    5维
     private static int str=10;//力
     private static int con=10;//体
     private static int intll=10;//智
     private static int dex=10;//敏
     private static int cha=10;//魅
+
+
     private static int age=17;
-    private static String name="Bhaal";
-    private static jobs job=jobs.fighter;
-    private static faiths faith=faiths.Pelor;
-    private static races race=races.human;
-    private static Adventure nextAdventure=new Adventure(new beginnersGuide());
+    private static int level=1;
+
+//    装备
+    private static String helmet="";
+    private static String breastPlate="";
+    private static String leftHand="";
+    private static String rightHand="";
+    private static String legArmor="";
+    private static String[] rings=new String[4];
+    private static String neckLace="";
+
+//     背包及金钱
     public static ArrayList<String> bag=new ArrayList<>();
+    private static int gold=0;
 
     public static boolean fullBag=false;
     public static boolean haveHarvested=false;
+    private static Adventure nextAdventure=new Adventure(new beginnersGuide());
 
-    private static int level=1;
+    private static Random random=new Random();
+
 
     public static void roll(){
         str=random.nextInt(4)+8;
@@ -32,6 +51,7 @@ public class Character {
         intll=random.nextInt(4)+8;
         dex=random.nextInt(4)+8;
         cha=random.nextInt(4)+8;
+        gold=random.nextInt(10)+random.nextInt(10)+random.nextInt(10);
     }
 
     public static void harvestTrophy(String trophy){
@@ -78,9 +98,21 @@ public class Character {
         job=aJob;
     }
 
+
+    public static String getBag(){
+        String items="";
+        for(String thing:bag){
+            items=items.concat(thing+"  ");
+        }
+        return "金币： "+gold+"\n"+items;
+    }
+
+
     public static Adventure getAdventure(){
         return nextAdventure;
     }
+
+
     public static races getRace(){return race;
     }
     public static jobs getJob(){
