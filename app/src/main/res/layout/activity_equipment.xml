@@ -29,9 +29,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="28dp"
+        android:textSize="20sp"
         android:text="@string/rua"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/equipment" />
 
@@ -39,20 +41,23 @@
         android:id="@+id/leftHand"
         android:layout_width="114dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:textSize="20sp"
+        android:layout_marginTop="48dp"
         android:text="@string/rua"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/helmet" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/rightHand"
         android:layout_width="114dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="48dp"
+        android:textSize="20sp"
+
         android:text="@string/rua"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/helmet" />
@@ -61,9 +66,11 @@
         android:id="@+id/breastplate"
         android:layout_width="112dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:textSize="20sp"
+
         android:text="@string/rua"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/leftHand" />
@@ -72,21 +79,25 @@
         android:id="@+id/legArmor"
         android:layout_width="112dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="44dp"
+        android:textSize="20sp"
+
         android:text="@string/rua"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/rightHand" />
 
     <TextView
         android:id="@+id/rings"
         android:layout_width="112dp"
-        android:layout_height="104dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="117dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="76dp"
         android:text="@string/rua"
+
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/breastplate" />
 
@@ -94,9 +105,11 @@
         android:id="@+id/neckLace"
         android:layout_width="112dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="76dp"
+        android:textSize="20sp"
+
         android:text="@string/rua"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/legArmor" />

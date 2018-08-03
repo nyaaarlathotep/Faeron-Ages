@@ -27,7 +27,7 @@ public class Roll extends BaseActivity {
                 TextView textViewCON=(TextView) findViewById(R.id.textViewCON);
                 textViewCON.setText(Character.getCon()+"");
                 TextView textViewINT=(TextView) findViewById(R.id.textViewINT);
-                textViewINT.setText(Character.getIntll()+"");
+                textViewINT.setText(Character.getIntell()+"");
                 TextView textViewDEX=(TextView) findViewById(R.id.textViewDEX);
                 textViewDEX.setText(Character.getDex()+"");
                 TextView textViewCHA=(TextView) findViewById(R.id.textViewCHA);
