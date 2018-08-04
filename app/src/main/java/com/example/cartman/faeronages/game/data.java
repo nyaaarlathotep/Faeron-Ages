@@ -54,7 +54,62 @@ public class data {
             "轻灵术（Cat‘s Grace）:受术者获得+4 敏捷加值，持续时间为每等级 1 分钟。治疗中度伤（Cure ModerateWounds）:治疗 2d8 点伤害，每等级再多治疗+1 点，最高+10点。" +
             "黑暗术（Darkness）:产生半径20 尺的超自然黑暗。怪物晕眩术（DazeMonster）:6HD 以下的活物会失去下一次的动作。" +
             "减缓毒性（Delay Poison）:使毒性停止对受术者造成伤害，每等级持续 1 小时。侦测思想（Detect Thoughts）:可以观察到他人的表面想法。";
-    public static String burd3="";
+    public static String burd3="闪现术（Blink）：你随机的消失、出现，持续时间 1 轮/每等级。魅惑怪物（Charm Monster）：使怪物相信它是你的盟友。" +
+            "锐耳术/鹰眼术（Clairaudience/Clairvoyance）：听或看到更远的地方，持续时间 1 分钟/每等级。困惑术（Confusion）：受术者行为古怪，持续时间 1 轮/每等级。" +
+            "满怀绝望（Crushing Despair）：目标攻击掷骰、伤害掷骰、豁免，以及其他所有检定均–2。治疗重伤（Cure Serious Wounds）：治疗 3d8 点伤害，每等级再多治疗 1 点，最多+15。" +
+            "昼明术（Daylight）：产生半径60 尺范围的亮光。沉睡术（Deep Slumber）：使生命骰总数 10 的生物沉睡。解除魔法（Dispel Magic）：解除魔法或魔法效果。" +
+            "移位术（Displacement）：攻击受术者有 50%的失手几率。恐惧术（Fear）：锥形区域内的目标群逃窜，持续时间 1 轮/每等级。气化形体（Gaseous Form）：受术者变为一团气体并能缓慢飞行。" +
+            "次等指使术（Geas, Lesser）：指挥生命骰为 7 或更少的生物。舌灿莲花:「唬骗」检定获得+30加值，且谎言不会被魔法拆穿。"+
+            "满怀希望（Good Hope）：目标攻击掷骰、伤害掷骰、豁免，以及所有检定均+2。加速术（Haste）：受术者移动速度加快，攻击掷骰、 AC、反射豁免检定各+1。每等级影响 1个生物。" +
+            "谜幻手稿（Illusory Script ） M:只有事先指定的读者可解读此文字。隐形法球（InvisibilitySphere）:使 10 尺内所有人隐形。 ";
+    public static String burd4="破除结界（Break Enchantment）:\n" +
+            "破除受术者所带有的附加魔\n" +
+            "法、诅咒、石化，或解除其变\n" +
+            "化。 \n" +
+            "治疗致命伤（Cure Critical \n" +
+            "Wounds）:治疗 4d8 点伤害，每\n" +
+            "等级再多治疗+1 点，最高+20\n" +
+            "点。 \n" +
+            "侦测探知（Detect Scrying）:\n" +
+            "警告你有人使用魔法在窃听。 \n" +
+            "任意门（Dimension Door）:传\n" +
+            "送至范围内任一地点。 \n" +
+            "支配人类（Dominate Person）:\n" +
+            "使用心灵控制人形生物。 \n" +
+            "动作自如（Freedom of \n" +
+            "Movement）:受术者可以无视障\n" +
+            "碍物而如常行走。 \n" +
+            "幻景（Hallucinatory \n" +
+            "Terrain）:使某种地形看起来\n" +
+            "像是另一种（如:使原野看起来\n" +
+            "像森林）。 \n" +
+            "怪物定身术（Hold Monster）:\n" +
+            "与「人类定身术」同，但可指\n" +
+            "定任意生物。 \n" +
+            "高等隐形术（Invisibility, \n" +
+            "Greater）:与「隐形」同，但\n" +
+            "受术者进行攻击后仍可保持隐\n" +
+            "形。 \n" +
+            "通晓传奇（Legend Lore ）M F\n" +
+            ":\n" +
+            "得知一个人、地方或事物的相\n" +
+            "关传说。 \n" +
+            "李欧蒙庇护所\n" +
+            "（Leomund’sSecureShelter）:\n" +
+            "造出坚固的屋舍。 ";
+
+
+    private static String[] resolveSpell(String sad){
+        String[] sss=sad.split("\n");
+
+        String result="";
+        for(String aa:sss){
+            result=result.concat(aa);
+        }
+        System.out.println(result);
+        System.out.println(result.split("。")[1]);
+        return result.split("。");
+    }
 
     //数字越大→true→越容易成功
     public static boolean d20(int number){
