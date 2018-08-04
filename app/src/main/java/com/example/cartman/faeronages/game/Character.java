@@ -23,7 +23,6 @@ public class Character {
     private static int dex=10;//敏
     private static int cha=10;//魅
 
-
     private static int age=17;
     private static int level=1;
 
@@ -43,19 +42,19 @@ public class Character {
     private static int gold=0;
 
     public static boolean fullBag=false;
-    public static boolean haveHarvested=false;
-    private static Adventure nextAdventure=new Adventure(new beginnersGuide());
+    public static boolean haveHarvested = false;
+    private static Adventure nextAdventure = new Adventure(new beginnersGuide());
 
-    private static Random random=new Random();
+    private static Random random = new Random();
 
 
     public static void roll(){
-        str=random.nextInt(4)+8;
-        con=random.nextInt(4)+8;
-        intll=random.nextInt(4)+8;
-        dex=random.nextInt(4)+8;
-        cha=random.nextInt(4)+8;
-        gold=random.nextInt(10)+random.nextInt(10)+random.nextInt(10);
+        str = random.nextInt(4) + 8;
+        con = random.nextInt(4) + 8;
+        intll = random.nextInt(4) + 8;
+        dex = random.nextInt(4) + 8;
+        cha = random.nextInt(4) + 8;
+        gold = random.nextInt(10) + random.nextInt(10) + random.nextInt(10);
     }
 
     public static void harvestTrophy(String trophy){
@@ -71,10 +70,10 @@ public class Character {
     public static String showBag() {
         if (!haveHarvested) {
             return "没能获得战利品";
-        } else if(fullBag){
+        } else if (fullBag) {
             return "包裹满了！";
-        }else{
-            haveHarvested=false;
+        } else {
+            haveHarvested = false;
             return "获得战利品" + bag.get(bag.size() - 1);
         }
     }
