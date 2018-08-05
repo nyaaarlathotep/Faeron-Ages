@@ -35,15 +35,22 @@ public class Character {
     private static String[] rings=new String[]{"祖传的生命戒指","","",""};
     private static String neckLace="祖传的格挡项链";
 
-//     背包及金钱
+//    法术
+    private static String[] spells=new String[]{"","","","","","",""};
 
+//     背包及金钱
     public static ArrayList<String> bag=new ArrayList<>();
+    public static ArrayList<String> livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
     public static String[] specialBag=new String[5];
     private static int gold=0;
+
+
 
     public static boolean fullBag=false;
     public static boolean haveHarvested = false;
     private static Adventure nextAdventure = new Adventure(new beginnersGuide());
+
+
 
     private static Random random = new Random();
 
@@ -82,6 +89,11 @@ public class Character {
 
     }
 
+    public static int learnSpells(){
+        spells=data.getSpell(spells,level);
+        return 0;
+    }
+
     public static String[] getEquipments(){
         String ring="";
         for(String ss:rings){
@@ -117,8 +129,7 @@ public class Character {
                 legArmor="破旧的鳞甲";
                 rings[0]="祖传的生命戒指";
                 neckLace="祖传的格挡项链";
-                String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
-                bag=new ArrayList<>(Arrays.asList(bornItems));
+                livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
                 break;
             }
             case bard:{
@@ -129,8 +140,7 @@ public class Character {
                 legArmor="破旧的布甲";
                 neckLace="祖传的精致哨子";
                 specialBag=new String[]{"鲁特琴","","","",""};
-                String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把、附盖提灯".split("、");
-                bag=new ArrayList<>(Arrays.asList(bornItems));
+                livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把、附盖提灯".split("、")));
                 break;
             }
             case druid:{
@@ -143,7 +153,7 @@ public class Character {
                 rings=new String[]{"","","",""};
                 specialBag=new String[]{"鲁特琴","","","",""};
                 String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
-                bag=new ArrayList<>(Arrays.asList(bornItems));
+                livingBag=new ArrayList<>(Arrays.asList(bornItems));
                 break;
             }
             case cleric:{
@@ -155,7 +165,7 @@ public class Character {
                 neckLace="";
                 specialBag=new String[]{"木质圣徽","","","",""};
                 String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
-                bag=new ArrayList<>(Arrays.asList(bornItems));
+                livingBag=new ArrayList<>(Arrays.asList(bornItems));
                 break;
             }
             case rogue:{
@@ -167,7 +177,7 @@ public class Character {
                 rings[0]="老旧的潜行戒指";
                 neckLace="";
                 String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把、游荡者工具、附盖提灯".split("、");
-                bag=new ArrayList<>(Arrays.asList(bornItems));
+                livingBag=new ArrayList<>(Arrays.asList(bornItems));
                 break;
             }
             case paladin:{
@@ -179,7 +189,7 @@ public class Character {
                 rings[0]="老旧的勇气戒指";
                 neckLace="祖传的重甲项链";
                 String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
-                bag=new ArrayList<>(Arrays.asList(bornItems));
+                livingBag=new ArrayList<>(Arrays.asList(bornItems));
                 break;
             }
             case sorcerer:{
@@ -190,7 +200,7 @@ public class Character {
                 rings[0]="老旧的法术默发戒指";
                 neckLace="祖传的固定项链";
                 String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把、墨水、墨水笔、法术材料包、法术书".split("、");
-                bag=new ArrayList<>(Arrays.asList(bornItems));
+                livingBag=new ArrayList<>(Arrays.asList(bornItems));
                 break;
             }
         }
@@ -206,15 +216,23 @@ public class Character {
         for(String tt:specialBag){
             specials=specials+tt;
         }
-        return "金币： "+gold+"g\n"+"特殊物品：  "+specials+"\n"+"战利品：  "+items;
+        String alwaysHave="";
+        for(String aa:livingBag){
+            alwaysHave=alwaysHave.concat(aa);
+        }
+        return "金币： "+gold+"g\n"+"特殊物品：  "+specials+"\n"+"冒险背包：  "+alwaysHave+"\n"+"战利品：  "+items;
+    }
+
+    public static String[] getSpells(){
+        for()
+        return spells;
     }
 
 
 
-    public static Adventure getAdventure(){
-        return nextAdventure;
-    }
 
+    public static Adventure getAdventure(){ return nextAdventure;
+    }
 
     public static races getRace(){return race;
     }

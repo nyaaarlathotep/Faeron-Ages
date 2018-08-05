@@ -1,7 +1,9 @@
 package com.example.cartman.faeronages.game;
 
 
+
 import java.util.Random;
+
 
 public class data {
 
@@ -38,7 +40,15 @@ public class data {
             "出北方。光亮术（Light）:使目标物品如火把般发光。瞌睡术（Lullaby）:使受术者昏昏欲睡，「侦察」与「聆听」检定受到-5 减值，对抗「睡眠术」时的意志检定受到-2 减值。" +
             "法师帮手（Mage Hand）:可对 5磅以内的物品使用心灵遥控。修复术（Mending）:修复目标物品的细微损伤。传讯术（Message）:可在远距离使用轻声交谈。" +
             "开关术（Open/Close）:打开或关上小或轻的目标物品。魔法技俩（Preestidigitation）:玩一些小把戏。阅读魔法（Read Magic）:阅读卷轴及法术书。" +
-            "提升抗力（Resistance）:受术者的豁免检定获获得+1 加值。召唤乐器（Summon Instrument）:召唤出一项施法者指定的乐器。").split("。");
+            "提升抗力（Resistance）:受术者的豁免检定获获得+1 加值。召唤乐器（Summon Instrument）:召唤出一项施法者指定的乐器。" +
+            "防护提升抗力（Resistance）:受术者的豁免检定获得+1 加值。 咒法强酸四溅（Acid Splash）:球形，造成 1d3 点强酸伤害。 " +
+            "预言侦测毒性（Detect Poison）:侦测一个生物或小型物体所带有的毒性。 侦测魔法（Detect Magic）:侦测 60 尺内的法术或魔法物品。 " +
+            "阅读魔法（Read Magic）:阅读卷轴及法术书。 附魔晕眩术（Daze）:4HD 以下的人形生物会失去下一次的动作。 塑能舞光术（Dancing Lights）:制造火把或其他光源。 " +
+            "闪光术（Flare）:使一个生物目眩（攻击检定-1）。 光亮术（Light）:使目标物品如火把般发光。 冷冻射线（Ray of Frost）:发出射线，造成 1d3 点冷冻伤害。" +
+            "幻术幻音术（Ghost Sound）:发出虚幻的假声。 死灵打击死灵（Disrupt Undead）:对一个不死生物造成1d6 点伤害。 " +
+            "疲乏之触（Touch of Fatigue）:接触攻击，成功可使目标疲乏。变化法师帮手（Mage Hand）：可对 5 磅以内的物品使用心灵遥控。 " +
+            "修复术（Mending）:修复目标物品的细微损伤。 传讯术（Message）:可在远距离使用轻声交谈。 开关术（Open/Close）:打开或关上小或轻的目标物品。 " +
+            "共通秘法印记（Arcane Mark）:刻上可见或不可见的个人记号。 魔法技俩（Prestidigitation）:玩一些小把戏。 ").split("。");
     public static String[] spell1 = ("魔法警报（Alarm）:产生警报结界，持续时间为每等级 2 小时。 活化绳（Animate Rope）:造出一条魔法绳，依你的命令动作。惊恐术（Cause F" +
             "ear）:使一个5HD 以下的生物逃窜 1d4 个回合。魅惑人类（Charm Person）:使一个人类成为你的朋友。通晓语言（ComprehendLanguages）:懂得所有可说可写的语言。" +
             "治疗轻伤（Cure Light Wounds）:治疗 1d8 点伤害，每等级再多治疗+1 点，最高+5 点。侦测密门（Detect SecretDoors）:发现 60 尺内的密门。" +
@@ -54,7 +64,13 @@ public class data {
             "朦胧术（Blur）:对受术者的攻击会有 20%的失手几率。安定心神（Calm Emotions）:安抚生物，抵销情绪性效应。" +
             "轻灵术（Cat‘s Grace）:受术者获得+4 敏捷加值，持续时间为每等级 1 分钟。治疗中度伤（Cure ModerateWounds）:治疗 2d8 点伤害，每等级再多治疗+1 点，最高+10点。" +
             "黑暗术（Darkness）:产生半径20 尺的超自然黑暗。怪物晕眩术（DazeMonster）:6HD 以下的活物会失去下一次的动作。" +
-            "减缓毒性（Delay Poison）:使毒性停止对受术者造成伤害，每等级持续 1 小时。侦测思想（Detect Thoughts）:可以观察到他人的表面想法。").split("。");
+            "减缓毒性（Delay Poison）:使毒性停止对受术者造成伤害，每等级持续 1 小时。侦测思想（Detect Thoughts）:可以观察到他人的表面想法。" +
+            "失智之触（Touch of Idiocy）:受术者会遭受 1d6 点智力、感知与魅力伤害。 塑能不灭明焰（Continual Flame）M:造出一支永远不灭，不会发热的火把。" +
+            "黑暗术（Darkness）:产生半径20 尺的超自然黑暗。 炽焰法球（Flaming Sphere）:滚出一团火球，造成 2d6 点伤害，持续时间为每等级 1 轮。 " +
+            "造风术（Gust of Wind）:刮走或吹倒小型生物。 焦灼射线（Scorching Ray）:远程接触攻击，可造成 4d6 点火焰伤害，每等级再多 1 道射线，最多+3 道。 " +
+            "粉碎音波（Shatter）:发出高速震动音波，足以伤害目标物品或晶体生物。 幻术朦胧术（Blur）:对受术者的攻击会有 20%的失手几率。 " +
+            "催眠图纹（Hypnotic Pattern）:使生命骰数和为「2d4+施法者等级」的生物群陷入迷魂状态。" +
+            "隐形（Invisibility）:受术者隐形，持续时间为每等级 1 分钟，或直到进行攻击为止。 ").split("。");
     public static String[] spell3 = ("闪现术（Blink）：你随机的消失、出现，持续时间 1 轮/每等级。魅惑怪物（Charm Monster）：使怪物相信它是你的盟友。" +
             "锐耳术/鹰眼术（Clairaudience/Clairvoyance）：听或看到更远的地方，持续时间 1 分钟/每等级。困惑术（Confusion）：受术者行为古怪，持续时间 1 轮/每等级。" +
             "满怀绝望（Crushing Despair）：目标攻击掷骰、伤害掷骰、豁免，以及其他所有检定均–2。治疗重伤（Cure Serious Wounds）：治疗 3d8 点伤害，每等级再多治疗 1 点，最多+15。" +
@@ -63,104 +79,78 @@ public class data {
             "次等指使术（Geas, Lesser）：指挥生命骰为 7 或更少的生物。舌灿莲花:「唬骗」检定获得+30加值，且谎言不会被魔法拆穿。" +
             "满怀希望（Good Hope）：目标攻击掷骰、伤害掷骰、豁免，以及所有检定均+2。加速术（Haste）：受术者移动速度加快，攻击掷骰、 AC、反射豁免检定各+1。每等级影响 1个生物。" +
             "谜幻手稿（Illusory Script ） M:只有事先指定的读者可解读此文字。隐形法球（InvisibilitySphere）:使 10 尺内所有人隐形。").split("。");
-    public static String[] spell4 = resolveSpell("破除结界（Break Enchantment）:\n" +
-            "破除受术者所带有的附加魔\n" +
-            "法、诅咒、石化，或解除其变\n" +
-            "化。 \n" +
-            "治疗致命伤（Cure Critical \n" +
-            "Wounds）:治疗 4d8 点伤害，每\n" +
-            "等级再多治疗+1 点，最高+20\n" +
-            "点。 \n" +
-            "侦测探知（Detect Scrying）:\n" +
-            "警告你有人使用魔法在窃听。 \n" +
-            "任意门（Dimension Door）:传\n" +
-            "送至范围内任一地点。 \n" +
-            "支配人类（Dominate Person）:\n" +
-            "使用心灵控制人形生物。 \n" +
-            "动作自如（Freedom of \n" +
-            "Movement）:受术者可以无视障\n" +
-            "碍物而如常行走。 \n" +
-            "幻景（Hallucinatory \n" +
-            "Terrain）:使某种地形看起来\n" +
-            "像是另一种（如:使原野看起来\n" +
-            "像森林）。 \n" +
-            "怪物定身术（Hold Monster）:\n" +
-            "与「人类定身术」同，但可指\n" +
-            "定任意生物。 \n" +
-            "高等隐形术（Invisibility, \n" +
-            "Greater）:与「隐形」同，但\n" +
-            "受术者进行攻击后仍可保持隐\n" +
-            "形。 \n" +
-            "通晓传奇（Legend Lore ）M F\n" +
-            ":\n" +
-            "得知一个人、地方或事物的相\n" +
-            "关传说。 \n" +
-            "李欧蒙庇护所\n" +
-            "（Leomund’sSecureShelter）:\n" +
-            "造出坚固的屋舍。 ");
-    public static String[] spell5 = resolveSpell("集体治疗轻伤（Cure Light \n" +
-            "Wounds, Mass）:对多个生物治\n" +
-            "疗 1d8 点伤害，每等级再多治\n" +
-            "疗+1 点。 \n" +
-            "高等解除魔法\n" +
-            "（DispelMagic,Greater）:与\n" +
-            "「解除魔法」同，但检定+20。 \n" +
-            "托梦法（Dream）:将讯息送至\n" +
-            "任何正在睡眠中的人。 \n" +
-            "梦魇（Nightmare）:送出虚像，\n" +
-            "可造成 1d10 点伤害，并使对象\n" +
-            "疲乏。 \n" +
-            "常驻幻影（Persistent Image）:\n" +
-            "与「高等幻影」同，但不需集\n" +
-            "中精神。 \n" +
-            "Evocation）:假拟低于五级的\n" +
-            "塑能系法术，但只有 20%的真实\n" +
-            "性。 \n" +
-            "集体暗示（Suggestion, Mass）:\n" +
-            "与「暗示」同，但可影响的生\n" +
-            "物个数与等级同。 \n" +
-            "五级召唤怪物术（Summon \n" +
-            "Monster V）:可召唤外界生物\n" +
-            "为你作战。 \n");
-    public static String[] spell6=resolveSpell("解析咒文（Analyze Dweomer）\n" +
-            ":发现受术者的魔法形态。 \n" +
-            "活化物体（Animate Objects）:\n" +
-            "目标物品会攻击你的对手。 \n" +
-            "集体轻灵术（Cat‘s Grace, \n" +
-            "Mass）:与「轻灵术」同，但可\n" +
-            "影响的生物个数与等级同。 \n" +
-            "集体魅惑怪物（Charm Monster, \n" +
-            "Mass）:与「魅惑怪物」同，但\n" +
-            "范围为 30 尺。 \n" +
-            "集体治疗中度伤（Cure \n" +
-            "Moderate Wounds, Mass）:对\n" +
-            "多个生物治疗 2d8 点伤害，每\n" +
-            "等级再多治疗+1 点。 \n" +
-            "集体耀眼术（Eagle‘s Splendor, \n" +
-            "Mass）:与「耀眼术」同，但可\n" +
-            "影响的生物个数与等级同。 ");
+    public static String[] spell4 =("破除结界（Break Enchantment）:破除受术者所带有的附加魔法、诅咒、石化，或解除其变化。 " +
+            "治疗致命伤（Cure Critical Wounds）:治疗 4d8 点伤害，每等级再多治疗+1 点，最高+20点。 侦测探知（Detect Scrying）:警告你有人使用魔法在窃听。" +
+            "任意门（Dimension Door）:传送至范围内任一地点。 支配人类（Dominate Person）:使用心灵控制人形生物。 动作自如（Freedom of Movement）:受术者可以无视障碍物而如常行走。" +
+            "幻景（Hallucinatory Terrain）:使某种地形看起来像是另一种（如:使原野看起来像森林）。怪物定身术（Hold Monster）:与「人类定身术」同，但可指定任意生物。 " +
+            "高等隐形术（Invisibility, Greater）:与「隐形」同，但受术者进行攻击后仍可保持隐形。 通晓传奇（Legend Lore ）M F:得知一个人、地方或事物的相关传说。 " +
+            "李欧蒙庇护所（Leomund’sSecureShelter）:造出坚固的屋舍。高等隐形（Invisibility, Greater）:与「隐形」同，但受术者进行攻击后仍可保持隐形。 " +
+            "魅影杀手（Phantasmal Killer）:恐怖的幻象出现杀害受术者，或对其造成 3d6 点伤害。 虹彩图纹（Rainbow Pattern）:发出彩光，使生命骰数和为 24的生物群陷入迷魂。 " +
+            "幽影咒法术（Shadow Conjuration）:假拟低于四级的咒法系法术，但只有 20%的真实性。 死灵操纵死尸（Animate Dead） M:制造骷髅、僵尸等不死生物。 " +
+            "降咒（Bestow Curse）:单一属性值-6，或攻击检定、豁免检定、各种检定值都-4，或每次动作有 50%失手几率。 疫病术（Contagion）:使受术者感染所指定之疫病。 " +
+            "弱能术（Enervation）:受术者获得 1d4 负向等级。 恐惧术（Fear）:使锥形范围内的目标群逃窜，持续时间为每等级 1 轮。 ").split("。");
+    public static String[] spell5 =("集体治疗轻伤（Cure Light Wounds, Mass）:对多个生物治疗 1d8 点伤害，每等级再多治疗+1 点。 " +
+            "高等解除魔法（DispelMagic,Greater）:与「解除魔法」同，但检定+20。 托梦法（Dream）:将讯息送至任何正在睡眠中的人。 " +
+            "梦魇（Nightmare）:送出虚像，可造成 1d10 点伤害，并使对象疲乏。 常驻幻影（Persistent Image）:与「高等幻影」同，但不需集中精神。" +
+            "集体暗示（Suggestion, Mass）:与「暗示」同，但可影响的生物个数与等级同。 五级召唤怪物术（Summon Monster V）:可召唤外界生物为你作战。" +
+            "防护破除结界（Break Enchantment）:破除受术者所带有的附加魔法、诅咒、石化，或解除其变化。 驱逐术（Dismissal）:强迫生物回到原属位面。 " +
+            "魔邓肯密室（Mordenkainen‘sPrivateSanctum）:防止任何人窥看或探知某区域，持续时间 24 小时。 " +
+            "咒法死云术（Cloudkill）:杀害生命骰数 3 以下生物，生命骰数 4 到 6 若没通过豁免检定则死亡，生命骰数大于 6 的生物会受到体质伤害。 李" +
+            "欧蒙秘藏箱（Leomund’sSecretChest）F:将贵重宝箱藏于灵界，在需要时可任意取用。 高等造物术（Major Creation）:与「次级造物术」同，但可创造石头与金属。 " +
+            "魔邓肯忠犬（Mordenkainen’sFaithfulHound）:出现魅影狗，可守卫，亦可攻击。 次级异界誓缚（Planar Binding, Lesser）:困住 6HD 以下异界生物，直至" +
+            "它完成工作为止。 五级召唤怪物术（Summon Monster V）:可召唤外界生物为你作战。  ").split("。");
+    public static String[] spell6 = ("防护防魔法力场（Antimagic Field）:抵销 10 尺内的法术。 高等解除魔法（Dispel MagicGreater）:与「解除魔法」同，但检定+20。 " +
+            "法术无效结界（Globe of Invulnerability）:与「次级法术无效结界」同，但可至四级法术。 铜墙铁壁（Guards and Wards）:一系列防护性法术与魔法效果。" +
+            " 防生物力场（Repulsion）:生物无法接近你。 咒法酸雾术（Acid Fog）:产生会造成强酸伤害的浓雾。 异界誓缚（Planar Binding）：与「次级异界誓缚」同，但最高可至 12HD。 " +
+            "六级召唤怪物术（Summon Monster V）:可召唤外界生物为你作战。 铁墙术（Wall of Iron） M:生命值为每 4 等级 30 点，可压在对手身上。 " +
+            "预言解析咒文（Analyze Dweomer） F:发现受术者的魔法形态。 通晓传奇（Legend Lore）M F:得知一个人、地方或事物的相关传说。 " +
+            "真实目光（True Seeing） M:见到所有事物的原本面貌。 附魔指使术（Geas/Quest）:与「次级指使术」同，但可以影响所有生物。 " +
+            "高等英勇术（Heroism, Greater）:攻击检定、豁免检定与技能检定+4，对恐惧免疫，获得暂时生命值。").split("。");
 
 
 
-    public static String getSpell(int level){
-        if(level!=lastLevel){
-            lastLevel=level;
-            if(level<=3){
-                
+    public static String[] getSpell(String[] spells,int level){
+        Random random=new Random();
+        if(level!=lastLevel) {
+            lastLevel = level;
+            if (level <= 3) {
+                spellTool(spells, 0);
+                return spellTool(spells, 0);
+            } else if (level < 10) {
+                spells = spellTool(spells, 0);
+                spells = spellTool(spells, 1);
+                return spells;
+            } else if (level < 18) {
+                spells=spellTool(spells,0);
+                spells=spellTool(spells,1);
+                spells=spellTool(spells,2);
+                return spells;
+            }else if(level<25){
+                spells=spellTool(spells,0);
+                spells=spellTool(spells,1);
+                spells=spellTool(spells,2);
+                spells=spellTool(spells,3);
+                return spells;
+            }else if(level<36){
+                spells=spellTool(spells,0);
+                spells=spellTool(spells,1);
+                spells=spellTool(spells,2);
+                spells=spellTool(spells,3);
+                spells=spellTool(spells,4);
+                return spells;
+            }else if(level<48){
+                spells=spellTool(spells,1);
+                spells=spellTool(spells,2);
+                spells=spellTool(spells,3);
+                spells=spellTool(spells,4);
+                spells=spellTool(spells,5);
+                spells=spellTool(spells,6);
+                return spells;
+            }else {
+                return spells;
             }
         }
-        return "";
-    }
-    private static String[] resolveSpell(String sad){
-        String[] sss=sad.split("\n");
-
-        String result="";
-        for(String aa:sss){
-            result=result.concat(aa);
-        }
-        System.out.println(result);
-        System.out.println(result.split("。")[1]);
-        return result.split("。");
+        else return spells;
     }
 
     //数字越大→true→越容易成功
@@ -187,6 +177,53 @@ public class data {
     }
 
     public static void die(){
+    }
 
+
+    private static String[] spellTool(String[] spells,int spellLevel){
+        while(true) {
+            String spp=getASpell(spellLevel);
+            if(!spells[spellLevel].contains(spp)){
+                spells[spellLevel]=spells[spellLevel].concat(spp);
+                break;
+            }
+        }
+        return spells;
+    }
+    private static String getASpell(int spellLevel){
+        Random random=new Random();
+        switch (spellLevel){
+            case 0:{
+                int sp=random.nextInt(spell0.length);
+                return spell0[sp];
+            }
+            case 1:{
+                int sp=random.nextInt(spell1.length);
+                return spell1[sp];
+            }
+            case 2:{
+                int sp=random.nextInt(spell2.length);
+                return spell2[sp];
+            }
+            case 3:{
+                int sp=random.nextInt(spell3.length);
+                return spell3[sp];
+            }
+            case 4:{
+                int sp=random.nextInt(spell4.length);
+                return spell4[sp];
+            }
+            case 5:{
+                int sp=random.nextInt(spell5.length);
+                return spell5[sp];
+            }
+            case 6:{
+                int sp=random.nextInt(spell6.length);
+                return spell6[sp];
+            }
+            default:{
+                return "error";
+            }
+        }
     }
 }

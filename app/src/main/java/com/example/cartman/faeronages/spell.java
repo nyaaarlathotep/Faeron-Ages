@@ -14,6 +14,6 @@ public class spell extends BaseActivity{
         setContentView(R.layout.activity_spell);
 
         spell=findViewById(R.id.aSpell);
-
+        spell.setText();
     }
 }
