@@ -37,7 +37,7 @@ public class data {
 
     public static String[] spell0 = ("舞光术（Dancing Lights）:制造火把或其他光源。 晕眩术（Daze）:4HD 以下的人形生物会失去下一次的动作。侦测魔法（Detect Magic）:" +
             "侦测 60 尺内的法术或魔法物品。闪光术（Flare）:使一个生物目眩（攻击检定-1）。幻音术（Ghost Sound）:发出虚幻的假声。指北术（Know Direction）:指" +
-            "出北方。光亮术（Light）:使目标物品如火把般发光。瞌睡术（Lullaby）:使受术者昏昏欲睡，「侦察」与「聆听」检定受到-5 减值，对抗「睡眠术」时的意志检定受到-2 减值。" +
+            "出北方。光亮术（Light）:使目标物品如火把般发光。 瞌睡术（Lullaby）:使受术者昏昏欲睡，「侦察」与「聆听」检定受到-5 减值，对抗「睡眠术」时的意志检定受到-2 减值。" +
             "法师帮手（Mage Hand）:可对 5磅以内的物品使用心灵遥控。修复术（Mending）:修复目标物品的细微损伤。传讯术（Message）:可在远距离使用轻声交谈。" +
             "开关术（Open/Close）:打开或关上小或轻的目标物品。魔法技俩（Preestidigitation）:玩一些小把戏。阅读魔法（Read Magic）:阅读卷轴及法术书。" +
             "提升抗力（Resistance）:受术者的豁免检定获获得+1 加值。召唤乐器（Summon Instrument）:召唤出一项施法者指定的乐器。" +
@@ -110,7 +110,6 @@ public class data {
 
 
     public static String[] getSpell(String[] spells,int level){
-        Random random=new Random();
         if(level!=lastLevel) {
             lastLevel = level;
             if (level <= 3) {
@@ -184,7 +183,7 @@ public class data {
         while(true) {
             String spp=getASpell(spellLevel);
             if(!spells[spellLevel].contains(spp)){
-                spells[spellLevel]=spells[spellLevel].concat(spp);
+                spells[spellLevel]=spells[spellLevel].concat(spp+"\n");
                 break;
             }
         }

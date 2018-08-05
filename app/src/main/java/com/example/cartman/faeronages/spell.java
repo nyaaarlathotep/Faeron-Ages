@@ -4,6 +4,8 @@ package com.example.cartman.faeronages;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.cartman.faeronages.game.Character;
+
 public class spell extends BaseActivity{
 
     TextView spell;
@@ -14,6 +16,6 @@ public class spell extends BaseActivity{
         setContentView(R.layout.activity_spell);
 
         spell=findViewById(R.id.aSpell);
-        spell.setText();
+        spell.setText(Character.getSpells());
     }
 }
