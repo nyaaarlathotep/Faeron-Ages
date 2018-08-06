@@ -89,12 +89,12 @@ public class eventlogAndClock extends BaseActivity {
 
         adventure=Character.getAdventure();
         adventureTime=adventure.getTime();
-        time=(TextView)findViewById(R.id.timer) ;
-        log1=(TextView)findViewById(R.id.log1) ;
-        log2=(TextView)findViewById(R.id.log2) ;
-        log3=(TextView) findViewById(R.id.log3);
-        A=(Button)findViewById(R.id.iChooseA);
-        B=(Button)findViewById(R.id.iChooseB);
+        time=findViewById(R.id.timer) ;
+        log1=findViewById(R.id.log1) ;
+        log2=findViewById(R.id.log2) ;
+        log3= findViewById(R.id.log3);
+        A=findViewById(R.id.iChooseA);
+        B=findViewById(R.id.iChooseB);
 
         handler=new MHandler(this);
         Message message=new Message();
@@ -168,6 +168,8 @@ public class eventlogAndClock extends BaseActivity {
                     }
                 }
                 Intent intent=new Intent(eventlogAndClock.this,town.class);
+                startActivity(intent);
+                finish();
             }
         }).start();
     }
