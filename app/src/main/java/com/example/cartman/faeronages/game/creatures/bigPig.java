@@ -1,7 +1,6 @@
 package com.example.cartman.faeronages.game.creatures;
 
 
-import android.content.Intent;
 import android.util.Log;
 import com.example.cartman.faeronages.game.data;
 import com.example.cartman.faeronages.game.Character;
@@ -11,7 +10,7 @@ public class bigPig extends Boss {
 
     private boolean[] choices=new boolean[5];
     private int rounds=0;
-    private int health;
+
     private int luck=0;
 
     public bigPig(){

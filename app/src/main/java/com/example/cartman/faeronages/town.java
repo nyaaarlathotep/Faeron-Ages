@@ -67,6 +67,6 @@ public class town extends BaseActivity {
         }
     }
     private void updateUI(){
-        
+
     }
 }
