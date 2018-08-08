@@ -105,8 +105,6 @@ public class eventlogAndClock extends BaseActivity {
             public void onClick(View v){
                 if(buttonAble){
                     if(!adventure.knowBoss()){
-                        Intent intent=new Intent(eventlogAndClock.this,town.class);
-                        startActivity(intent);
                         free=true;
                     }else {
                         Log.d("aaa","aaa");
@@ -123,8 +121,6 @@ public class eventlogAndClock extends BaseActivity {
             public void onClick(View v){
                 if(buttonAble){
                     if(!adventure.knowBoss()){
-                        Intent intent=new Intent(eventlogAndClock.this,town.class);
-                        startActivity(intent);
                         free=true;
                     }else{
                         Log.d("bbb","b");
@@ -167,6 +163,7 @@ public class eventlogAndClock extends BaseActivity {
                         break;
                     }
                 }
+                Log.d("!!","intent ready");
                 Intent intent=new Intent(eventlogAndClock.this,town.class);
                 startActivity(intent);
                 finish();
@@ -192,7 +189,6 @@ public class eventlogAndClock extends BaseActivity {
                             if (!needStop) {
                                 theClass.updateUI();  //更新UI
                                 theClass.addTimeUsed();    //计时
-
                             }
                             break;
                     }

@@ -40,6 +40,7 @@ public class Roll extends BaseActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(Roll.this,RoleCreation.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

@@ -40,7 +40,7 @@ public class beginnersGuide extends Place {
 
     @Override
     public int adventureTime(){
-        return 100;
+        return 20;
     }
 
     @Override

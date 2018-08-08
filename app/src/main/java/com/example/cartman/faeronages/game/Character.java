@@ -1,6 +1,8 @@
 package com.example.cartman.faeronages.game;
 
 import android.util.Log;
+
+import com.example.cartman.faeronages.game.maps.Place;
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,28 +43,26 @@ public class Character {
 //     背包及金钱
     public static ArrayList<String> bag=new ArrayList<>();
     public static ArrayList<String> livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
-    public static String[] specialBag=new String[]{"","","","",""};
-            private static int gold=0;
+    public static String[] specialBag = new String[]{"", "", "", "", ""};
+    private static int gold = 0;
 
 
-
-            public static boolean fullBag=false;
-            public static boolean haveHarvested = false;
-            private static Adventure nextAdventure = new Adventure(new beginnersGuide());
-
+    public static boolean fullBag = false;
+    public static boolean haveHarvested = false;
+    private static Adventure nextAdventure = new Adventure(new beginnersGuide());
 
 
-            private static Random random = new Random();
+    private static Random random = new Random();
 
 
-            public static void roll(){
-                str = random.nextInt(4) + 8;
-                con = random.nextInt(4) + 8;
-                intll = random.nextInt(4) + 8;
-                dex = random.nextInt(4) + 8;
-                cha = random.nextInt(4) + 8;
-                gold = random.nextInt(10) + random.nextInt(10) + random.nextInt(10);
-            }
+    public static void roll() {
+        str = random.nextInt(4) + 8;
+        con = random.nextInt(4) + 8;
+        intll = random.nextInt(4) + 8;
+        dex = random.nextInt(4) + 8;
+        cha = random.nextInt(4) + 8;
+        gold = random.nextInt(10) + random.nextInt(10) + random.nextInt(10);
+    }
 
             public static void harvestTrophy(String trophy){
                 if(bag.size() <20) {
@@ -242,10 +242,11 @@ public class Character {
 
 
 
-
+    public static void setNextAdventure(Adventure adventure){
+        nextAdventure=adventure;
+    }
     public static Adventure getAdventure(){ return nextAdventure;
     }
-
     public static races getRace(){return race;
     }
     public static jobs getJob(){

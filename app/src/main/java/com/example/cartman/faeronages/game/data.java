@@ -152,6 +152,13 @@ public class data {
         else return spells;
     }
 
+    public static String getEquipment(int level,jobs job){
+        return "大鸡腿";
+    }
+    public static String getRandomEquipment(jobs job){
+        return "小鸡腿";
+    }
+
     //数字越大→true→越容易成功
     public static boolean d20(int number){
         Random random=new Random();
@@ -189,6 +196,7 @@ public class data {
         }
         return spells;
     }
+
     private static String getASpell(int spellLevel){
         Random random=new Random();
         switch (spellLevel){

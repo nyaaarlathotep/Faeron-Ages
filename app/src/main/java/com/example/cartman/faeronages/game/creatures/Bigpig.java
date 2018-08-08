@@ -135,10 +135,10 @@ public class bigPig extends Boss {
         }
         return "越界";
     }
-
+//5+Character.getDex()
     @Override
     public void beSeeked(){
-        boolean seekSecceed=data.d20(5+Character.getDex());
+        boolean seekSecceed=data.d20(0);
         if(seekSecceed){
             spotTrack=true;
         }
