@@ -1,9 +1,12 @@
 package com.example.cartman.faeronages;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.cartman.faeronages.game.Adventure;
@@ -20,6 +23,11 @@ public class town extends BaseActivity {
     TextView option1;
     TextView option2;
     TextView option3;
+
+    Button A;
+    Button B;
+    Button C;
+
     boolean buttonAble=false;
     boolean needToGetTownEvent=true;
     boolean letsGo=false;
@@ -36,8 +44,39 @@ public class town extends BaseActivity {
         option1=findViewById(R.id.option1);
         option2=findViewById(R.id.option2);
         option3=findViewById(R.id.option3);
+        A=findViewById(R.id.A);
+        B=findViewById(R.id.B);
+        C=findViewById(R.id.C);
         town=new Town(Character.getLevel());
 
+        A.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if(buttonAble){
+                    town.choose(0);
+                    buttonAble=false;
+
+                }
+            }
+        });
+        B.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if(buttonAble){
+                    town.choose(1);
+                    buttonAble=false;
+
+
+                }
+            }
+        });
+        C.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if(buttonAble){
+                    town.choose(2);
+                    buttonAble=false;
+
+                }
+            }
+        });
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -57,6 +96,9 @@ public class town extends BaseActivity {
                         ex.printStackTrace();
                     }
                 }
+                Intent intent=new Intent(town.this,eventlogAndClock.class);
+                startActivity(intent);
+                finish();
             }
         }).start();
     }
@@ -88,12 +130,16 @@ public class town extends BaseActivity {
             theTownEvent.setText(town.getTownEvent());
             needToGetTownEvent=false;
         }
-        if(!town.isNeedChoose()) {
-            option1.setText(town.getOption(1));
-            option2.setText(town.getOption(2));
-            option2.setText(town.getOption(3));
+        buttonAble=town.isNeedChoose();
+        if(!buttonAble) {
+            option1.setText(town.getOption(0));
+            option2.setText(town.getOption(1));
+            option3.setText(town.getOption(2));
             overview.setText(town.getMove());
         }
+    }
 
+    public void setFree() {
+        letsGo=true;
     }
 }

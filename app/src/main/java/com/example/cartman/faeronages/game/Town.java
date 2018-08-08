@@ -1,6 +1,8 @@
 package com.example.cartman.faeronages.game;
 
 
+import android.util.Log;
+
 import com.example.cartman.faeronages.game.maps.Place;
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
 
@@ -23,8 +25,8 @@ public class Town {
         level = aLevel;
         moves=new ArrayList<>();
         moves.addAll(Arrays.asList("正在和贪婪的材料商讨价还价","正在小酒馆的角落狼吞虎咽","正在旅馆的硬板床上呼呼大睡","正在城镇中四处闲逛","正在和工会的接待员打哈哈",
-                "正在寻找可以完成的任务","正在办理手续接任务","正在铁匠铺保养装备"," 正在说服铁匠给你强化装备", "正在欣赏昂贵的装备"
-                ,"正在补充冒险工具背包"));
+                "正在寻找可以完成的任务","正在办理手续接任务","正在铁匠铺保养装备","正在说服铁匠给你强化装备", "正在欣赏昂贵的装备"
+                ,"正在补充冒险工具背包","",""));
         switch (Character.getJob()){
             case sorcerer:{
                 moves.add(11,"正在房间里练习魔法");
@@ -50,7 +52,7 @@ public class Town {
 
             }
             case druid:{
-                moves.add(11,"正在为哭死的老树落泪");
+                moves.add(11,"正在为枯死的老树落泪");
                 moves.add(12,"正在独自为一旁的小树苗浇水");
                 break;
 
@@ -91,10 +93,11 @@ public class Town {
         return move;
     }
 
-//    ss包含两种信息，这是第几个选项，ss=4时是否需要等待选择
+//    ss包含两种信息，这是第几个选项，
     public String getOption(int ss){
             switch (moves.get(round)){
                 case "正在说服铁匠给你强化装备":{
+                    Log.d("正在说服铁匠给你强化装备","ss");
                     event=1;
                     needChoose=true;
                     switch (ss){
@@ -110,9 +113,9 @@ public class Town {
                     }
                 }
                 case "正在欣赏昂贵的装备":{
+                    Log.d("正在欣赏昂贵的装备","ss");
                     event=2;
                     needChoose=true;
-
                     switch (ss){
                         case 0:{
                             options[0]=data.getEquipment(level,Character.getJob());
@@ -129,6 +132,8 @@ public class Town {
                     }
                 }
                 case "正在和查看行商的物品":{
+                    Log.d("正在和查看行商的物品","ss");
+
                     event=3;
                     needChoose=true;
 
@@ -148,6 +153,8 @@ public class Town {
                     }
                 }
                 case "正在黑市里闲逛":{
+                    Log.d("正在黑市里闲逛","ss");
+
                     event=4;
                     needChoose=true;
                     switch (ss){
