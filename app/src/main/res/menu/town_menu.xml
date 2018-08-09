@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/option_normal_2"
-        android:icon="@mipmap/camp"
+        android:icon="@mipmap/camp_1"
         android:title="@string/camp"
         app:showAsAction="ifRoom"/>
 

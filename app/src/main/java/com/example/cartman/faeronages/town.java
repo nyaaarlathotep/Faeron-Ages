@@ -45,7 +45,7 @@ public class town extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.option_normal_1:{
-            
+
                 break;
             }
             case R.id.option_normal_2:{
