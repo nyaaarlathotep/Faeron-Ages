@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.cartman.faeronages.game.Adventure;
 import com.example.cartman.faeronages.game.Character;
 import com.example.cartman.faeronages.game.Town;
 
@@ -54,7 +53,8 @@ public class town extends BaseActivity {
                 if(buttonAble){
                     town.choose(0);
                     buttonAble=false;
-
+                    setFree();
+                    Log.d("town","a");
                 }
             }
         });
@@ -63,7 +63,8 @@ public class town extends BaseActivity {
                 if(buttonAble){
                     town.choose(1);
                     buttonAble=false;
-
+                    setFree();
+                    Log.d("town","b");
 
                 }
             }
@@ -73,6 +74,8 @@ public class town extends BaseActivity {
                 if(buttonAble){
                     town.choose(2);
                     buttonAble=false;
+                    setFree();
+                    Log.d("town","c");
 
                 }
             }
@@ -128,16 +131,17 @@ public class town extends BaseActivity {
             theTownEvent.setText(town.getTownEvent());
             needToGetTownEvent=false;
         }
-        buttonAble=town.isNeedChoose();
         if(!buttonAble) {
+
             option1.setText(town.getOption(0));
             option2.setText(town.getOption(1));
             option3.setText(town.getOption(2));
             overview.setText(town.getMove());
+            buttonAble=town.isNeedChoose();
         }
     }
 
     public void setFree() {
-        letsGo=true;
+        letsGo=town.getFree();
     }
 }

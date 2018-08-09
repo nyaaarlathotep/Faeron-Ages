@@ -99,22 +99,28 @@
         android:id="@+id/iChooseA"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="52dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="72dp"
         android:text="@string/A"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/log3" />
+        app:layout_constraintTop_toBottomOf="@+id/log3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/iChooseB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
         android:layout_marginTop="72dp"
         android:text="@string/B"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/log3" />
+        app:layout_constraintTop_toBottomOf="@+id/log3"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

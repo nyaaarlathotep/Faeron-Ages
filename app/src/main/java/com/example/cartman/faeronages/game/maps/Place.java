@@ -9,4 +9,5 @@ public abstract class Place {
     public abstract String battleInfo();
     public abstract String battleChoiceContent(boolean choice);
     public abstract String bossChoose(boolean choice);
+    public abstract String getName();
 }

@@ -2,8 +2,6 @@ package com.example.cartman.faeronages.game.maps;
 
 import com.example.cartman.faeronages.game.creatures.Boss;
 import com.example.cartman.faeronages.game.creatures.bigPig;
-
-
 import java.util.Random;
 
 public class beginnersGuide extends Place {
@@ -40,7 +38,7 @@ public class beginnersGuide extends Place {
 
     @Override
     public int adventureTime(){
-        return 20;
+        return 300;
     }
 
     @Override
@@ -65,5 +63,10 @@ public class beginnersGuide extends Place {
     @Override
     public String bossChoose(boolean choice) {
         return boss.bossChoose(choice);
+    }
+
+    @Override
+    public String getName() {
+        return "新手村";
     }
 }

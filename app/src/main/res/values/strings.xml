@@ -132,4 +132,7 @@
     <string name="townEvent">城镇事件</string>
     <string name="give_up">放弃</string>
     <string name="C">C</string>
+    <string name="missionList">任务列表</string>
+    <string name="camp">阵营观察</string>
+    <string name="fame">声望</string>
 </resources>

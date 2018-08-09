@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/option_normal_1"
+        android:icon="@mipmap/icons8_standing_man"
+        android:title="@string/missionList"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/option_normal_2"
+        android:icon="@mipmap/icons8_footman_32"
+        android:title="@string/camp"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/option_normal_3"
+        android:icon="@mipmap/icons8_rucksack_50"
+        android:title="@string/fame"
+        app:showAsAction="ifRoom"/>
+
+</menu>
