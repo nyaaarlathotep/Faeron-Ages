@@ -86,8 +86,6 @@ public class town extends BaseActivity {
                     message.what = 1;
                     handler.sendMessage(message);
                     if(letsGo){
-                        Adventure adventure=new Adventure(town.getPlace());
-                        Character.setNextAdventure(adventure);
                         break;
                     }
                     try {

@@ -2,6 +2,9 @@ package com.example.cartman.faeronages.game;
 
 
 
+import com.example.cartman.faeronages.game.maps.Place;
+import com.example.cartman.faeronages.game.maps.beginnersGuide;
+
 import java.util.Random;
 
 
@@ -10,6 +13,7 @@ public class data {
     public static int d20=0;
     public static boolean d20haveShown=true;
     private static int lastLevel=0;
+    private static Random random=new Random();
     public static String[] hangOut=new String[]{"[放松]正在和自己尬舞","[放松]正在和左手打架","[警戒]正在机敏的巡视四周","[警戒]正在灌木丛中躲藏","[愉悦]正在生吃史莱姆"
             ,"[放松]正在生吃马卡龙","[警戒]正在担忧接下来的战斗","[修整]正在检查装备","[修整]正在检查武器","[警戒]正在消除自己的踪迹","[修整]正在给伤口消毒","[修整]正在给伤口包扎",
             "这武器a下去怎么有爆炸的声音","[放松]正在洗脸","[警戒]正在搜寻猎物"};
@@ -152,6 +156,9 @@ public class data {
         else return spells;
     }
 
+    public static String getMission(int level){
+        return "杀一只鸡";
+    }
     public static String getEquipment(int level,jobs job){
         return "大鸡腿";
     }
@@ -159,14 +166,17 @@ public class data {
         return "小鸡腿";
     }
 
+    public static Place getAMap(){
+        return new beginnersGuide();
+    }
+
     //数字越大→true→越容易成功
     public static boolean d20(int number){
-        Random random=new Random();
         return number>=(random.nextInt(20)+1);
     }
 
     public static boolean shownD20(int number){
-        Random random=new Random();
+
         d20=random.nextInt(20)+1;
         d20haveShown=false;
         return number>=(d20);

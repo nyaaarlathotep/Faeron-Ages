@@ -26,7 +26,7 @@ public class Town {
         moves=new ArrayList<>();
         moves.addAll(Arrays.asList("正在和贪婪的材料商讨价还价","正在小酒馆的角落狼吞虎咽","正在旅馆的硬板床上呼呼大睡","正在城镇中四处闲逛","正在和工会的接待员打哈哈",
                 "正在寻找可以完成的任务","正在办理手续接任务","正在铁匠铺保养装备","正在说服铁匠给你强化装备", "正在欣赏昂贵的装备"
-                ,"正在补充冒险工具背包","",""));
+                ,"正在补充冒险工具背包","正在城镇里休息最后一个夜晚","正在准备自己的装备，准备出发"));
         switch (Character.getJob()){
             case sorcerer:{
                 moves.add(11,"正在房间里练习魔法");
@@ -126,7 +126,7 @@ public class Town {
                             return options[1];
                         }
                         case 2:{
-                            options[2]=data.getEquipment(level,Character.getJob());
+                            options[2]="算了算了";
                             return options[2];
                         }
                     }
@@ -147,7 +147,7 @@ public class Town {
                             return options[1];
                         }
                         case 2:{
-                            options[2]=data.getRandomEquipment(Character.getJob());
+                            options[2]="算了算了";
                             return options[2];
                         }
                     }
@@ -167,7 +167,45 @@ public class Town {
                             return options[1];
                         }
                         case 2:{
-                            options[2]=data.getRandomEquipment(Character.getJob());
+                            options[2]="算了算了";
+                            return options[2];
+                        }
+                    }
+                }
+                case "正在寻找可以完成的任务":{
+                    Log.d("正在寻找可以完成的任务","ss");
+                    event=5;
+                    needChoose=true;
+                    switch (ss){
+                        case 0:{
+                            options[0]=data.getMission(Character.getLevel());
+                            return options[0];
+                        }
+                        case 1:{
+                            options[1]=data.getMission(Character.getLevel());
+                            return options[1];
+                        }
+                        case 2:{
+                            options[2]=data.getMission(Character.getLevel());
+                            return options[2];
+                        }
+                    }
+                }
+                case "正在准备自己的装备，准备出发":{
+                    Log.d("正在准备自己的装备","准备出发");
+                    event=6;
+                    needChoose=true;
+                    switch (ss){
+                        case 0:{
+                            options[0]=;
+                            return options[0];
+                        }
+                        case 1:{
+                            options[1]=;
+                            return options[1];
+                        }
+                        case 2:{
+                            options[2]=;
                             return options[2];
                         }
                     }
@@ -182,8 +220,8 @@ public class Town {
 
     public void choose(int choice){
         switch (event){
-            case 1:{
-                needChoose=false;
+            case 1: {
+                needChoose = false;
             }
             case 2:{
                 needChoose=false;
@@ -194,10 +232,13 @@ public class Town {
             case 4:{
                 needChoose=false;
             }
+            case 5: {
+                needChoose = false;
+            }
+            case 6:{
+                needChoose=false;
+            }
         }
     }
 
-    public Place getPlace(){
-        return new beginnersGuide();
-    }
 }
