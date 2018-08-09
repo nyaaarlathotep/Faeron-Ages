@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -31,6 +33,33 @@ public class town extends BaseActivity {
     boolean needToGetTownEvent=true;
     boolean letsGo=false;
     Town town;
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.town_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.option_normal_1:{
+            
+                break;
+            }
+            case R.id.option_normal_2:{
+
+                break;
+            }
+            case R.id.option_normal_3:{
+
+                break;
+            }
+            default:
+        }
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

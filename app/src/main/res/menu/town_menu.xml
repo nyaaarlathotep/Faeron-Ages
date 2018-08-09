@@ -4,17 +4,17 @@
 
 
     <item android:id="@+id/option_normal_1"
-        android:icon="@mipmap/icons8_standing_man"
+        android:icon="@mipmap/mission"
         android:title="@string/missionList"
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/option_normal_2"
-        android:icon="@mipmap/icons8_footman_32"
+        android:icon="@mipmap/camp"
         android:title="@string/camp"
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/option_normal_3"
-        android:icon="@mipmap/icons8_rucksack_50"
+        android:icon="@mipmap/fame_2"
         android:title="@string/fame"
         app:showAsAction="ifRoom"/>
 
