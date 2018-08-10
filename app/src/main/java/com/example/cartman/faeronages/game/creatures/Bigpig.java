@@ -14,7 +14,6 @@ public class bigPig extends Boss {
     private int luck=0;
 
     public bigPig(){
-
     }
 
     @Override

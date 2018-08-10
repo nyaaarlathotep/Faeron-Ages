@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bag">
+    tools:context=".missionList">
 
     <TextView
-        android:id="@+id/bag"
+        android:id="@+id/missionList"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
@@ -16,14 +16,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="@string/bag"
         android:textSize="30sp"
+        android:text="@string/missionList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/thingsInBag"
+        android:id="@+id/theMissionList"
         android:layout_width="275dp"
         android:layout_height="420dp"
         android:layout_marginEnd="8dp"
@@ -35,6 +35,5 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bag" />
-
+        app:layout_constraintTop_toBottomOf="@+id/missionList" />
 </android.support.constraint.ConstraintLayout>

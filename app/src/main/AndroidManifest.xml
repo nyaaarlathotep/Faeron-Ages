@@ -35,7 +35,10 @@
         <activity android:name=".character" />
         <activity android:name=".equipment" />
         <activity android:name=".bag" />
-        <activity android:name=".spell"></activity>
+        <activity android:name=".spell" />
+        <activity android:name=".missionList" />
+        <activity android:name=".campInfo" />
+        <activity android:name=".fame"></activity>
     </application>
 
 </manifest>

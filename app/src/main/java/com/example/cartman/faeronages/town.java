@@ -41,19 +41,23 @@ public class town extends BaseActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.option_normal_1:{
-
+                Intent intent=new Intent(town.this,missionList.class);
+                startActivity(intent);
                 break;
             }
             case R.id.option_normal_2:{
-
+                Intent intent=new Intent(town.this,campInfo.class);
+                startActivity(intent);
                 break;
             }
             case R.id.option_normal_3:{
-
+                Intent intent=new Intent(town.this,missionList.class);
+                startActivity(intent);
                 break;
             }
             default:

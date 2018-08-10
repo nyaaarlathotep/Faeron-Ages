@@ -1,8 +1,6 @@
 package com.example.cartman.faeronages.game;
 
 import android.util.Log;
-
-import com.example.cartman.faeronages.game.maps.Place;
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +38,10 @@ public class Character {
 //    法术
     private static String[] spells=new String[]{"","","","","","",""};
 
-//     背包及金钱
+//    任务列表
+    private static ArrayList<String> missionList=new ArrayList<>();
+
+//    背包及金钱
     public static ArrayList<String> bag=new ArrayList<>();
     public static ArrayList<String> livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
     public static String[] specialBag = new String[]{"", "", "", "", ""};
@@ -64,153 +65,164 @@ public class Character {
         gold = random.nextInt(10) + random.nextInt(10) + random.nextInt(10);
     }
 
-            public static void harvestTrophy(String trophy){
-                if(bag.size() <20) {
-                    bag.add(trophy);
-                    haveHarvested=true;
-                    Log.d("Trophy",trophy);
-                }else {
-                    fullBag=true;
-                }
-            }
+    public static void harvestTrophy(String trophy) {
+        if (bag.size() < 20) {
+            bag.add(trophy);
+            haveHarvested = true;
+            Log.d("Trophy", trophy);
+        } else {
+            fullBag = true;
+        }
+    }
 
-            public static String showBag() {
-                if (!haveHarvested) {
-                    return "没能获得战利品";
-                } else if (fullBag) {
-                    return "包裹满了！";
-                } else {
-                    haveHarvested = false;
-                    return "获得战利品" + bag.get(bag.size() - 1);
-                }
-            }
+    public static String showBag() {
 
-            public static void die(){
+        if (!haveHarvested) {
+            return "没能获得战利品";
+        } else if (fullBag) {
+            return "包裹满了！";
+        } else {
+            haveHarvested = false;
+            return "获得战利品" + bag.get(bag.size() - 1);
+        }
+    }
 
-            }
+    public static void die() {
 
-            public static int learnSpells(){
-                spells=data.getSpell(spells,level);
-                return 0;
-            }
+    }
 
-            public static String[] getEquipments(){
-                String ring="";
-                for(String ss:rings){
-                    if(!ss.equals("")) {
-                        ring = ring+" "+ss;
-                    }
-                }
-                return new String[]{helmet,breastPlate,leftHand,rightHand,legArmor,ring,neckLace};
+    public static int learnSpells() {
+        spells = data.getSpell(spells, level);
+        return 0;
+    }
+
+    public static String[] getEquipments() {
+        String ring = "";
+        for (String ss : rings) {
+            if (!ss.equals("")) {
+                ring = ring + " " + ss;
             }
+        }
+        return new String[]{helmet, breastPlate, leftHand, rightHand, legArmor, ring, neckLace};
+    }
+
+    public static void addMission(String mission){
+        missionList.add(mission+" 未完成");
+    }
+
+
 
             // get set 方法
 
-            public static void setAge(String aAge){
-                age=Integer.parseInt(aAge);
-            }
-            public static void setRace(races aRace){
-                race=aRace;
-            }
-            public static void setName(String aName){
-                name=aName;
-            }
-            public static void setFaith(faiths aFaith){
-                faith=aFaith;
-            }
-            public static void setJob(jobs aJob){
-                job=aJob;
-                switch (aJob){
-                    case fighter:{
-                        helmet="破旧的头盔";
-                        breastPlate="破旧的鳞甲";
-                        rightHand="磨损的长剑";
-                        leftHand="磨损的小盾";
-                        legArmor="破旧的鳞甲";
-                        rings[0]="祖传的生命戒指";
-                        neckLace="祖传的格挡项链";
-                        livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
-                        break;
-                    }
-                    case bard:{
-                        helmet="破旧的头巾";
-                        breastPlate="破旧的布甲";
-                        rightHand="磨损的短剑";
-                        leftHand ="磨损的手弩";
-                        legArmor="破旧的布甲";
-                        neckLace="祖传的精致哨子";
-                        specialBag=new String[]{"鲁特琴","","","",""};
-                        spells=data.getSpell(spells,level);
-                        livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把、附盖提灯".split("、")));
+    public static void setAge(String aAge) {
+        age = Integer.parseInt(aAge);
+    }
 
-                        break;
-                    }
-                    case druid:{
-                        helmet="破旧的头环";
-                        breastPlate="破旧的生皮甲";
-                        rightHand="磨损的弯刀";
-                        leftHand="";
-                        legArmor="磨损的生皮甲";
-                        neckLace="新鲜的花环";
-                        rings=new String[]{"","","",""};
-                        specialBag=new String[]{"鲁特琴","","","",""};
-                        spells=data.getSpell(spells,level);
-                        String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
-                        livingBag=new ArrayList<>(Arrays.asList(bornItems));
-                        break;
-                    }
-                    case cleric:{
-                        breastPlate="破旧的长袍";
-                        rightHand="";
-                        leftHand="老旧的木质节杖";
-                        legArmor="破旧的绑腿";
-                        rings[0]="老旧的神圣戒指";
-                        neckLace="";
-                        specialBag=new String[]{"木质圣徽","","","",""};
-                        spells=data.getSpell(spells,level);
-                        String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
-                        livingBag=new ArrayList<>(Arrays.asList(bornItems));
-                        break;
-                    }
-                    case rogue:{
-                        helmet="破旧的头巾";
-                        breastPlate="破旧的皮甲";
-                        rightHand="磨损的匕首";
-                        leftHand="";
-                        legArmor="破旧的皮甲";
-                        rings[0]="老旧的潜行戒指";
-                        neckLace="";
-                        String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把、游荡者工具、附盖提灯".split("、");
-                        livingBag=new ArrayList<>(Arrays.asList(bornItems));
-                        break;
-                    }
-                    case paladin:{
-                        helmet="破旧的头盔";
-                        breastPlate="破旧的鳞甲";
-                        rightHand="磨损的长剑";
-                        leftHand="";
-                        legArmor="破旧的鳞甲";
-                        rings[0]="老旧的勇气戒指";
-                        neckLace="祖传的重甲项链";
-                        spells=data.getSpell(spells,level);
-                        String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把".split("、");
-                        livingBag=new ArrayList<>(Arrays.asList(bornItems));
-                        break;
-                    }
-                    case sorcerer:{
-                        breastPlate="破旧的长袍";
-                        rightHand="";
-                        leftHand="老旧的木质节杖";
-                        legArmor="破旧的绑腿";
-                        rings[0]="老旧的法术默发戒指";
-                        neckLace="祖传的固定项链";
-                        spells=data.getSpell(spells,level);
-                        String[] bornItems="水袋、口粮、睡袋、燧石与铁片、火把、墨水、墨水笔、法术材料包、法术书".split("、");
-                        livingBag=new ArrayList<>(Arrays.asList(bornItems));
-                        break;
-                    }
-                }
+    public static void setRace(races aRace) {
+        race = aRace;
+    }
+
+    public static void setName(String aName) {
+        name = aName;
+    }
+
+    public static void setFaith(faiths aFaith) {
+        faith = aFaith;
+    }
+
+    public static void setJob(jobs aJob) {
+        job = aJob;
+        switch (aJob) {
+            case fighter: {
+                helmet = "破旧的头盔";
+                breastPlate = "破旧的鳞甲";
+                rightHand = "磨损的长剑";
+                leftHand = "磨损的小盾";
+                legArmor = "破旧的鳞甲";
+                rings[0] = "祖传的生命戒指";
+                neckLace = "祖传的格挡项链";
+                livingBag = new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
+                break;
             }
+            case bard: {
+                helmet = "破旧的头巾";
+                breastPlate = "破旧的布甲";
+                rightHand = "磨损的短剑";
+                leftHand = "磨损的手弩";
+                legArmor = "破旧的布甲";
+                neckLace = "祖传的精致哨子";
+                specialBag = new String[]{"鲁特琴", "", "", "", ""};
+                spells = data.getSpell(spells, level);
+                livingBag = new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把、附盖提灯".split("、")));
+
+                break;
+            }
+            case druid: {
+                helmet = "破旧的头环";
+                breastPlate = "破旧的生皮甲";
+                rightHand = "磨损的弯刀";
+                leftHand = "";
+                legArmor = "磨损的生皮甲";
+                neckLace = "新鲜的花环";
+                rings = new String[]{"", "", "", ""};
+                specialBag = new String[]{"鲁特琴", "", "", "", ""};
+                spells = data.getSpell(spells, level);
+                String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把".split("、");
+                livingBag = new ArrayList<>(Arrays.asList(bornItems));
+                break;
+            }
+            case cleric: {
+                breastPlate = "破旧的长袍";
+                rightHand = "";
+                leftHand = "老旧的木质节杖";
+                legArmor = "破旧的绑腿";
+                rings[0] = "老旧的神圣戒指";
+                neckLace = "";
+                specialBag = new String[]{"木质圣徽", "", "", "", ""};
+                spells = data.getSpell(spells, level);
+                String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把".split("、");
+                livingBag = new ArrayList<>(Arrays.asList(bornItems));
+                break;
+            }
+            case rogue: {
+                helmet = "破旧的头巾";
+                breastPlate = "破旧的皮甲";
+                rightHand = "磨损的匕首";
+                leftHand = "";
+                legArmor = "破旧的皮甲";
+                rings[0] = "老旧的潜行戒指";
+                neckLace = "";
+                String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把、游荡者工具、附盖提灯".split("、");
+                livingBag = new ArrayList<>(Arrays.asList(bornItems));
+                break;
+            }
+            case paladin: {
+                helmet = "破旧的头盔";
+                breastPlate = "破旧的鳞甲";
+                rightHand = "磨损的长剑";
+                leftHand = "";
+                legArmor = "破旧的鳞甲";
+                rings[0] = "老旧的勇气戒指";
+                neckLace = "祖传的重甲项链";
+                spells = data.getSpell(spells, level);
+                String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把".split("、");
+                livingBag = new ArrayList<>(Arrays.asList(bornItems));
+                break;
+            }
+            case sorcerer: {
+                breastPlate = "破旧的长袍";
+                rightHand = "";
+                leftHand = "老旧的木质节杖";
+                legArmor = "破旧的绑腿";
+                rings[0] = "老旧的法术默发戒指";
+                neckLace = "祖传的固定项链";
+                spells = data.getSpell(spells, level);
+                String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把、墨水、墨水笔、法术材料包、法术书".split("、");
+                livingBag = new ArrayList<>(Arrays.asList(bornItems));
+                break;
+            }
+        }
+    }
 
 
             public static String getBag(){
@@ -267,6 +279,11 @@ public class Character {
     }
     public static int getAge(){return age;
     }
-    public static int getLevel(){
-        return level;}
+    public static int getLevel() {
+        return level;
+    }
+
+    public static String[] getMission() {
+        return (String[]) missionList.toArray();
+    }
 }
