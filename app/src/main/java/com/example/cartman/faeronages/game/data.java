@@ -4,7 +4,6 @@ package com.example.cartman.faeronages.game;
 
 import com.example.cartman.faeronages.game.maps.Place;
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
-
 import java.util.Random;
 
 

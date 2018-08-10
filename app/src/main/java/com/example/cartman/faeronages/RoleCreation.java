@@ -78,6 +78,7 @@ public class RoleCreation extends BaseActivity {
                 }
                 else {
                     startActivity(intent);
+                    Character.check();
                     finish();
                 }
             }

@@ -16,6 +16,9 @@ public class Character {
     private static faiths faith = faiths.Pelor;
     private static races race = races.human;
 
+//    0是秩序度，1是善良度，这是阵营数据
+    private static int[] camp={0,0};
+
     //    5维
     private static int str = 10;//力
     private static int con = 10;//体
@@ -132,7 +135,10 @@ public class Character {
 
     public static void setJob(jobs aJob) {
         job = aJob;
-        switch (aJob) {
+    }
+
+    public static void check(){
+        switch (job) {
             case fighter: {
                 helmet = "破旧的头盔";
                 breastPlate = "破旧的鳞甲";
@@ -222,9 +228,37 @@ public class Character {
                 break;
             }
         }
+        switch (faith){
+            case Pelor:{
+                camp[1]=camp[1]+30;
+                break;
+            }
+            case Boccob:{
+                break;
+            }
+            case Heironeous:{
+                camp[0]=camp[0]+20;
+                camp[1]=camp[1]+30;
+                break;
+            }
+            case Olidammara:{
+                camp[0]=camp[0]-20;
+                break;
+
+            }
+            case StCuthbert:{
+                camp[0]=camp[0]+20;
+                camp[1]=camp[1]+30;
+                break;
+
+            }
+            case CorellonLarethian:{
+                camp[0]=camp[0]-20;
+                camp[1]=camp[1]+30;
+                break;
+            }
+        }
     }
-
-
             public static String getBag(){
                 String items="";
                 for(String thing:bag){
@@ -282,8 +316,10 @@ public class Character {
     public static int getLevel() {
         return level;
     }
-
-    public static String[] getMission() {
-        return (String[]) missionList.toArray();
+    public static int[] getCamp(){
+        return camp;
+    }
+    public static ArrayList<String> getMission() {
+        return missionList;
     }
 }
