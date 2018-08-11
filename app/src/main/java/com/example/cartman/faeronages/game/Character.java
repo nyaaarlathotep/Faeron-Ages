@@ -18,6 +18,8 @@ public class Character {
 
 //    0是秩序度，1是善良度，这是阵营数据
     private static int[] camp={0,0};
+    private static int[] prestige=new int[]{0,0,0,0,0,0};
+    private static int[] godPrestige=new int[]{0,0,0,0,0,0};
 
     //    5维
     private static int str = 10;//力
@@ -160,7 +162,6 @@ public class Character {
                 specialBag = new String[]{"鲁特琴", "", "", "", ""};
                 spells = data.getSpell(spells, level);
                 livingBag = new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把、附盖提灯".split("、")));
-
                 break;
             }
             case druid: {
@@ -231,6 +232,9 @@ public class Character {
         switch (faith){
             case Pelor:{
                 camp[1]=camp[1]+30;
+                prestige[2]=prestige[2]+5;
+                prestige[3]=prestige[3]+5;
+                prestige[5]=prestige[5]+15;
                 break;
             }
             case Boccob:{
@@ -238,23 +242,29 @@ public class Character {
             }
             case Heironeous:{
                 camp[0]=camp[0]+20;
-                camp[1]=camp[1]+30;
+                prestige[5]=prestige[5]+5;
+                prestige[3]=prestige[3]+10;
                 break;
             }
             case Olidammara:{
                 camp[0]=camp[0]-20;
+                prestige[3]=prestige[3]-10;
                 break;
 
             }
             case StCuthbert:{
                 camp[0]=camp[0]+20;
-                camp[1]=camp[1]+30;
+                prestige[3]=prestige[3]+20;
+                prestige[5]=prestige[5]+5;
                 break;
 
             }
             case CorellonLarethian:{
                 camp[0]=camp[0]-20;
                 camp[1]=camp[1]+30;
+                prestige[4]=prestige[4]-5;
+                prestige[5]=prestige[5]+5;
+                prestige[3]=prestige[3]-10;
                 break;
             }
         }
@@ -321,5 +331,12 @@ public class Character {
     }
     public static ArrayList<String> getMission() {
         return missionList;
+    }
+    public static int getPrestige(int index,boolean isGod){
+        if(isGod){
+            return godPrestige[index];
+        }else {
+            return prestige[index];
+        }
     }
 }

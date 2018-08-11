@@ -6,15 +6,32 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".fame">
 
+    <TextView
+        android:id="@+id/HeironeousText"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/rua"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Heironeous"
+        tools:text="@string/rua" />
+
     <ImageView
         android:id="@+id/Boccob"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/god_Boccob"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pelor"
+        app:layout_constraintStart_toEndOf="@+id/CorellonLarethian"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/boccob" />
 
@@ -22,50 +39,44 @@ tools:context=".fame">
         android:id="@+id/CorellonLarethian"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/god_CorellonLarethian"
-        app:layout_constraintEnd_toStartOf="@+id/pelor"
-        app:layout_constraintStart_toEndOf="@+id/Boccob"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/corellonlarethian" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/Heironeous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/god_Heironeous"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Boccob"
+        app:layout_constraintTop_toBottomOf="@+id/CorText"
         app:srcCompat="@drawable/heironeous" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/Olidammara"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/god_Olidammara"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:srcCompat="@drawable/olidammara"
-        tools:layout_editor_absoluteY="220dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pelorText"
+        app:srcCompat="@drawable/olidammara" />
 
     <ImageView
         android:id="@+id/pelor"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/god_Pelor"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,14 +84,94 @@ tools:context=".fame">
         app:srcCompat="@drawable/pelor" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/StCuthbert"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/god_St.Cuthbert"
+        app:layout_constraintEnd_toStartOf="@+id/Olidammara"
+        app:layout_constraintStart_toEndOf="@+id/Heironeous"
+        app:layout_constraintTop_toBottomOf="@+id/BoccobText"
+        app:srcCompat="@drawable/stcuthbert" />
+
+    <TextView
+        android:id="@+id/BoccobText"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/rua"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/pelorText"
+        app:layout_constraintStart_toEndOf="@+id/CorText"
+        app:layout_constraintTop_toBottomOf="@+id/Boccob"
+        tools:text="@string/rua" />
+
+    <TextView
+        android:id="@+id/CorText"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/rua"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CorellonLarethian"
+        tools:text="@string/rua" />
+
+    <TextView
+        android:id="@+id/pelorText"
+        android:layout_width="98dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/rua"
+        android:textSize="15sp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pelor"
-        app:srcCompat="@drawable/stcuthbert" />
+        tools:text="@string/rua" />
+
+    <TextView
+        android:id="@+id/StCuthbertText"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/rua"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/OlidammaraText"
+        app:layout_constraintStart_toEndOf="@+id/Heironeous"
+        app:layout_constraintTop_toBottomOf="@+id/StCuthbert"
+        tools:text="@string/rua" />
+
+    <TextView
+        android:id="@+id/OlidammaraText"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/rua"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Olidammara"
+        tools:text="@string/rua" />
 
 </android.support.constraint.ConstraintLayout>

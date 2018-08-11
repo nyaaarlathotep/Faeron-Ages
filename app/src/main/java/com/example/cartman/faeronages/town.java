@@ -56,7 +56,7 @@ public class town extends BaseActivity {
                 break;
             }
             case R.id.option_normal_3:{
-                Intent intent=new Intent(town.this,missionList.class);
+                Intent intent=new Intent(town.this,fame.class);
                 startActivity(intent);
                 break;
             }
