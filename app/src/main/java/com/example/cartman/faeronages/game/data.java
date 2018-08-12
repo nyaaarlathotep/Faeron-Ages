@@ -168,8 +168,9 @@ public class data {
 
     private static String[] equipmentStatement="战痕累累的.-0.9 破碎的.-0.5 粗劣的.-0.2 普通的.0.0 精制的.0.2 卓越的.0.4 无双的.0.6 不朽的.0.9 传奇的.1.2 王者的.1.5".split(" ");
 
-    public static String getAEquipment(jobs job,){
-        
+    public static String getAEquipment(jobs job){
+        String subscribe=equipmentStatement[random.nextInt(equipmentStatement.length)];
+        return "";
     }
     public static String[] getSpell(String[] spells,int level){
         if(level!=lastLevel) {

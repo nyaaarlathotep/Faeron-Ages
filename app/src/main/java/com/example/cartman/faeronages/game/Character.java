@@ -32,13 +32,13 @@ public class Character {
     private static int level=1;
 
 //    装备
-    private static String helmet="破旧的头盔";
-    private static String breastPlate="破旧的鳞甲";
-    private static String leftHand="磨损的小盾";
-    private static String rightHand="磨损的长剑";
-    private static String legArmor="破旧的鳞甲";
-    private static String[] rings=new String[]{"祖传的生命戒指","","",""};
-    private static String neckLace="祖传的格挡项链";
+    private static String helmet="破旧的头盔.0";
+    private static String breastPlate="破旧的鳞甲.0";
+    private static String leftHand="磨损的小盾.0";
+    private static String rightHand="磨损的长剑.0";
+    private static String legArmor="破旧的鳞甲.0";
+    private static String rings="祖传的生命戒指";
+    private static String neckLace="祖传的格挡项链.0";
     private static int[] strengthLevel={0,0,0,0,0};
 
 //    法术
@@ -102,13 +102,8 @@ public class Character {
     }
 
     public static String[] getEquipments() {
-        String ring = "";
-        for (String ss : rings) {
-            if (!ss.equals("")) {
-                ring = ring + " " + ss;
-            }
-        }
-        String[] asd=new String[]{helmet, breastPlate, leftHand,rightHand,legArmor, ring, neckLace};;
+        String[] asd=new String[]{helmet.split(".")[0], breastPlate.split(".")[0], leftHand.split(".")[0],rightHand.split(".")[0]
+                ,legArmor.split(".")[0], rings.split(".")[0], neckLace.split(".")[0]};
         for(int i=0;i<asd.length;i++){
             if(strengthLevel[i]!=0){
                 asd[i]="+"+strengthLevel[i]+asd[i];
@@ -174,36 +169,36 @@ public class Character {
     public static void check(){
         switch (job) {
             case fighter: {
-                helmet = "破旧的头盔";
-                breastPlate = "破旧的鳞甲";
-                rightHand = "磨损的长剑";
-                leftHand = "磨损的小盾";
-                legArmor = "破旧的鳞甲";
-                rings[0] = "祖传的生命戒指";
-                neckLace = "祖传的格挡项链";
+                helmet = "破旧的头盔.0";
+                breastPlate = "破旧的鳞甲.0";
+                rightHand = "磨损的长剑.0";
+                leftHand = "磨损的小盾.0";
+                legArmor = "破旧的鳞甲.0";
+                rings = "祖传的生命戒指.0";
+                neckLace = "祖传的格挡项链.0";
                 livingBag = new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
                 break;
             }
             case bard: {
-                helmet = "破旧的头巾";
-                breastPlate = "破旧的布甲";
-                rightHand = "磨损的短剑";
-                leftHand = "磨损的手弩";
-                legArmor = "破旧的布甲";
-                neckLace = "祖传的精致哨子";
+                helmet = "破旧的头巾.0";
+                breastPlate = "破旧的布甲.0";
+                rightHand = "磨损的短剑.0";
+                leftHand = "磨损的手弩.0";
+                legArmor = "破旧的布甲.0";
+                neckLace = "祖传的精致哨子.0";
                 specialBag = new String[]{"鲁特琴", "", "", "", ""};
                 spells = data.getSpell(spells, level);
                 livingBag = new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把、附盖提灯".split("、")));
                 break;
             }
             case druid: {
-                helmet = "破旧的头环";
-                breastPlate = "破旧的生皮甲";
-                rightHand = "磨损的弯刀";
+                helmet = "破旧的头环.0";
+                breastPlate = "破旧的生皮甲.0";
+                rightHand = "磨损的弯刀.0";
                 leftHand = "";
-                legArmor = "磨损的生皮甲";
-                neckLace = "新鲜的花环";
-                rings = new String[]{"", "", "", ""};
+                legArmor = "磨损的生皮甲.0";
+                neckLace = "新鲜的花环.0";
+                rings ="";
                 specialBag = new String[]{"鲁特琴", "", "", "", ""};
                 spells = data.getSpell(spells, level);
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把".split("、");
@@ -211,11 +206,11 @@ public class Character {
                 break;
             }
             case cleric: {
-                breastPlate = "破旧的长袍";
+                breastPlate = "破旧的长袍.0";
                 rightHand = "";
-                leftHand = "老旧的木质节杖";
-                legArmor = "破旧的绑腿";
-                rings[0] = "老旧的神圣戒指";
+                leftHand = "老旧的木质节杖.0";
+                legArmor = "破旧的绑腿.0";
+                rings = "老旧的神圣戒指.0";
                 neckLace = "";
                 specialBag = new String[]{"木质圣徽", "", "", "", ""};
                 spells = data.getSpell(spells, level);
@@ -224,37 +219,37 @@ public class Character {
                 break;
             }
             case rogue: {
-                helmet = "破旧的头巾";
-                breastPlate = "破旧的皮甲";
-                rightHand = "磨损的匕首";
+                helmet = "破旧的头巾.0";
+                breastPlate = "破旧的皮甲.0";
+                rightHand = "磨损的匕首.0";
                 leftHand = "";
-                legArmor = "破旧的皮甲";
-                rings[0] = "老旧的潜行戒指";
+                legArmor = "破旧的皮甲.0";
+                rings = "老旧的潜行戒指.0";
                 neckLace = "";
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把、游荡者工具、附盖提灯".split("、");
                 livingBag = new ArrayList<>(Arrays.asList(bornItems));
                 break;
             }
             case paladin: {
-                helmet = "破旧的头盔";
-                breastPlate = "破旧的鳞甲";
-                rightHand = "磨损的长剑";
+                helmet = "破旧的头盔.0";
+                breastPlate = "破旧的鳞甲.0";
+                rightHand = "磨损的长剑.0";
                 leftHand = "";
-                legArmor = "破旧的鳞甲";
-                rings[0] = "老旧的勇气戒指";
-                neckLace = "祖传的重甲项链";
+                legArmor = "破旧的鳞甲.0";
+                rings = "老旧的勇气戒指.0";
+                neckLace = "祖传的重甲项链.0";
                 spells = data.getSpell(spells, level);
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把".split("、");
                 livingBag = new ArrayList<>(Arrays.asList(bornItems));
                 break;
             }
             case sorcerer: {
-                breastPlate = "破旧的长袍";
+                breastPlate = "破旧的长袍.0";
                 rightHand = "";
-                leftHand = "老旧的木质节杖";
-                legArmor = "破旧的绑腿";
-                rings[0] = "老旧的法术默发戒指";
-                neckLace = "祖传的固定项链";
+                leftHand = "老旧的木质节杖.0";
+                legArmor = "破旧的绑腿.0";
+                rings = "老旧的法术默发戒指.0";
+                neckLace = "祖传的固定项链.0";
                 spells = data.getSpell(spells, level);
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把、墨水、墨水笔、法术材料包、法术书".split("、");
                 livingBag = new ArrayList<>(Arrays.asList(bornItems));

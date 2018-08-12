@@ -28,13 +28,13 @@ public class equipment extends BaseActivity {
         legArmor=findViewById(R.id.legArmor);
 
         String[] equipment= Character.getEquipments();
-        helmet.setText("头部： "+equipment[0]);
-        breastPlate.setText("胸部： "+equipment[1]);
-        rightHand.setText("右手： "+equipment[3]);
-        leftHand.setText("左手： "+equipment[2]);
-        legArmor.setText("腿部： "+equipment[4]);
-        rings.setText("戒指： "+equipment[5]);
-        neckLace.setText("项链： "+equipment[6]);
+        helmet.setText("头部： "+equipment[0].split(".")[0]);
+        breastPlate.setText("胸部： "+equipment[1].split(".")[0]);
+        rightHand.setText("右手： "+equipment[3].split(".")[0]);
+        leftHand.setText("左手： "+equipment[2].split(".")[0]);
+        legArmor.setText("腿部： "+equipment[4].split(".")[0]);
+        rings.setText("戒指： "+equipment[5].split(".")[0]);
+        neckLace.setText("项链： "+equipment[6].split(".")[0]);
 
 
     }
