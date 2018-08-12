@@ -122,13 +122,19 @@ public class Town {
                     Log.d("正在欣赏昂贵的装备", "ss");
                     event = 2;
                     needChoose = true;
+//                    给个格式防止傻逼: 王者的卡萨斯勾刃.8.5,2
                     switch (ss) {
                         case 0: {
-                            options[0] = data.getEquipment(level, Character.getJob());
-                            return options[0];
+                            String eee = data.getAEquipment(Character.getJob());
+                            while (Integer.parseInt(eee.split(",")[0].split(".")[1])<=Character.getEquipmentPoint(eee.split(",")[1])){
+                                eee=data.getAEquipment(Character.getJob());
+                            }
+                            options[0]=eee;
+                            String res=options[0].split(",")[0].split(".")[0]
+                            return options[0].split(",")[0].split(".")[0];
                         }
                         case 1: {
-                            options[1] = data.getEquipment(level, Character.getJob());
+                            options[1] = data.getAEquipment(Character.getJob());
                             return options[1];
                         }
                         case 2: {

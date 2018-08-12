@@ -2,6 +2,8 @@ package com.example.cartman.faeronages.game;
 
 
 
+import android.util.Log;
+
 import com.example.cartman.faeronages.game.maps.Place;
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
 import java.util.Random;
@@ -166,11 +168,93 @@ public class data {
             "护戒.1 祝福戒指.2 贪婪戒指.3 灵蛇戒指.4 蓝石戒指.5 武神战戒.6 王者之戒.7".split(" "),
             "铁项链.1 祝福项链.2 银环项链.3 獠牙项链.4 红石项链.5 武神项链.6 不灭之链.7".split(" ")};
 
-    private static String[] equipmentStatement="战痕累累的.-0.9 破碎的.-0.5 粗劣的.-0.2 普通的.0.0 精制的.0.2 卓越的.0.4 无双的.0.6 不朽的.0.9 传奇的.1.2 王者的.1.5".split(" ");
+    private static String[] equipmentStatement="战痕累累的.-7 破碎的.-5 粗劣的.-2 普通的.0 精制的.2 卓越的.4 无双的.6 不朽的.9 传奇的.2 王者的.5".split(" ");
 
+//    index作为判断装备类型的数据，用空格隔开返回
     public static String getAEquipment(jobs job){
         String subscribe=equipmentStatement[random.nextInt(equipmentStatement.length)];
-        return "";
+        switch (job){
+            case fighter:{
+                int index=random.nextInt(fighterEquipment.length);
+                while (fighterEquipment[index].length==0){
+                    index=random.nextInt(fighterEquipment.length);
+                }
+                String equip=fighterEquipment[index][random.nextInt(fighterEquipment[index].length)];
+                Log.d("fighter equipment",equip);
+                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
+                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                return equip+","+index;
+            }
+            case bard:{
+                int index=random.nextInt(bardEquipment.length);
+                while (bardEquipment[index].length==0){
+                    index=random.nextInt(bardEquipment.length);
+                }
+                String equip=bardEquipment[index][random.nextInt(bardEquipment[index].length)];
+                Log.d("bardEquipment",equip);
+                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
+                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                return equip+","+index;
+            }
+            case druid:{
+                int index=random.nextInt(druidEquipment.length);
+                while (druidEquipment[index].length==0){
+                    index=random.nextInt(druidEquipment.length);
+                }
+                String equip=druidEquipment[index][random.nextInt(druidEquipment[index].length)];
+                Log.d("druidEquipment",equip);
+                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
+                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                return equip+","+index;
+            }
+            case cleric:{
+                int index=random.nextInt(clericEquipment.length);
+                while (clericEquipment[index].length==0){
+                    index=random.nextInt(clericEquipment.length);
+                }
+                String equip=clericEquipment[index][random.nextInt(clericEquipment[index].length)];
+                Log.d("clericEquipment",equip);
+                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
+                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                return equip+","+index;
+            }
+            case rogue:{
+                int index=random.nextInt(rogueEquipment.length);
+                while (rogueEquipment[index].length==0){
+                    index=random.nextInt(rogueEquipment.length);
+                }
+                String equip=rogueEquipment[index][random.nextInt(rogueEquipment[index].length)];
+                Log.d("rogueEquipment",equip);
+                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
+                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                return equip+","+index;
+            }
+            case paladin:{
+                int index=random.nextInt(paladinEquipment.length);
+                while (paladinEquipment[index].length==0){
+                    index=random.nextInt(paladinEquipment.length);
+                }
+                String equip=paladinEquipment[index][random.nextInt(paladinEquipment[index].length)];
+                Log.d("paladinEquipment",equip);
+                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
+                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                return equip+","+index;
+            }
+            case sorcerer:{
+                int index=random.nextInt(sorcererEquipment.length);
+                while (sorcererEquipment[index].length==0){
+                    index=random.nextInt(sorcererEquipment.length);
+                }
+                String equip=sorcererEquipment[index][random.nextInt(sorcererEquipment[index].length)];
+                Log.d("sorcererEquipment",equip);
+                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
+                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                return equip+","+index;
+            }
+            default:{
+                return "error";
+            }
+        }
     }
     public static String[] getSpell(String[] spells,int level){
         if(level!=lastLevel) {
@@ -218,9 +302,7 @@ public class data {
     public static String getMission(int level){
         return "杀一只鸡";
     }
-    public static String getEquipment(int level,jobs job){
-        return "大鸡腿";
-    }
+
     public static String getRandomEquipment(jobs job){
         return "小鸡腿";
     }

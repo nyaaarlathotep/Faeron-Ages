@@ -1,6 +1,8 @@
 package com.example.cartman.faeronages.game;
 
 import android.util.Log;
+import android.widget.ProgressBar;
+
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,7 +39,7 @@ public class Character {
     private static String leftHand="磨损的小盾.0";
     private static String rightHand="磨损的长剑.0";
     private static String legArmor="破旧的鳞甲.0";
-    private static String rings="祖传的生命戒指";
+    private static String rings="祖传的生命戒指.0";
     private static String neckLace="祖传的格挡项链.0";
     private static int[] strengthLevel={0,0,0,0,0};
 
@@ -101,7 +103,7 @@ public class Character {
         return 0;
     }
 
-    public static String[] getEquipments() {
+    public static String[] getShownEquipments() {
         String[] asd=new String[]{helmet.split(".")[0], breastPlate.split(".")[0], leftHand.split(".")[0],rightHand.split(".")[0]
                 ,legArmor.split(".")[0], rings.split(".")[0], neckLace.split(".")[0]};
         for(int i=0;i<asd.length;i++){
@@ -136,7 +138,6 @@ public class Character {
                 if(data.d20(10)){
                     strengthLevel[index]=strengthLevel[index]+5;
                     return true;
-
                 }
             }
             default:
@@ -325,6 +326,34 @@ public class Character {
 
 
 
+//    这个函数完全按照town中事件与data中装备的index安排，千万别用
+    public static int getEquipmentPoint(String index){
+        switch (index){
+            case "0":{
+                return Integer.parseInt(helmet.split(".")[1]);
+            }
+            case "1":{
+                return Integer.parseInt(leftHand.split(".")[1]);
+            }
+            case "2":{
+                return Integer.parseInt(rightHand.split(".")[1]);
+            }
+            case "3":{
+                return Integer.parseInt(breastPlate .split(".")[1]);
+            }
+            case "4":{
+                return Integer.parseInt(legArmor.split(".")[1]);
+            }
+            case "5":{
+                return Integer.parseInt(rings.split(".")[1]);
+            }
+            case "6":{
+                return Integer.parseInt(neckLace.split(".")[1]);
+            }
+            default:
+                return -1;
+        }
+    }
     public static void setNextAdventure(Adventure adventure){
         nextAdventure=adventure;
     }

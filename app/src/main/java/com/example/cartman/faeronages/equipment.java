@@ -27,7 +27,7 @@ public class equipment extends BaseActivity {
         breastPlate=findViewById(R.id.breastplate);
         legArmor=findViewById(R.id.legArmor);
 
-        String[] equipment= Character.getEquipments();
+        String[] equipment= Character.getShownEquipments();
         helmet.setText("头部： "+equipment[0].split(".")[0]);
         breastPlate.setText("胸部： "+equipment[1].split(".")[0]);
         rightHand.setText("右手： "+equipment[3].split(".")[0]);
