@@ -34,11 +34,12 @@ public class Character {
 //    装备
     private static String helmet="破旧的头盔";
     private static String breastPlate="破旧的鳞甲";
-    private static String rightHand="磨损的长剑";
     private static String leftHand="磨损的小盾";
+    private static String rightHand="磨损的长剑";
     private static String legArmor="破旧的鳞甲";
     private static String[] rings=new String[]{"祖传的生命戒指","","",""};
     private static String neckLace="祖传的格挡项链";
+    private static int[] strengthLevel={0,0,0,0,0};
 
 //    法术
     private static String[] spells=new String[]{"","","","","","",""};
@@ -81,7 +82,6 @@ public class Character {
     }
 
     public static String showBag() {
-
         if (!haveHarvested) {
             return "没能获得战利品";
         } else if (fullBag) {
@@ -108,14 +108,46 @@ public class Character {
                 ring = ring + " " + ss;
             }
         }
-        return new String[]{helmet, breastPlate, leftHand, rightHand, legArmor, ring, neckLace};
+        String[] asd=new String[]{helmet, breastPlate, leftHand,rightHand,legArmor, ring, neckLace};;
+        for(int i=0;i<asd.length;i++){
+            if(strengthLevel[i]!=0){
+                asd[i]="+"+strengthLevel[i]+asd[i];
+            }
+        }
+        return asd;
     }
 
     public static void addMission(String mission){
         missionList.add(mission+" 未完成");
     }
 
+    public static boolean strengthEquipment(int ww){
+        int index=random.nextInt(5);
+        switch (ww){
+            case 1:{
+                if(data.d20(18)){
+                    strengthLevel[index]=strengthLevel[index]+1;
+                    return true;
+                }
+            }
+            case 2:{
+                if(data.d20(15)){
+                    strengthLevel[index]=strengthLevel[index]+2;
+                    return true;
 
+                }
+            }
+            case 5:{
+                if(data.d20(10)){
+                    strengthLevel[index]=strengthLevel[index]+5;
+                    return true;
+
+                }
+            }
+            default:
+        }
+        return false;
+    }
 
             // get set 方法
 

@@ -175,7 +175,6 @@ public class data {
     }
 
     public static boolean shownD20(int number){
-
         d20=random.nextInt(20)+1;
         d20haveShown=false;
         return number>=(d20);

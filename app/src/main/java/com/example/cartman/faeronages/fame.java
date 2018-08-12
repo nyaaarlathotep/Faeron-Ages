@@ -25,11 +25,11 @@ public class fame extends BaseActivity {
         StCuthbertText=findViewById(R.id.StCuthbertText);
         OlidammaraText=findViewById(R.id.OlidammaraText);
         String a="神明未注意:"+Character.getPrestige(1,true)+"\n教会声望： "+ Character.getPrestige(1,false);
-        String b="神明未注意："+Character.getPrestige(0,true)+"\n教会声望： "+ Character.getPrestige(0,false);
-        String c="神明未注意："+Character.getPrestige(5,true)+"\n教会声望： "+ Character.getPrestige(5,false);
-        String d="神明未注意："+Character.getPrestige(2,true)+"\n教会声望： "+ Character.getPrestige(2,false);
-        String e="神明未注意："+Character.getPrestige(3,true)+"\n教会声望： "+ Character.getPrestige(3,false);
-        String f="神明未注意："+Character.getPrestige(4,true)+"\n教会声望： "+ Character.getPrestige(4,false);
+        String b="神明未注意:"+Character.getPrestige(0,true)+"\n教会声望： "+ Character.getPrestige(0,false);
+        String c="神明未注意:"+Character.getPrestige(5,true)+"\n教会声望： "+ Character.getPrestige(5,false);
+        String d="神明未注意:"+Character.getPrestige(2,true)+"\n教会声望： "+ Character.getPrestige(2,false);
+        String e="神明未注意:"+Character.getPrestige(3,true)+"\n教会声望： "+ Character.getPrestige(3,false);
+        String f="神明未注意"+Character.getPrestige(4,true)+"\n教会声望： "+ Character.getPrestige(4,false);
 
 
         CorText.setText(a);

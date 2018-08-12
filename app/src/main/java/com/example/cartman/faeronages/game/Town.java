@@ -231,6 +231,32 @@ public class Town {
     public void choose(int choice){
         switch (event){
             case 1: {
+                switch (choice){
+                    case 0:{
+                       if(Character.strengthEquipment(1)){
+                           moves.add(round,"成功强化,ez");
+                       }else {
+                           moves.add(round,"真的非啊,gg");
+                       }
+                        break;
+                    }
+                    case 1:{
+                        if(Character.strengthEquipment(2)){
+                            moves.add(round,"成功强化,ez");
+                        }else {
+                            moves.add(round,"有点非啊,gg");
+                        }
+                        break;
+                    }
+                    case 2:{
+                        if(Character.strengthEquipment(5)){
+                            moves.add(round,"成功强化,欧！");
+                        }else {
+                            moves.add(round,"你以为自己是天选之人？");
+                        }
+                        break;
+                    }
+                }
                 needChoose = false;
                 break;
             }
