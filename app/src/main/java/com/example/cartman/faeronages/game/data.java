@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class data {
 
-    public static int d20=0;
+    private static int d20=0;
     public static boolean d20haveShown=true;
     private static int lastLevel=0;
     private static Random random=new Random();
@@ -38,7 +38,7 @@ public class data {
             ,"滩羊 羊皮","狮鹫 厚重羽毛","毒蛇 毒腺","野狗 狗牙","小豹子 豹子皮","成年雄狮 狮皮","田鼠 鼠皮","被诅咒的稻草人 诅咒印记"};
     public static String home="may be it's time to go home";
 
-    public static String[] spell0 = ("舞光术（Dancing Lights）:制造火把或其他光源。 晕眩术（Daze）:4HD 以下的人形生物会失去下一次的动作。侦测魔法（Detect Magic）:" +
+    private static String[] spell0 = ("舞光术（Dancing Lights）:制造火把或其他光源。 晕眩术（Daze）:4HD 以下的人形生物会失去下一次的动作。侦测魔法（Detect Magic）:" +
             "侦测 60 尺内的法术或魔法物品。闪光术（Flare）:使一个生物目眩（攻击检定-1）。幻音术（Ghost Sound）:发出虚幻的假声。指北术（Know Direction）:指" +
             "出北方。光亮术（Light）:使目标物品如火把般发光。 瞌睡术（Lullaby）:使受术者昏昏欲睡，「侦察」与「聆听」检定受到-5 减值，对抗「睡眠术」时的意志检定受到-2 减值。" +
             "法师帮手（Mage Hand）:可对 5磅以内的物品使用心灵遥控。修复术（Mending）:修复目标物品的细微损伤。传讯术（Message）:可在远距离使用轻声交谈。" +
@@ -52,7 +52,7 @@ public class data {
             "疲乏之触（Touch of Fatigue）:接触攻击，成功可使目标疲乏。变化法师帮手（Mage Hand）：可对 5 磅以内的物品使用心灵遥控。 " +
             "修复术（Mending）:修复目标物品的细微损伤。 传讯术（Message）:可在远距离使用轻声交谈。 开关术（Open/Close）:打开或关上小或轻的目标物品。 " +
             "共通秘法印记（Arcane Mark）:刻上可见或不可见的个人记号。 魔法技俩（Prestidigitation）:玩一些小把戏。 ").split("。");
-    public static String[] spell1 = ("魔法警报（Alarm）:产生警报结界，持续时间为每等级 2 小时。 活化绳（Animate Rope）:造出一条魔法绳，依你的命令动作。惊恐术（Cause F" +
+    private static String[] spell1 = ("魔法警报（Alarm）:产生警报结界，持续时间为每等级 2 小时。 活化绳（Animate Rope）:造出一条魔法绳，依你的命令动作。惊恐术（Cause F" +
             "ear）:使一个5HD 以下的生物逃窜 1d4 个回合。魅惑人类（Charm Person）:使一个人类成为你的朋友。通晓语言（ComprehendLanguages）:懂得所有可说可写的语言。" +
             "治疗轻伤（Cure Light Wounds）:治疗 1d8 点伤害，每等级再多治疗+1 点，最高+5 点。侦测密门（Detect SecretDoors）:发现 60 尺内的密门。" +
             "魔法易容（Disguise Self）:改变自己的外貌。抹消术（Erase）:消除一般或魔法性的书写文字。脚底抹油（ExpeditiousRetreat）:你的速度增加 30尺。" +
@@ -62,7 +62,7 @@ public class data {
             "魔嘴（Magic Mouth ）M:触发时会说话。涅斯图伪装灵光（Magic Aura）:改变物品的灵光。遮蔽物品（Obscure Object）:目标物品不会被探测到。" +
             "移除恐惧（Remove Fear）:压抑恐惧感，或使一个受术者的抗恐惧豁免检定+4，每 4 等级增加一对象。无声幻影（Silent Image）:造出你想要的幻影。" +
             "睡眠术（Sleep）:使生命骰数和为 4 的生物群陷入魔法昏睡。").split("。");
-    public static String[] spell2 = ("变身术（Alter Self）:变为类似的生物。动物使者（Animal Messenger）:将一只超小型动物送至指定地点。" +
+    private static String[] spell2 = ("变身术（Alter Self）:变为类似的生物。动物使者（Animal Messenger）:将一只超小型动物送至指定地点。" +
             "迷惑动物（Animal Trance）:使生命骰数和为 2d6 的动物陷入迷魂状态。目盲术／耳聋术（BlindnessDeafness）:使受术者目盲或耳聋。" +
             "朦胧术（Blur）:对受术者的攻击会有 20%的失手几率。安定心神（Calm Emotions）:安抚生物，抵销情绪性效应。" +
             "轻灵术（Cat‘s Grace）:受术者获得+4 敏捷加值，持续时间为每等级 1 分钟。治疗中度伤（Cure ModerateWounds）:治疗 2d8 点伤害，每等级再多治疗+1 点，最高+10点。" +
@@ -74,7 +74,7 @@ public class data {
             "粉碎音波（Shatter）:发出高速震动音波，足以伤害目标物品或晶体生物。 幻术朦胧术（Blur）:对受术者的攻击会有 20%的失手几率。 " +
             "催眠图纹（Hypnotic Pattern）:使生命骰数和为「2d4+施法者等级」的生物群陷入迷魂状态。" +
             "隐形（Invisibility）:受术者隐形，持续时间为每等级 1 分钟，或直到进行攻击为止。 ").split("。");
-    public static String[] spell3 = ("闪现术（Blink）：你随机的消失、出现，持续时间 1 轮/每等级。魅惑怪物（Charm Monster）：使怪物相信它是你的盟友。" +
+    private static String[] spell3 = ("闪现术（Blink）：你随机的消失、出现，持续时间 1 轮/每等级。魅惑怪物（Charm Monster）：使怪物相信它是你的盟友。" +
             "锐耳术/鹰眼术（Clairaudience/Clairvoyance）：听或看到更远的地方，持续时间 1 分钟/每等级。困惑术（Confusion）：受术者行为古怪，持续时间 1 轮/每等级。" +
             "满怀绝望（Crushing Despair）：目标攻击掷骰、伤害掷骰、豁免，以及其他所有检定均–2。治疗重伤（Cure Serious Wounds）：治疗 3d8 点伤害，每等级再多治疗 1 点，最多+15。" +
             "昼明术（Daylight）：产生半径60 尺范围的亮光。沉睡术（Deep Slumber）：使生命骰总数 10 的生物沉睡。解除魔法（Dispel Magic）：解除魔法或魔法效果。" +
@@ -82,7 +82,7 @@ public class data {
             "次等指使术（Geas, Lesser）：指挥生命骰为 7 或更少的生物。舌灿莲花:「唬骗」检定获得+30加值，且谎言不会被魔法拆穿。" +
             "满怀希望（Good Hope）：目标攻击掷骰、伤害掷骰、豁免，以及所有检定均+2。加速术（Haste）：受术者移动速度加快，攻击掷骰、 AC、反射豁免检定各+1。每等级影响 1个生物。" +
             "谜幻手稿（Illusory Script ） M:只有事先指定的读者可解读此文字。隐形法球（InvisibilitySphere）:使 10 尺内所有人隐形。").split("。");
-    public static String[] spell4 =("破除结界（Break Enchantment）:破除受术者所带有的附加魔法、诅咒、石化，或解除其变化。 " +
+    private static String[] spell4 =("破除结界（Break Enchantment）:破除受术者所带有的附加魔法、诅咒、石化，或解除其变化。 " +
             "治疗致命伤（Cure Critical Wounds）:治疗 4d8 点伤害，每等级再多治疗+1 点，最高+20点。 侦测探知（Detect Scrying）:警告你有人使用魔法在窃听。" +
             "任意门（Dimension Door）:传送至范围内任一地点。 支配人类（Dominate Person）:使用心灵控制人形生物。 动作自如（Freedom of Movement）:受术者可以无视障碍物而如常行走。" +
             "幻景（Hallucinatory Terrain）:使某种地形看起来像是另一种（如:使原野看起来像森林）。怪物定身术（Hold Monster）:与「人类定身术」同，但可指定任意生物。 " +
@@ -92,7 +92,7 @@ public class data {
             "幽影咒法术（Shadow Conjuration）:假拟低于四级的咒法系法术，但只有 20%的真实性。 死灵操纵死尸（Animate Dead） M:制造骷髅、僵尸等不死生物。 " +
             "降咒（Bestow Curse）:单一属性值-6，或攻击检定、豁免检定、各种检定值都-4，或每次动作有 50%失手几率。 疫病术（Contagion）:使受术者感染所指定之疫病。 " +
             "弱能术（Enervation）:受术者获得 1d4 负向等级。 恐惧术（Fear）:使锥形范围内的目标群逃窜，持续时间为每等级 1 轮。 ").split("。");
-    public static String[] spell5 =("集体治疗轻伤（Cure Light Wounds, Mass）:对多个生物治疗 1d8 点伤害，每等级再多治疗+1 点。 " +
+    private static String[] spell5 =("集体治疗轻伤（Cure Light Wounds, Mass）:对多个生物治疗 1d8 点伤害，每等级再多治疗+1 点。 " +
             "高等解除魔法（DispelMagic,Greater）:与「解除魔法」同，但检定+20。 托梦法（Dream）:将讯息送至任何正在睡眠中的人。 " +
             "梦魇（Nightmare）:送出虚像，可造成 1d10 点伤害，并使对象疲乏。 常驻幻影（Persistent Image）:与「高等幻影」同，但不需集中精神。" +
             "集体暗示（Suggestion, Mass）:与「暗示」同，但可影响的生物个数与等级同。 五级召唤怪物术（Summon Monster V）:可召唤外界生物为你作战。" +
@@ -102,7 +102,7 @@ public class data {
             "欧蒙秘藏箱（Leomund’sSecretChest）F:将贵重宝箱藏于灵界，在需要时可任意取用。 高等造物术（Major Creation）:与「次级造物术」同，但可创造石头与金属。 " +
             "魔邓肯忠犬（Mordenkainen’sFaithfulHound）:出现魅影狗，可守卫，亦可攻击。 次级异界誓缚（Planar Binding, Lesser）:困住 6HD 以下异界生物，直至" +
             "它完成工作为止。 五级召唤怪物术（Summon Monster V）:可召唤外界生物为你作战。  ").split("。");
-    public static String[] spell6 = ("防护防魔法力场（Antimagic Field）:抵销 10 尺内的法术。 高等解除魔法（Dispel MagicGreater）:与「解除魔法」同，但检定+20。 " +
+    private static String[] spell6 = ("防护防魔法力场（Antimagic Field）:抵销 10 尺内的法术。 高等解除魔法（Dispel MagicGreater）:与「解除魔法」同，但检定+20。 " +
             "法术无效结界（Globe of Invulnerability）:与「次级法术无效结界」同，但可至四级法术。 铜墙铁壁（Guards and Wards）:一系列防护性法术与魔法效果。" +
             " 防生物力场（Repulsion）:生物无法接近你。 咒法酸雾术（Acid Fog）:产生会造成强酸伤害的浓雾。 异界誓缚（Planar Binding）：与「次级异界誓缚」同，但最高可至 12HD。 " +
             "六级召唤怪物术（Summon Monster V）:可召唤外界生物为你作战。 铁墙术（Wall of Iron） M:生命值为每 4 等级 30 点，可压在对手身上。 " +
@@ -110,8 +110,67 @@ public class data {
             "真实目光（True Seeing） M:见到所有事物的原本面貌。 附魔指使术（Geas/Quest）:与「次级指使术」同，但可以影响所有生物。 " +
             "高等英勇术（Heroism, Greater）:攻击检定、豁免检定与技能检定+4，对恐惧免疫，获得暂时生命值。").split("。");
 
+    private static String[][] sorcererEquipment = new String[][]{"轻质头盔.1 铁头盔.2 帆布兜帽.3 魔导师兜帽.4 呓语面具.5 炉心假面.6 失落头套.7".split(" "),
+            "学徒法杖.1 导师法杖.2 异端杖.3 职业法杖.4 魔导师法杖.5 雷霆法杖.6 高阶魔导师魔杖.7 枯骨杖.8 竭心杖.9 失落之杖.10".split(" "),
+            {},
+            "轻质胸甲.1 铁质胸甲.2 魔导师长袍.3 充能魔甲.4 白灵护甲.5 魔能铠甲.6".split(" "),
+            "轻质腿甲.1 铁质腿甲.2 魔导师护腿.3 轻灵之靴.4 高级魔法护腿.5 奥术靴.6 ".split(" "),
+            "护戒.1 祝福戒指.2 贪婪戒指.3 灵蛇戒指.4 蓝石戒指.5 枯骨戒.6 不详之戒.7".split(" "),
+            "铁项链.1 祝福项链.2 银环项链.3 獠牙项链.4 红石项链.5 骸骨链.6".split(" ")};
 
+    private static String[][] clericEquipment=new String[][]{"轻质头盔.1 铁头盔.2 祝福头盔.3 荣耀头盔.4 信仰盔.5".split(" "),
+            "木制盾牌.1 铁盾牌.2 小圆盾.3 突刺盾.4 祝福盾牌.5 信仰盾.6".split(" "),
+            "硬头锤.1 单手斧.2 信仰短刃.3 祝福锤.4 十字锤.5 亡语者.6 奇迹短刃.7 制裁者.8".split(" "),
+            "轻质胸甲.1 铁质胸甲.2 银鳞胸甲.3 祝福胸甲.4 贵族胸甲.5 太阳胸甲.6".split(" "),
+            "轻质腿甲.1 铁质腿甲.2 祝福腿甲.3 高级护腿.4 贵族护腿.5 高级战靴.6 荣耀护腿.7 ".split(" "),
+            "护戒.1 祝福戒指.2 贪婪戒指.3 灵蛇戒指.4 蓝石戒指.5 惜别戒指6 不详之戒.7".split(" "),
+            "铁项链.1 祝福项链.2 银环项链.3 獠牙项链.4 红石项链.5 失落项链.6".split(" ")};
 
+    private static String[][] rogueEquipment=new String[][]{"奴隶头巾.1 轻质头盔.2 铁头盔.3 佣兵头罩.4 卡萨斯面巾.5 亡语面巾.6 骨面.7 流放面具.8".split(" "),
+            {},
+            "短匕.1 卡萨斯长刀.2 双持短刃.3 佣兵对刀.4 淬毒匕首.5 守墓对刀.6 翡翠战刃.7 亡语者.8 流放之刃.9 夺魂之镰.10 熏闸㓗之锋.9".split(" "),
+            "轻质胸甲.1 铁质胸甲.2 银鳞胸甲.3 轻盈长袍.4 守墓者袍.5 流放者战袍.6 诅咒之袍.7".split(" "),
+            "轻质腿甲.1 铁质腿甲.2 祝福腿甲.3 静谧靴.4 风尘靴.5 亡者靴.6 ".split(" "),
+            "护戒.1 贪婪戒指.2 灵蛇戒指.3 蓝石戒指.4 惜别戒指.5 不详之戒.6 亡者戒.7".split(" "),
+            "铁项链.1 祝福项链.2 银环项链.3 獠牙项链.4 红石项链.5 亡者项链.6".split(" ")};
+
+    private static String[][] paladinEquipment=new String[][]{"轻质头盔.1 铁头盔.2 祝福头盔.3 荣耀头盔.4 信仰盔.5 圣光盔.6 圣武士战盔.7".split(" "),
+            "木制盾牌.1 铁盾牌.2 小圆盾.3 突刺盾.4 祝福盾牌.5 信仰盾.6 圣光大盾.7".split(" "),
+            "硬头锤.1 单手斧.2 双手重锤.3 流星锤.4 圣骑士战锤.5 圣光锤.6 龙头锤.7 神圣复仇者（仿）.8".split(" "),
+            "轻质胸甲.1 铁质胸甲.2 银鳞胸甲.3 祝福胸甲.4 贵族胸甲.5 太阳胸甲.6 圣光铠甲.7 圣武士战甲.8".split(" "),
+            "轻质腿甲.1 铁质腿甲.2 梭子腿甲.3 明亮腿甲.4 贵族腿甲.5 太阳腿甲.6".split(" "),
+            "护戒.1 祝福戒指.2 宁静戒指.3 灵狐戒指.4 蓝石戒指.5 惜别戒指6 阳光戒.7".split(" "),
+            "铁项链.1 祝福项链.2 银环项链.3 獠牙项链.4 红石项链.5 圣光项链.6 太阳裂片.7".split(" ")};
+
+    private static String[][] bardEquipment=new String[][]{"轻质头盔.1 铁头盔.2 祝福头盔.3 吟游面巾.4 薄雾面罩.5 失落面具.6".split(" "),
+            "金属手弩.3 连弩.4 雷霆连弩.5 卡萨斯连弩.6 卡萨斯直剑.7 箭雨弩.8".split(" "),
+            "轻质单手剑.1 短柄斧.2 淬毒匕首.5 宝石对刀.6 翡翠战刃.7 风语者.8 熏闸㓗之锋.9".split(" "),
+            "轻质胸甲.1 铁质胸甲.2 银鳞胸甲.3 祝福胸甲.4 贵族胸甲.5 吟游者长袍.6".split(" "),
+            "轻质腿甲.1 铁质腿甲.2 祝福腿甲.3 华丽腿甲.4 贵族绑腿.5 宝石绑腿".split(" "),
+            "护戒.1 祝福戒指.2 贪婪戒指.3 灵蛇戒指.4 蓝石戒指.5 惜别戒指.6 魅力之戒.7 自走炮戒指.8".split(" "),
+            "铁项链.1 祝福项链.2 银环项链.3 獠牙项链.4 红石项链.5 塞壬之心.8 海妖之鳍.9".split(" ")};
+
+    private static String[][] druidEquipment=new String[][]{"轻质头盔.1 铁头盔.2 祝福头盔.3 鲜花面具.4 自然之力面具.5 守护者面具.7".split(" "),
+            {},
+            "镰刀.1 链状刀.2 精制长矛.3 铁质飞镖.4 淬毒飞镖.5 狩猎者战矛.6 卡萨斯钩刀.7".split(" "),
+            "轻质胸甲.1 铁质胸甲.2 银鳞胸甲.3 祝福胸甲.4 自然之力铠甲.5 守护者胸甲.6".split(" "),
+            "轻质腿甲.1 铁质腿甲.2 祝福腿甲.3 高级护腿.4 贵族护腿.5 高级战靴.6 自然之力战靴.7 守护者之靴.8".split(" "),
+            "护戒.1 祝福戒指.2 贪婪戒指.3 灵蛇戒指.4 蓝石戒指.5 自然之力戒指.6 守护者之戒.7".split(" "),
+            "铁项链.1 祝福项链.2 银环项链.3 獠牙项链.4 红石项链.5 自然之链.6 守护者项链.7".split(" ")};
+
+    private static String[][] fighterEquipment=new String[][]{"轻质头盔.1 铁头盔.2 祝福头盔.3 荣耀头盔.4 信仰盔.5 龙头盔.6 王者战盔.7 遗落战盔.8 巨龙战盔（仿）.9".split(" "),
+            "木制盾牌.1 铁盾牌.2 小圆盾.3 突刺盾.4 祝福盾牌.5 猎龙大盾.6 惩罚者大盾.7 战神巨盾.8".split(" "),
+            "直剑.1 阔剑.2 战斧.3 双刃战斧.4 巨剑.5 复仇者大剑.6 流放者大刀.7 卡萨斯特大剑.8 追龙斧.9 猎龙大斧.10 毁灭者.11 熏闸㓗之臂.9".split(" "),
+            "轻质胸甲.1 铁质胸甲.2 银鳞胸甲.3 祝福胸甲.4 厚质重甲.5 圣战士铠甲.6 古达铠甲.7 猎龙铠甲.8".split(" "),
+            "轻质腿甲.1 铁质腿甲.2 祝福腿甲.3 华丽腿甲.4 贵族绑腿.5 宝石绑腿".split(" "),
+            "护戒.1 祝福戒指.2 贪婪戒指.3 灵蛇戒指.4 蓝石戒指.5 武神战戒.6 王者之戒.7".split(" "),
+            "铁项链.1 祝福项链.2 银环项链.3 獠牙项链.4 红石项链.5 武神项链.6 不灭之链.7".split(" ")};
+
+    private static String[] equipmentStatement="战痕累累的.-0.9 破碎的.-0.5 粗劣的.-0.2 普通的.0.0 精制的.0.2 卓越的.0.4 无双的.0.6 不朽的.0.9 传奇的.1.2 王者的.1.5".split(" ");
+
+    public static String getAEquipment(jobs job,){
+        
+    }
     public static String[] getSpell(String[] spells,int level){
         if(level!=lastLevel) {
             lastLevel = level;

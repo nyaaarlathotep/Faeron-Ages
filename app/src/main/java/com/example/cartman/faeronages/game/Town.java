@@ -261,6 +261,22 @@ public class Town {
                 break;
             }
             case 2:{
+                switch (choice){
+                    case 0:{
+
+                        break;
+                    }
+                    case 1:{
+
+                        break;
+
+                    }
+                    case 2:{
+
+                        break;
+
+                    }
+                }
                 needChoose=false;
                 break;
 
