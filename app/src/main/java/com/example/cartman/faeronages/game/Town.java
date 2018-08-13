@@ -20,6 +20,8 @@ public class Town {
     private Place[] places=new Place[3];
     private boolean needChoose=false;
     private boolean isFree=false;
+    private double Magnification=1.5;
+
     private String[] townEvents=new String[]{"啤酒节！\n是时候放开肚皮喝了，今天的酒水统统不要钱","黑死病\n整个个城镇的居民都缩在自己的家中瑟瑟发抖",
             "巧遇行商\n你正好遇到了在这座城镇歇脚的行商，他可能有很多好东西","工会解放\n这座城镇的工会负责人死了！全体工会员工都在庆祝","船新的铁匠\n年轻的学徒自立门户，他会给所有顾客一点优惠",
             "巧遇严打\n镇上来了一伙圣骑士，动不动就给路人上侦测阵营","痔疮犯了\n这下可没有你最喜欢的窑子环节了","黑市集会\n正巧你遇到了黑市集会，说不定有什么好东西"};
@@ -122,20 +124,25 @@ public class Town {
                     Log.d("正在欣赏昂贵的装备", "ss");
                     event = 2;
                     needChoose = true;
-//                    给个格式防止傻逼: 王者的卡萨斯勾刃.8.5,2
+//                    给个格式防止傻逼: 王者的卡萨斯勾刃.85,2
                     switch (ss) {
                         case 0: {
                             String eee = data.getAEquipment(Character.getJob());
-                            while (Integer.parseInt(eee.split(",")[0].split(".")[1])<=Character.getEquipmentPoint(eee.split(",")[1])){
+                            while (Integer.parseInt(eee.split(",")[0].split("\\.")[1])<=Character.getEquipmentPoint(eee.split(",")[1])){
                                 eee=data.getAEquipment(Character.getJob());
                             }
                             options[0]=eee;
-                            String res=options[0].split(",")[0].split(".")[0]
-                            return options[0].split(",")[0].split(".")[0];
+                            return eee.split(",")[0].split("\\.")[0]+"  售价: "+
+                                    Integer.parseInt(eee.split(",")[0].split("\\.")[1])*10*Magnification;
                         }
                         case 1: {
-                            options[1] = data.getAEquipment(Character.getJob());
-                            return options[1];
+                            String eee = data.getAEquipment(Character.getJob());
+                            while (Integer.parseInt(eee.split(",")[0].split("\\.")[1])<=Character.getEquipmentPoint(eee.split(",")[1])){
+                                eee=data.getAEquipment(Character.getJob());
+                            }
+                            options[1]=eee;
+                            return eee.split(",")[0].split("\\.")[0]+"  售价: "+
+                                    Integer.parseInt(eee.split(",")[0].split("\\.")[1])*10*Magnification;
                         }
                         case 2: {
                             options[2] = "算了算了";
@@ -268,19 +275,70 @@ public class Town {
             }
             case 2:{
                 switch (choice){
-                    case 0:{
-
+                    case 0: {
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                            switch (options[0].split(",")[1]) {
+                                case "0": {
+                                    Character.setHelmet(options[0].split(",")[0]);
+                                }
+                                case "1": {
+                                    Character.setLeftHand(options[0].split(",")[0]);
+                                }
+                                case "2": {
+                                    Character.setRightHand(options[0].split(",")[0]);
+                                }
+                                case "3": {
+                                    Character.setBreastPlate(options[0].split(",")[0]);
+                                }
+                                case "4": {
+                                    Character.setLegArmor(options[0].split(",")[0]);
+                                }
+                                case "5": {
+                                    Character.setRings(options[0].split(",")[0]);
+                                }
+                                case "6": {
+                                    Character.setNeckLace(options[0].split(",")[0]);
+                                }
+                            }
+                            moves.add(round,"换上了"+options[0].split(",")[0].split("\\.")[0]+"的你感觉自己强的一笔");
+                    }else {
+                            moves.add(round,"靠北啊你根本没有那么多钱，你被一脸嫌弃的店长轰出了门");
+                        }
                         break;
                     }
                     case 1:{
-
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                            switch (options[1].split(",")[1]) {
+                                case "0": {
+                                    Character.setHelmet(options[1].split(",")[0]);
+                                }
+                                case "1": {
+                                    Character.setLeftHand(options[1].split(",")[0]);
+                                }
+                                case "2": {
+                                    Character.setRightHand(options[1].split(",")[0]);
+                                }
+                                case "3": {
+                                    Character.setBreastPlate(options[1].split(",")[0]);
+                                }
+                                case "4": {
+                                    Character.setLegArmor(options[1].split(",")[0]);
+                                }
+                                case "5": {
+                                    Character.setRings(options[1].split(",")[0]);
+                                }
+                                case "6": {
+                                    Character.setNeckLace(options[1].split(",")[0]);
+                                }
+                            }
+                            moves.add(round, "换上了" + options[1].split(",")[0].split("\\.")[0] + "的你感觉自己强的一笔");
+                        }else {
+                            moves.add(round,"靠北啊你根本没有那么多钱，你被一脸嫌弃的店长轰出了门");
+                        }
                         break;
-
                     }
                     case 2:{
-
                         break;
-
                     }
                 }
                 needChoose=false;

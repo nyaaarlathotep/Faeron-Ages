@@ -53,7 +53,7 @@ public class Character {
     public static ArrayList<String> bag=new ArrayList<>();
     public static ArrayList<String> livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
     public static String[] specialBag = new String[]{"", "", "", "", ""};
-    private static int gold = 0;
+    private static double gold = 0;
 
 
     public static boolean fullBag = false;
@@ -104,8 +104,8 @@ public class Character {
     }
 
     public static String[] getShownEquipments() {
-        String[] asd=new String[]{helmet.split(".")[0], breastPlate.split(".")[0], leftHand.split(".")[0],rightHand.split(".")[0]
-                ,legArmor.split(".")[0], rings.split(".")[0], neckLace.split(".")[0]};
+        String[] asd=new String[]{helmet.split("\\.")[0], breastPlate.split("\\.")[0], leftHand.split("\\.")[0],rightHand.split("\\.")[0]
+                ,legArmor.split("\\.")[0], rings.split("\\.")[0], neckLace.split("\\.")[0]};
         for(int i=0;i<asd.length;i++){
             if(strengthLevel[i]!=0){
                 asd[i]="+"+strengthLevel[i]+asd[i];
@@ -297,6 +297,15 @@ public class Character {
             }
         }
     }
+
+    public static boolean purchase(double price){
+        if(price<=gold){
+            gold=gold-price;
+            return true;
+        }else {
+            return false;
+        }
+    }
             public static String getBag(){
                 String items="";
                 for(String thing:bag){
@@ -330,33 +339,58 @@ public class Character {
     public static int getEquipmentPoint(String index){
         switch (index){
             case "0":{
-                return Integer.parseInt(helmet.split(".")[1]);
+                return Integer.parseInt(helmet.split("\\.")[1]);
             }
             case "1":{
-                return Integer.parseInt(leftHand.split(".")[1]);
+                return Integer.parseInt(leftHand.split("\\.")[1]);
             }
             case "2":{
-                return Integer.parseInt(rightHand.split(".")[1]);
+                return Integer.parseInt(rightHand.split("\\.")[1]);
             }
             case "3":{
-                return Integer.parseInt(breastPlate .split(".")[1]);
+                return Integer.parseInt(breastPlate .split("\\.")[1]);
             }
             case "4":{
-                return Integer.parseInt(legArmor.split(".")[1]);
+                return Integer.parseInt(legArmor.split("\\.")[1]);
             }
             case "5":{
-                return Integer.parseInt(rings.split(".")[1]);
+                return Integer.parseInt(rings.split("\\.")[1]);
             }
             case "6":{
-                return Integer.parseInt(neckLace.split(".")[1]);
+                return Integer.parseInt(neckLace.split("\\.")[1]);
             }
             default:
                 return -1;
         }
     }
+
+    public static void setHelmet(String aHelmet){
+        helmet=aHelmet;
+    }
+    public static void setBreastPlate(String aBreastPlate){
+        breastPlate=aBreastPlate;
+    }
+    public static void setLeftHand(String aLeftHand){
+        leftHand=aLeftHand;
+    }
+    public static void setRightHand(String aRightHand){
+        rightHand=aRightHand;
+    }
+    public static void setLegArmor(String alegArmor){
+        legArmor=alegArmor;
+    }
+    public static void setRings(String aRings){
+        rings=aRings;
+    }
+    public static void setNeckLace(String aNeckLace){
+        neckLace=aNeckLace;
+    }
     public static void setNextAdventure(Adventure adventure){
         nextAdventure=adventure;
     }
+
+
+
     public static Adventure getAdventure(){ return nextAdventure;
     }
     public static races getRace(){return race;
