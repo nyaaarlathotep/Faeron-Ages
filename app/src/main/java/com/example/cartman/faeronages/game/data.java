@@ -181,8 +181,8 @@ public class data {
                 }
                 String equip=fighterEquipment[index][random.nextInt(fighterEquipment[index].length)];
                 Log.d("fighter equipment",equip);
-                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
-                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                equip=subscribe.split("\\.")[0]+equip.split("\\.")[0]+"."+
+                        (Integer.parseInt(subscribe.split("\\.")[1])+Integer.parseInt(equip.split("\\.")[1]));
                 return equip+","+index;
             }
             case bard:{
@@ -192,8 +192,8 @@ public class data {
                 }
                 String equip=bardEquipment[index][random.nextInt(bardEquipment[index].length)];
                 Log.d("bardEquipment",equip);
-                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
-                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                equip=subscribe.split("\\.")[0]+equip.split("\\.")[0]+"."+
+                        (Integer.parseInt(subscribe.split("\\.")[1])+Integer.parseInt(equip.split("\\.")[1]));
                 return equip+","+index;
             }
             case druid:{
@@ -203,8 +203,8 @@ public class data {
                 }
                 String equip=druidEquipment[index][random.nextInt(druidEquipment[index].length)];
                 Log.d("druidEquipment",equip);
-                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
-                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                equip=subscribe.split("\\.")[0]+equip.split("\\.")[0]+"."+
+                        (Integer.parseInt(subscribe.split("\\.")[1])+Integer.parseInt(equip.split("\\.")[1]));
                 return equip+","+index;
             }
             case cleric:{
@@ -214,8 +214,8 @@ public class data {
                 }
                 String equip=clericEquipment[index][random.nextInt(clericEquipment[index].length)];
                 Log.d("clericEquipment",equip);
-                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
-                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                equip=subscribe.split("\\.")[0]+equip.split("\\.")[0]+"."+
+                        (Integer.parseInt(subscribe.split("\\.")[1])+Integer.parseInt(equip.split("\\.")[1]));
                 return equip+","+index;
             }
             case rogue:{
@@ -225,8 +225,8 @@ public class data {
                 }
                 String equip=rogueEquipment[index][random.nextInt(rogueEquipment[index].length)];
                 Log.d("rogueEquipment",equip);
-                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
-                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                equip=subscribe.split("\\.")[0]+equip.split("\\.")[0]+"."+
+                        (Integer.parseInt(subscribe.split("\\.")[1])+Integer.parseInt(equip.split("\\.")[1]));
                 return equip+","+index;
             }
             case paladin:{
@@ -236,8 +236,8 @@ public class data {
                 }
                 String equip=paladinEquipment[index][random.nextInt(paladinEquipment[index].length)];
                 Log.d("paladinEquipment",equip);
-                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
-                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                equip=subscribe.split("\\.")[0]+equip.split("\\.")[0]+"."+
+                        (Integer.parseInt(subscribe.split("\\.")[1])+Integer.parseInt(equip.split("\\.")[1]));
                 return equip+","+index;
             }
             case sorcerer:{
@@ -247,8 +247,8 @@ public class data {
                 }
                 String equip=sorcererEquipment[index][random.nextInt(sorcererEquipment[index].length)];
                 Log.d("sorcererEquipment",equip);
-                equip=subscribe.split(".")[0]+equip.split(".")[0]+"."+
-                        (Integer.parseInt(subscribe.split(".")[1])+Integer.parseInt(equip.split(".")[1]));
+                equip=subscribe.split("\\.")[0]+equip.split("\\.")[0]+"."+
+                        (Integer.parseInt(subscribe.split("\\.")[1])+Integer.parseInt(equip.split("\\.")[1]));
                 return equip+","+index;
             }
             default:{
