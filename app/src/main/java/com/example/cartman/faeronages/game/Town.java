@@ -488,6 +488,16 @@ public class Town {
                 break;
             }
             case 5: {
+                switch (choice){
+                    case 0:{
+                        switch (options[0]){
+                            case "去真菌荒地寻找可食用的蘑菇":{
+                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+
+                            }
+                        }
+                    }
+                }
                 
                 needChoose = false;
                 break;
