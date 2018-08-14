@@ -3,6 +3,7 @@ package com.example.cartman.faeronages.game;
 import android.util.Log;
 import android.widget.ProgressBar;
 
+import com.example.cartman.faeronages.game.maps.Place;
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,13 +42,15 @@ public class Character {
     private static String legArmor="破旧的鳞甲.0";
     private static String rings="祖传的生命戒指.0";
     private static String neckLace="祖传的格挡项链.0";
-    private static int[] strengthLevel={0,0,0,0,0};
+    private static int[] strengthLevel={0,0,0,0,0,0,0};
 
 //    法术
     private static String[] spells=new String[]{"","","","","","",""};
 
 //    任务列表
     private static ArrayList<String> missionList=new ArrayList<>();
+    private static ArrayList<Place> missionMap=new ArrayList<>();
+    private static ArrayList<String> missionFinished=new ArrayList<>();
 
 //    背包及金钱
     public static ArrayList<String> bag=new ArrayList<>();
@@ -362,6 +365,25 @@ public class Character {
             default:
                 return -1;
         }
+    }
+    public static void addMap(Place map){
+        missionMap.add(map);
+    }
+    public static void checkMission(){
+        ArrayList<String> temp=new ArrayList<>();
+        ArrayList<Place> ttemp=new ArrayList<>();
+        for(int i=0;i<missionMap.size();i++){
+            if(missionMap.get(i).equals(nextAdventure.getMap())){
+                for(int j=0;j<missionMap.size();j++) {
+                    if (j!=i) {
+                        temp.add(missionList.get(j));
+                        ttemp.add(missionMap.get(j));
+                    }
+                }
+            }
+        }
+        missionMap=ttemp;
+        missionList=temp;
     }
 
     public static void setHelmet(String aHelmet){

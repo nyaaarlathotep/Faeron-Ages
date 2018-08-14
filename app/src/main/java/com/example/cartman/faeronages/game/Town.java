@@ -28,7 +28,7 @@ public class Town {
     public Town(int aLevel) {
         level = aLevel;
         moves=new ArrayList<>();
-        moves.addAll(Arrays.asList("正在和贪婪的材料商讨价还价","正在小酒馆的角落狼吞虎咽","正在旅馆的硬板床上呼呼大睡","正在城镇中四处闲逛","正在和工会的接待员打哈哈",
+        moves.addAll(Arrays.asList("正在和贪婪的材料商讨价还价","正在小酒馆的角落狼吞虎咽","正在旅馆的硬板床上呼呼大睡","正在城镇中四处闲逛","正在和工会的接待员打哈哈并提交任务",
                 "正在寻找可以完成的任务","正在办理手续接任务","正在铁匠铺保养装备","正在说服铁匠给你强化装备", "正在欣赏昂贵的装备"
                 ,"正在补充冒险工具背包","正在城镇里休息最后一个夜晚","正在准备自己的装备，准备出发"));
         switch (Character.getJob()){
@@ -152,18 +152,18 @@ public class Town {
                 }
                 case "正在和查看行商的物品": {
                     Log.d("正在和查看行商的物品", "ss");
-
                     event = 3;
                     needChoose = true;
-
                     switch (ss) {
                         case 0: {
                             options[0] = data.getRandomEquipment(Character.getJob());
-                            return options[0];
+                            return options[0].split(",")[0].split("\\.")[0]+"  售价: "+
+                                    Integer.parseInt(options[0].split(",")[0].split("\\.")[1])*10*Magnification*Magnification;
                         }
                         case 1: {
                             options[1] = data.getRandomEquipment(Character.getJob());
-                            return options[1];
+                            return options[1].split(",")[0].split("\\.")[0]+"  售价: "+
+                                    Integer.parseInt(options[1].split(",")[0].split("\\.")[1])*10*Magnification*Magnification;
                         }
                         case 2: {
                             options[2] = "算了算了";
@@ -173,20 +173,21 @@ public class Town {
                 }
                 case "正在黑市里闲逛": {
                     Log.d("正在黑市里闲逛", "ss");
-
                     event = 4;
                     needChoose = true;
                     switch (ss) {
                         case 0: {
                             options[0] = data.getRandomEquipment(Character.getJob());
-                            return options[0];
+                            return options[0].split(",")[0].split("\\.")[0]+"  售价: "+
+                                    Integer.parseInt(options[0].split(",")[0].split("\\.")[1])*10*Magnification*Magnification;
                         }
                         case 1: {
                             options[1] = data.getRandomEquipment(Character.getJob());
-                            return options[1];
+                            return options[1].split(",")[0].split("\\.")[0]+"  售价: "+
+                                    Integer.parseInt(options[1].split(",")[0].split("\\.")[1])*10*Magnification*Magnification;
                         }
                         case 2: {
-                            options[2] = "算了算了";
+                            options[2] = "算了算了我都不想要";
                             return options[2];
                         }
                     }
@@ -343,19 +344,151 @@ public class Town {
                 }
                 needChoose=false;
                 break;
-
             }
             case 3:{
+                switch (choice){
+                    case 0: {
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                            switch (options[0].split(",")[1]) {
+                                case "0": {
+                                    Character.setHelmet(options[0].split(",")[0]);
+                                }
+                                case "1": {
+                                    Character.setLeftHand(options[0].split(",")[0]);
+                                }
+                                case "2": {
+                                    Character.setRightHand(options[0].split(",")[0]);
+                                }
+                                case "3": {
+                                    Character.setBreastPlate(options[0].split(",")[0]);
+                                }
+                                case "4": {
+                                    Character.setLegArmor(options[0].split(",")[0]);
+                                }
+                                case "5": {
+                                    Character.setRings(options[0].split(",")[0]);
+                                }
+                                case "6": {
+                                    Character.setNeckLace(options[0].split(",")[0]);
+                                }
+                            }
+                            moves.add(round,"换上了"+options[0].split(",")[0].split("\\.")[0]+"的你感觉自己捡了个大便宜");
+                        }else {
+                            moves.add(round,"靠北啊你根本没有那么多钱，误以为你要打劫的行商一脸惊恐地盯着你");
+                        }
+                        break;
+                    }
+                    case 1:{
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                            switch (options[1].split(",")[1]) {
+                                case "0": {
+                                    Character.setHelmet(options[1].split(",")[0]);
+                                }
+                                case "1": {
+                                    Character.setLeftHand(options[1].split(",")[0]);
+                                }
+                                case "2": {
+                                    Character.setRightHand(options[1].split(",")[0]);
+                                }
+                                case "3": {
+                                    Character.setBreastPlate(options[1].split(",")[0]);
+                                }
+                                case "4": {
+                                    Character.setLegArmor(options[1].split(",")[0]);
+                                }
+                                case "5": {
+                                    Character.setRings(options[1].split(",")[0]);
+                                }
+                                case "6": {
+                                    Character.setNeckLace(options[1].split(",")[0]);
+                                }
+                            }
+                            moves.add(round, "换上了" + options[1].split(",")[0].split("\\.")[0] + "的你感觉自己捡了个大便宜");
+                        }else {
+                            moves.add(round,"靠北啊你根本没有那么多钱，误以为你要打劫的行商一脸惊恐地盯着你");
+                        }
+                        break;
+                    }
+                    case 2:{
+                        break;
+                    }
+                }
                 needChoose=false;
                 break;
-
             }
             case 4:{
+                switch (choice){
+                    case 0: {
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                            switch (options[0].split(",")[1]) {
+                                case "0": {
+                                    Character.setHelmet(options[0].split(",")[0]);
+                                }
+                                case "1": {
+                                    Character.setLeftHand(options[0].split(",")[0]);
+                                }
+                                case "2": {
+                                    Character.setRightHand(options[0].split(",")[0]);
+                                }
+                                case "3": {
+                                    Character.setBreastPlate(options[0].split(",")[0]);
+                                }
+                                case "4": {
+                                    Character.setLegArmor(options[0].split(",")[0]);
+                                }
+                                case "5": {
+                                    Character.setRings(options[0].split(",")[0]);
+                                }
+                                case "6": {
+                                    Character.setNeckLace(options[0].split(",")[0]);
+                                }
+                            }
+                            moves.add(round,"换上了"+options[0].split(",")[0].split("\\.")[0]+"的你感觉自己捡了个大便宜");
+                        }else {
+                            moves.add(round,"靠北啊你根本没有那么多钱，黑市组织者派了个人盯着你");
+                        }
+                        break;
+                    }
+                    case 1:{
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                            switch (options[1].split(",")[1]) {
+                                case "0": {
+                                    Character.setHelmet(options[1].split(",")[0]);
+                                }
+                                case "1": {
+                                    Character.setLeftHand(options[1].split(",")[0]);
+                                }
+                                case "2": {
+                                    Character.setRightHand(options[1].split(",")[0]);
+                                }
+                                case "3": {
+                                    Character.setBreastPlate(options[1].split(",")[0]);
+                                }
+                                case "4": {
+                                    Character.setLegArmor(options[1].split(",")[0]);
+                                }
+                                case "5": {
+                                    Character.setRings(options[1].split(",")[0]);
+                                }
+                                case "6": {
+                                    Character.setNeckLace(options[1].split(",")[0]);
+                                }
+                            }
+                            moves.add(round, "换上了" + options[1].split(",")[0].split("\\.")[0] + "的你感觉自己捡了个大便宜");
+                        }else {
+                            moves.add(round,"靠北啊你根本没有那么多钱，黑市组织者派了个人盯着你");
+                        }
+                        break;
+                    }
+                    case 2:{
+                        break;
+                    }
+                }
                 needChoose=false;
                 break;
-
             }
             case 5: {
+                
                 needChoose = false;
                 break;
 

@@ -68,4 +68,8 @@ public class Adventure {
         Log.d("iChooseB","b");
         return map.bossChoose(false);
     }
+
+    public Place getMap() {
+        return map;
+    }
 }
