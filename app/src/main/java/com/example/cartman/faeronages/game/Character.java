@@ -56,7 +56,7 @@ public class Character {
     public static ArrayList<String> bag=new ArrayList<>();
     public static ArrayList<String> livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
     public static String[] specialBag = new String[]{"", "", "", "", ""};
-    private static double gold = 1000;
+    private static double gold = 1000.0;
 
 
     public static boolean fullBag = false;
@@ -434,7 +434,9 @@ public class Character {
     }
 
 
-
+    public static double getGold(){
+        return gold;
+    }
     public static Adventure getAdventure(){ return nextAdventure;
     }
     public static races getRace(){return race;

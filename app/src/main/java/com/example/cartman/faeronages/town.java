@@ -78,6 +78,11 @@ public class town extends BaseActivity {
         A=findViewById(R.id.A);
         B=findViewById(R.id.B);
         C=findViewById(R.id.C);
+
+
+        Character.checkMission();
+        Character.sellBag();
+        Character.experience();
         town=new Town(Character.getLevel());
 
         A.setOnClickListener(new View.OnClickListener(){
@@ -113,9 +118,7 @@ public class town extends BaseActivity {
             }
         });
 
-        Character.checkMission();
-        Character.sellBag();
-        Character.experience();
+
         new Thread(new Runnable() {
             @Override
             public void run() {

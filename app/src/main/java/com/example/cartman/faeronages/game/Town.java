@@ -36,7 +36,7 @@ public class Town {
         level = aLevel;
         moves=new ArrayList<>();
         moves.addAll(Arrays.asList("正在和贪婪的材料商讨价还价","正在小酒馆的角落狼吞虎咽","正在旅馆的硬板床上呼呼大睡","正在城镇中四处闲逛","正在和工会的接待员打哈哈并提交任务",
-                "正在寻找可以完成的任务","正在办理手续接任务","正在铁匠铺保养装备","正在说服铁匠给你强化装备", "正在欣赏昂贵的装备"
+                "正在寻找可以完成的任务","正在办理手续接任务","正在铁匠铺保养装备","正在说服铁匠给你强化装备", "正在欣赏昂贵的装备\n现有金钱"+Character.getGold()
                 ,"正在补充冒险工具背包","正在城镇里休息最后一个夜晚","正在准备自己的装备，准备出发"));
         switch (Character.getJob()){
             case sorcerer:{
@@ -92,9 +92,9 @@ public class Town {
         if(random.nextBoolean()){
             int event=random.nextInt(townEvents.length);
             if(event==2){
-                moves.add(1,"正在和查看行商的物品");
+                moves.add(1,"正在和查看行商的物品\n现有金钱"+Character.getGold());
             }else if(event==7){
-                moves.add(1,"正在黑市里闲逛");
+                moves.add(1,"正在黑市里闲逛\n现有金钱"+Character.getGold());
             }
             return townEvents[event];
         }else {
@@ -115,7 +115,7 @@ public class Town {
 //    ss这是第几个选项，
     public String getOption(int ss){
         if(round<moves.size()) {
-            switch (moves.get(round)) {
+            switch (moves.get(round).split("\n")[0]) {
                 case "正在说服铁匠给你强化装备": {
                     Log.d("正在说服铁匠给你强化装备", "ss");
                     event = 1;
@@ -182,8 +182,8 @@ public class Town {
                             return options[2];
                         }
                     }
-
                 }
+
                 case "正在黑市里闲逛": {
                     Log.d("正在黑市里闲逛", "ss");
                     event = 4;
@@ -403,7 +403,7 @@ public class Town {
             case 3:{
                 switch (choice){
                     case 0: {
-                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification* Magnification)) {
                             switch (options[0].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[0].split(",")[0]);
@@ -441,7 +441,7 @@ public class Town {
                         break;
                     }
                     case 1:{
-                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification* Magnification)) {
                             switch (options[1].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[1].split(",")[0]);
@@ -488,7 +488,7 @@ public class Town {
             case 4:{
                 switch (choice){
                     case 0: {
-                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification* Magnification)) {
                             switch (options[0].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[0].split(",")[0]);
@@ -526,7 +526,7 @@ public class Town {
                         break;
                     }
                     case 1:{
-                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification* Magnification)) {
                             switch (options[1].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[1].split(",")[0]);
