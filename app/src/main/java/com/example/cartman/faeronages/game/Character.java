@@ -56,13 +56,13 @@ public class Character {
     public static ArrayList<String> bag=new ArrayList<>();
     public static ArrayList<String> livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
     public static String[] specialBag = new String[]{"", "", "", "", ""};
-    private static double gold = 0;
+    private static double gold = 1000;
 
 
     public static boolean fullBag = false;
     public static boolean haveHarvested = false;
     private static Adventure nextAdventure = new Adventure(new beginnersGuide());
-
+    private static int levelMark=0;
 
     private static Random random = new Random();
 
@@ -73,7 +73,7 @@ public class Character {
         intll = random.nextInt(4) + 8;
         dex = random.nextInt(4) + 8;
         cha = random.nextInt(4) + 8;
-        gold = random.nextInt(10) + random.nextInt(10) + random.nextInt(10);
+//        gold = random.nextInt(10) + random.nextInt(10) + random.nextInt(10);
     }
 
     public static void harvestTrophy(String trophy) {
@@ -366,6 +366,11 @@ public class Character {
                 return -1;
         }
     }
+    public static void sellBag(){
+        int item=bag.size();
+        gold=gold+item*level;
+        bag=new ArrayList<>();
+    }
     public static void addMap(Place map){
         missionMap.add(map);
     }
@@ -384,6 +389,23 @@ public class Character {
         }
         missionMap=ttemp;
         missionList=temp;
+    }
+    public static void experience(){
+        if(level<5){
+            level=level+1;
+        }else if(level<10){
+            levelMark=levelMark+1;
+            if(levelMark>=3){
+                levelMark=0;
+                level=level+1;
+            }
+        }else {
+            levelMark=levelMark+1;
+            if(levelMark>=5){
+                levelMark=0;
+                level=level+1;
+            }
+        }
     }
 
     public static void setHelmet(String aHelmet){

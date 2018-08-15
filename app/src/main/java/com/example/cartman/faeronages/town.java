@@ -24,7 +24,6 @@ public class town extends BaseActivity {
     TextView option1;
     TextView option2;
     TextView option3;
-
     Button A;
     Button B;
     Button C;
@@ -113,6 +112,10 @@ public class town extends BaseActivity {
                 }
             }
         });
+
+        Character.checkMission();
+        Character.sellBag();
+        Character.experience();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -165,7 +168,6 @@ public class town extends BaseActivity {
             needToGetTownEvent=false;
         }
         if(!buttonAble) {
-
             option1.setText(town.getOption(0));
             option2.setText(town.getOption(1));
             option3.setText(town.getOption(2));

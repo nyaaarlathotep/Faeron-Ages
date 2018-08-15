@@ -42,11 +42,13 @@ public class Town {
             case sorcerer:{
                 moves.add(11,"正在房间里练习魔法");
                 moves.add(12,"正在和自己创造的魔法纸片人聊天");
+                moves.add(13,"突然你灵光一现，好像对于法术书上的法术又有了新的领悟");
                 break;
             }
             case paladin:{
                 moves.add(11,"正在教堂中孤独地祷告");
-                moves.add(12,"正在尝试去接受并享受鞭笞");
+                moves.add(12,"肃穆的教堂中只有你一个人，在一片安宁中你好像有了更多的领悟");
+                moves.add(13,"正在尝试去接受并享受鞭笞");
                 break;
 
             }
@@ -58,19 +60,22 @@ public class Town {
             }
             case cleric:{
                 moves.add(11,"正在教堂中孤独地祷告");
-                moves.add(12,"正在参加传统的娈童活动");
+                moves.add(12,"肃穆的教堂中只有你一个人，在一片安宁中你好像有了更多的领悟");
+                moves.add(13,"正在参加传统的娈童活动");
                 break;
 
             }
             case druid:{
                 moves.add(11,"正在为枯死的老树落泪");
                 moves.add(12,"正在独自为一旁的小树苗浇水");
+                moves.add(13,"青翠的小树苗给了你平和与安宁，你有了些许领悟");
                 break;
 
             }
             case bard:{
                 moves.add(11,"正在小酒馆内传颂远方的传奇");
-                moves.add(12,"正在和当地的地头蛇称兄道弟");
+                moves.add(12,"在抑扬顿挫的诗歌与低沉的音乐声中你好像领悟了什么");
+                moves.add(13,"正在和当地的地头蛇称兄道弟");
                 break;
 
             }
@@ -107,7 +112,7 @@ public class Town {
         return "";
     }
 
-//    ss包含两种信息，这是第几个选项，
+//    ss这是第几个选项，
     public String getOption(int ss){
         if(round<moves.size()) {
             switch (moves.get(round)) {
@@ -117,13 +122,13 @@ public class Town {
                     needChoose = true;
                     switch (ss) {
                         case 0: {
-                            return "先加个1，这大概不会出什么问题吧";
+                            return "随机强化+1，这大概不会出什么问题吧";
                         }
                         case 1: {
-                            return "我想加个2，这样我估计期望最高";
+                            return "随机强化+2，这样我估计期望最高";
                         }
                         case 2: {
-                            return "我要加5！俺寻思能成";
+                            return "随机强化+5！俺寻思能成";
                         }
                     }
                 }
@@ -177,6 +182,7 @@ public class Town {
                             return options[2];
                         }
                     }
+
                 }
                 case "正在黑市里闲逛": {
                     Log.d("正在黑市里闲逛", "ss");
@@ -237,6 +243,34 @@ public class Town {
                         }
                     }
                 }
+                case "突然你灵光一现，好像对于法术书上的法术又有了新的领悟":{
+                    Log.d("突然你灵光一现，好像对于法术书上", "spell");
+                    event = 6;
+                    needChoose = true;
+                    switch (ss) {
+                        case 0: {
+                            places[0] = data.getAMap();
+                            return "我要去" + places[0].getName()+ "继续我伟大的冒险";
+                        }
+                        case 1: {
+                            places[1] = data.getAMap();
+                            return "我要去" + places[1].getName() + "继续我伟大的冒险";
+                        }
+                        case 2: {
+                            places[2] = data.getAMap();
+                            return "我要去" + places[2].getName() + "继续我伟大的冒险";
+                        }
+                    }
+                }
+                case "肃穆的教堂中只有你一个人，在一片安宁中你好像有了更多的领悟":{
+
+                }
+                case "青翠的小树苗给了你平和与安宁，你有了些许领悟":{
+
+                }
+                case "在抑扬顿挫的诗歌与低沉的音乐声中你好像领悟了什么":{
+
+                }
             }
         }
         return "";
@@ -288,24 +322,31 @@ public class Town {
                             switch (options[0].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "1": {
                                     Character.setLeftHand(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "2": {
                                     Character.setRightHand(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "3": {
                                     Character.setBreastPlate(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "4": {
                                     Character.setLegArmor(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "5": {
                                     Character.setRings(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "6": {
                                     Character.setNeckLace(options[0].split(",")[0]);
+                                    break;
                                 }
                             }
                             moves.add(round,"换上了"+options[0].split(",")[0].split("\\.")[0]+"的你感觉自己强的一笔");
@@ -319,24 +360,31 @@ public class Town {
                             switch (options[1].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "1": {
                                     Character.setLeftHand(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "2": {
                                     Character.setRightHand(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "3": {
                                     Character.setBreastPlate(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "4": {
                                     Character.setLegArmor(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "5": {
                                     Character.setRings(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "6": {
                                     Character.setNeckLace(options[1].split(",")[0]);
+                                    break;
                                 }
                             }
                             moves.add(round, "换上了" + options[1].split(",")[0].split("\\.")[0] + "的你感觉自己强的一笔");
@@ -359,24 +407,31 @@ public class Town {
                             switch (options[0].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "1": {
                                     Character.setLeftHand(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "2": {
                                     Character.setRightHand(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "3": {
                                     Character.setBreastPlate(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "4": {
                                     Character.setLegArmor(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "5": {
                                     Character.setRings(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "6": {
                                     Character.setNeckLace(options[0].split(",")[0]);
+                                    break;
                                 }
                             }
                             moves.add(round,"换上了"+options[0].split(",")[0].split("\\.")[0]+"的你感觉自己捡了个大便宜");
@@ -390,24 +445,31 @@ public class Town {
                             switch (options[1].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "1": {
                                     Character.setLeftHand(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "2": {
                                     Character.setRightHand(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "3": {
                                     Character.setBreastPlate(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "4": {
                                     Character.setLegArmor(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "5": {
                                     Character.setRings(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "6": {
                                     Character.setNeckLace(options[1].split(",")[0]);
+                                    break;
                                 }
                             }
                             moves.add(round, "换上了" + options[1].split(",")[0].split("\\.")[0] + "的你感觉自己捡了个大便宜");
@@ -430,24 +492,31 @@ public class Town {
                             switch (options[0].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "1": {
                                     Character.setLeftHand(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "2": {
                                     Character.setRightHand(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "3": {
                                     Character.setBreastPlate(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "4": {
                                     Character.setLegArmor(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "5": {
                                     Character.setRings(options[0].split(",")[0]);
+                                    break;
                                 }
                                 case "6": {
                                     Character.setNeckLace(options[0].split(",")[0]);
+                                    break;
                                 }
                             }
                             moves.add(round,"换上了"+options[0].split(",")[0].split("\\.")[0]+"的你感觉自己捡了个大便宜");
@@ -461,24 +530,31 @@ public class Town {
                             switch (options[1].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "1": {
                                     Character.setLeftHand(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "2": {
                                     Character.setRightHand(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "3": {
                                     Character.setBreastPlate(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "4": {
                                     Character.setLegArmor(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "5": {
                                     Character.setRings(options[1].split(",")[0]);
+                                    break;
                                 }
                                 case "6": {
                                     Character.setNeckLace(options[1].split(",")[0]);
+                                    break;
                                 }
                             }
                             moves.add(round, "换上了" + options[1].split(",")[0].split("\\.")[0] + "的你感觉自己捡了个大便宜");
@@ -501,32 +577,40 @@ public class Town {
                             case "去真菌荒地寻找可食用的蘑菇":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
                                 Character.addMap(new fungalWastes());
+                                break;
                             }
                             case"去安溪庭院寻找温热的生命":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
                                 Character.addMap(new restingYards());
+                                break;
                             }
                             case"去伽缝边境寻找善意的灵魂":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
                                 Character.addMap(new limbo());
+                                break;
                             }
                             case"去机械之匣寻找完整的灵魂":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
                                 Character.addMap(new mechanus());
+                                break;
                             }
                             case"去潮湿海岸寻找干燥的鳞片":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
                                 Character.addMap(new shore());
+                                break;
                             }
                             case"去贫民窟寻找健康的心脏":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
                                 Character.addMap(new slum());
+                                break;
                             }
                             case"去磺芜平原寻找茁壮的幼苗":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
                                 Character.addMap(new barrenPlain());
+                                break;
                             }
                             default:
+                                break;
                         }
                     }
                 }
@@ -560,7 +644,4 @@ public class Town {
             }
         }
     }
-
-
-
 }
