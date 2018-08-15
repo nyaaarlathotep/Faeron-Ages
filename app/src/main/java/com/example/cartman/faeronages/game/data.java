@@ -2,7 +2,15 @@ package com.example.cartman.faeronages.game;
 
 import android.util.Log;
 import com.example.cartman.faeronages.game.maps.Place;
+import com.example.cartman.faeronages.game.maps.barrenPlain;
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
+import com.example.cartman.faeronages.game.maps.fungalWastes;
+import com.example.cartman.faeronages.game.maps.limbo;
+import com.example.cartman.faeronages.game.maps.mechanus;
+import com.example.cartman.faeronages.game.maps.restingYards;
+import com.example.cartman.faeronages.game.maps.shore;
+import com.example.cartman.faeronages.game.maps.slum;
+
 import java.util.Random;
 
 
@@ -356,6 +364,30 @@ public class data {
     }
 
     public static Place getAMap(){
+        int map=random.nextInt(7);
+        switch (map){
+            case 0:{
+                return new fungalWastes();
+            }
+            case 1:{
+                return new limbo();
+            }
+            case 2:{
+                return new mechanus();
+            }
+            case 3:{
+                return new restingYards();
+            }
+            case 4:{
+                return new shore();
+            }
+            case 5:{
+                return new slum();
+            }
+            case 6:{
+                return new barrenPlain();
+            }
+        }
         return new beginnersGuide();
     }
 

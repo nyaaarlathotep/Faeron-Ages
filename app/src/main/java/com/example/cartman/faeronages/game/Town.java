@@ -4,6 +4,13 @@ package com.example.cartman.faeronages.game;
 import android.util.Log;
 
 import com.example.cartman.faeronages.game.maps.Place;
+import com.example.cartman.faeronages.game.maps.barrenPlain;
+import com.example.cartman.faeronages.game.maps.fungalWastes;
+import com.example.cartman.faeronages.game.maps.limbo;
+import com.example.cartman.faeronages.game.maps.mechanus;
+import com.example.cartman.faeronages.game.maps.restingYards;
+import com.example.cartman.faeronages.game.maps.shore;
+import com.example.cartman.faeronages.game.maps.slum;
 import com.example.cartman.faeronages.town;
 
 import java.util.ArrayList;
@@ -493,12 +500,36 @@ public class Town {
                         switch (options[0]){
                             case "去真菌荒地寻找可食用的蘑菇":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
-
+                                Character.addMap(new fungalWastes());
                             }
+                            case"去安溪庭院寻找温热的生命":{
+                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMap(new restingYards());
+                            }
+                            case"去伽缝边境寻找善意的灵魂":{
+                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMap(new limbo());
+                            }
+                            case"去机械之匣寻找完整的灵魂":{
+                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMap(new mechanus());
+                            }
+                            case"去潮湿海岸寻找干燥的鳞片":{
+                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMap(new shore());
+                            }
+                            case"去贫民窟寻找健康的心脏":{
+                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMap(new slum());
+                            }
+                            case"去磺芜平原寻找茁壮的幼苗":{
+                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMap(new barrenPlain());
+                            }
+                            default:
                         }
                     }
                 }
-                
                 needChoose = false;
                 break;
 
