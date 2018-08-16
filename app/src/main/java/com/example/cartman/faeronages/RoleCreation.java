@@ -21,6 +21,8 @@ public class RoleCreation extends BaseActivity {
     Button buttonJob;
     Button buttonGo;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -36,6 +38,7 @@ public class RoleCreation extends BaseActivity {
         buttonRace.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent=new Intent(RoleCreation.this,chooseRace.class);
+                Character.setRaceChecked();
                 startActivity(intent);
             }
         });
@@ -43,6 +46,7 @@ public class RoleCreation extends BaseActivity {
         buttonFaith.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent=new Intent(RoleCreation.this,chooseFaith.class);
+                Character.setFaithChecked();
                 startActivity(intent);
             }
         });
@@ -51,6 +55,7 @@ public class RoleCreation extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(RoleCreation.this,chooseJob.class);
+                Character.setJobChecked();
                 startActivity(intent);
             }
         });
@@ -77,9 +82,14 @@ public class RoleCreation extends BaseActivity {
                     Toast.makeText(RoleCreation.this, "a "+Character.getJob() + " believes in "+ Character.getFaith() +" ?", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    startActivity(intent);
-                    Character.check();
-                    finish();
+                    if(Character.allChedked()) {
+                        startActivity(intent);
+                        Character.check();
+                        finish();
+                    }
+                    else {
+                        Toast.makeText(RoleCreation.this, "你是不是忘了什么事情", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

@@ -1,6 +1,7 @@
 package com.example.cartman.faeronages;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,11 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cartman.faeronages.game.Character;
 import com.example.cartman.faeronages.game.Town;
 
 import java.lang.ref.WeakReference;
+
+import static java.lang.reflect.Modifier.PRIVATE;
 
 public class town extends BaseActivity {
 
@@ -135,6 +139,7 @@ public class town extends BaseActivity {
                         ex.printStackTrace();
                     }
                 }
+
                 Intent intent=new Intent(town.this,eventlogAndClock.class);
                 startActivity(intent);
                 finish();
@@ -177,7 +182,34 @@ public class town extends BaseActivity {
             buttonAble=town.isNeedChoose();
         }
     }
+    private void save(){
+        SharedPreferences.Editor editor=getSharedPreferences("data",MODE_PRIVATE).edit();
+        editor.putString("name",Character.getName());
+        editor.putString("job",Character.getJob().toString());
+        editor.putString("faith",Character.getFaith().toString());
+        editor.putString("race",Character.getRace().toString());
+        editor.putInt("camp0",Character.getCamp()[0]);
+        editor.putInt("camp1",Character.getCamp()[1]);
+        editor.putInt("Prestige1",Character.getPrestige(0,false));
+        editor.putInt("Prestige2",Character.getPrestige(1,false));
+        editor.putInt("Prestige3",Character.getPrestige(2,false));
+        editor.putInt("Prestige4",Character.getPrestige(3,false));
+        editor.putInt("Prestige5",Character.getPrestige(4,false));
+        editor.putInt("Prestige6",Character.getPrestige(5,false));
+        editor.putInt("Prestige11",Character.getPrestige(0,true));
+        editor.putInt("Prestige21",Character.getPrestige(1,true));
+        editor.putInt("Prestige31",Character.getPrestige(2,true));
+        editor.putInt("Prestige41",Character.getPrestige(3,true));
+        editor.putInt("Prestige51",Character.getPrestige(4,true));
+        editor.putInt("Prestige61",Character.getPrestige(5,true));
+        editor.putInt("age",Character.getAge());
+        editor.putInt("level",Character.getLevel());
+        editor.putString("helmet","破旧的头盔.0");
 
+
+        editor.apply();
+
+    }
     public void setFree() {
         letsGo=town.getFree();
     }

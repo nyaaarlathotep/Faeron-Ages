@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.cartman.faeronages.game.ActivityCollector;
+import com.example.cartman.faeronages.game.Character;
 
 public class BeginActivity extends BaseActivity {
 
@@ -22,8 +23,13 @@ public class BeginActivity extends BaseActivity {
 
         buttonStart.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v){
-            Intent intent=new Intent(BeginActivity.this,Roll.class);
-            startActivity(intent);
+            if(Character.getHasChecked()){
+                Intent intent=new Intent(BeginActivity.this,eventlogAndClock.class);
+                startActivity(intent);
+            }else {
+                Intent intent = new Intent(BeginActivity.this, Roll.class);
+                startActivity(intent);
+            }
         }
     });
         buttonOptions.setOnClickListener(new View.OnClickListener() {

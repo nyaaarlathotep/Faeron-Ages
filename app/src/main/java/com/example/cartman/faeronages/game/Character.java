@@ -1,5 +1,6 @@
 package com.example.cartman.faeronages.game;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.ProgressBar;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import static java.lang.reflect.Modifier.PRIVATE;
 
 
 public class Character {
@@ -63,6 +65,10 @@ public class Character {
     public static boolean haveHarvested = false;
     private static Adventure nextAdventure = new Adventure(new beginnersGuide());
     private static int levelMark=0;
+    private static boolean hasChecked=false;
+    private static boolean raceChecked=false;
+    private static boolean faithChecked=false;
+    private static boolean jobChecked=false;
 
     private static Random random = new Random();
 
@@ -73,7 +79,8 @@ public class Character {
         intll = random.nextInt(4) + 8;
         dex = random.nextInt(4) + 8;
         cha = random.nextInt(4) + 8;
-//        gold = random.nextInt(10) + random.nextInt(10) + random.nextInt(10);
+        gold = random.nextInt(10) + random.nextInt(10) + random.nextInt(10);
+        hasChecked=true;
     }
 
     public static void harvestTrophy(String trophy) {
@@ -578,6 +585,23 @@ public class Character {
         }
     }
 
+    public static boolean allChedked(){
+        return raceChecked&&faithChecked&&jobChecked;
+    }
+
+    public static void save(){
+    }
+
+
+    public static void setRaceChecked(){
+        raceChecked=true;
+    }
+    public static void setFaithChecked(){
+        faithChecked=true;
+    }
+    public static void setJobChecked(){
+        jobChecked=true;
+    }
     public static void setHelmet(String aHelmet){
         helmet=aHelmet;
     }
@@ -604,6 +628,9 @@ public class Character {
     }
 
 
+    public static boolean getHasChecked(){
+        return hasChecked;
+    }
     public static double getGold(){
         return gold;
     }

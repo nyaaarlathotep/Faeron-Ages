@@ -5,10 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cartman.faeronages.game.Character;
 
 public class Roll extends BaseActivity {
+
+    boolean asd=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,7 @@ public class Roll extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Character.roll();
+                asd=true;
                 TextView textViewSTR=(TextView) findViewById(R.id.textViewSTR);
                 textViewSTR.setText(Integer.toString(Character.getStr()));
                 TextView textViewCON=(TextView) findViewById(R.id.textViewCON);
@@ -38,9 +42,13 @@ public class Roll extends BaseActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Roll.this,RoleCreation.class);
-                startActivity(intent);
-                finish();
+                if(asd) {
+                    Intent intent = new Intent(Roll.this, RoleCreation.class);
+                    startActivity(intent);
+                    finish();
+                }else {
+                    Toast.makeText(Roll.this, "请先roll点确认属性", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

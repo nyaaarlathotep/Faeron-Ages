@@ -267,15 +267,15 @@ public class Town {
                     switch (ss){
                         case 0:{
                             options[0]=data.getASpell(Character.getSpells(),Character.getLevel());
-                            return options[0].split(",")[0]+"级法术: "+options[0].split(",")[1];
+                            return options[0].split(",")[1]+"级法术: "+options[0].split(",")[0];
                         }
                         case 1:{
                             options[1]=data.getASpell(Character.getSpells(),Character.getLevel());
-                            return options[1].split(",")[0]+"级法术: "+options[1].split(",")[1];
+                            return options[1].split(",")[1]+"级法术: "+options[1].split(",")[0];
                         }
                         case 2:{
                             options[2]=data.getASpell(Character.getSpells(),Character.getLevel());
-                            return options[2].split(",")[0]+"级法术: "+options[2].split(",")[1];
+                            return options[2].split(",")[1]+"级法术: "+options[2].split(",")[0];
                         }
                     }
                 }
@@ -285,15 +285,15 @@ public class Town {
                     switch (ss){
                         case 0:{
                             options[0]=data.getASpell(Character.getSpells(),Character.getLevel());
-                            return options[0].split(",")[0]+"级法术: "+options[0].split(",")[1];
+                            return options[0].split(",")[1]+"级法术: "+options[0].split(",")[0];
                         }
                         case 1:{
                             options[1]=data.getASpell(Character.getSpells(),Character.getLevel());
-                            return options[1].split(",")[0]+"级法术: "+options[1].split(",")[1];
+                            return options[1].split(",")[1]+"级法术: "+options[1].split(",")[0];
                         }
                         case 2:{
                             options[2]=data.getASpell(Character.getSpells(),Character.getLevel());
-                            return options[2].split(",")[0]+"级法术: "+options[2].split(",")[1];
+                            return options[2].split(",")[1]+"级法术: "+options[2].split(",")[0];
                         }
                     }
 
