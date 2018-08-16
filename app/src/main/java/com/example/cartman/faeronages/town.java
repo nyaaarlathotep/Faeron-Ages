@@ -123,7 +123,6 @@ public class town extends BaseActivity {
             @Override
             public void run() {
                 while (true) {
-                    Log.d("town thread","www");
                     Message message = new Message();
                     message.what = 1;
                     handler.sendMessage(message);

@@ -122,13 +122,13 @@ public class Town {
                     needChoose = true;
                     switch (ss) {
                         case 0: {
-                            return "随机强化+1，这大概不会出什么问题吧";
+                            return "随机装备强化+1，这大概不会出什么问题吧";
                         }
                         case 1: {
-                            return "随机强化+2，这样我估计期望最高";
+                            return "随机装备强化+2，这样我估计期望最高";
                         }
                         case 2: {
-                            return "随机强化+5！俺寻思能成";
+                            return "随机装备强化+5！俺寻思能成";
                         }
                     }
                 }
@@ -244,32 +244,77 @@ public class Town {
                     }
                 }
                 case "突然你灵光一现，好像对于法术书上的法术又有了新的领悟":{
-                    Log.d("突然你灵光一现，好像对于法术书上", "spell");
-                    event = 6;
-                    needChoose = true;
-                    switch (ss) {
-                        case 0: {
-                            places[0] = data.getAMap();
-                            return "我要去" + places[0].getName()+ "继续我伟大的冒险";
+                    event=7;
+                    needChoose=true;
+                    switch (ss){
+                        case 0:{
+                            options[0]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[0].split(",")[1]+"级法术: "+options[0].split(",")[0];
                         }
-                        case 1: {
-                            places[1] = data.getAMap();
-                            return "我要去" + places[1].getName() + "继续我伟大的冒险";
+                        case 1:{
+                            options[1]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[1].split(",")[1]+"级法术: "+options[1].split(",")[0];
                         }
-                        case 2: {
-                            places[2] = data.getAMap();
-                            return "我要去" + places[2].getName() + "继续我伟大的冒险";
+                        case 2:{
+                            options[2]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[2].split(",")[1]+"级法术: "+options[2].split(",")[0];
                         }
                     }
                 }
                 case "肃穆的教堂中只有你一个人，在一片安宁中你好像有了更多的领悟":{
-
+                    event=7;
+                    needChoose=true;
+                    switch (ss){
+                        case 0:{
+                            options[0]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[0].split(",")[0]+"级法术: "+options[0].split(",")[1];
+                        }
+                        case 1:{
+                            options[1]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[1].split(",")[0]+"级法术: "+options[1].split(",")[1];
+                        }
+                        case 2:{
+                            options[2]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[2].split(",")[0]+"级法术: "+options[2].split(",")[1];
+                        }
+                    }
                 }
                 case "青翠的小树苗给了你平和与安宁，你有了些许领悟":{
+                    event=7;
+                    needChoose=true;
+                    switch (ss){
+                        case 0:{
+                            options[0]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[0].split(",")[0]+"级法术: "+options[0].split(",")[1];
+                        }
+                        case 1:{
+                            options[1]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[1].split(",")[0]+"级法术: "+options[1].split(",")[1];
+                        }
+                        case 2:{
+                            options[2]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[2].split(",")[0]+"级法术: "+options[2].split(",")[1];
+                        }
+                    }
 
                 }
                 case "在抑扬顿挫的诗歌与低沉的音乐声中你好像领悟了什么":{
-
+                    event=7;
+                    needChoose=true;
+                    switch (ss){
+                        case 0:{
+                            options[0]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[0].split(",")[1]+"级法术: "+options[0].split(",")[0];
+                        }
+                        case 1:{
+                            options[1]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[1].split(",")[1]+"级法术: "+options[1].split(",")[0];
+                        }
+                        case 2:{
+                            options[2]=data.getASpell(Character.getSpells(),Character.getLevel());
+                            return options[2].split(",")[1]+"级法术: "+options[2].split(",")[0];
+                        }
+                    }
                 }
             }
         }
@@ -356,7 +401,7 @@ public class Town {
                         break;
                     }
                     case 1:{
-                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
+                        if (Character.purchase(Integer.parseInt(options[1].split(",")[0].split("\\.")[1]) * 10 * Magnification)) {
                             switch (options[1].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[1].split(",")[0]);
@@ -441,7 +486,7 @@ public class Town {
                         break;
                     }
                     case 1:{
-                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification* Magnification)) {
+                        if (Character.purchase(Integer.parseInt(options[1].split(",")[0].split("\\.")[1]) * 10 * Magnification* Magnification)) {
                             switch (options[1].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[1].split(",")[0]);
@@ -526,7 +571,7 @@ public class Town {
                         break;
                     }
                     case 1:{
-                        if (Character.purchase(Integer.parseInt(options[0].split(",")[0].split("\\.")[1]) * 10 * Magnification* Magnification)) {
+                        if (Character.purchase(Integer.parseInt(options[1].split(",")[0].split("\\.")[1]) * 10 * Magnification* Magnification)) {
                             switch (options[1].split(",")[1]) {
                                 case "0": {
                                     Character.setHelmet(options[1].split(",")[0]);
@@ -580,43 +625,129 @@ public class Town {
                                 break;
                             }
                             case"去安溪庭院寻找温热的生命":{
-                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMission("去安溪庭院寻找温热的生命");
                                 Character.addMap(new restingYards());
                                 break;
                             }
                             case"去伽缝边境寻找善意的灵魂":{
-                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMission("去伽缝边境寻找善意的灵魂");
                                 Character.addMap(new limbo());
                                 break;
                             }
                             case"去机械之匣寻找完整的灵魂":{
-                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMission("去机械之匣寻找完整的灵魂");
                                 Character.addMap(new mechanus());
                                 break;
                             }
                             case"去潮湿海岸寻找干燥的鳞片":{
-                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMission("去潮湿海岸寻找干燥的鳞片");
                                 Character.addMap(new shore());
                                 break;
                             }
                             case"去贫民窟寻找健康的心脏":{
-                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMission("去贫民窟寻找健康的心脏");
                                 Character.addMap(new slum());
                                 break;
                             }
                             case"去磺芜平原寻找茁壮的幼苗":{
+                                Character.addMission("去磺芜平原寻找茁壮的幼苗");
+                                Character.addMap(new barrenPlain());
+                                break;
+                            }
+                            default: {
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                    case 1:{
+                        switch (options[1]){
+                            case "去真菌荒地寻找可食用的蘑菇":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMap(new fungalWastes());
+                                break;
+                            }
+                            case"去安溪庭院寻找温热的生命":{
+                                Character.addMission("去安溪庭院寻找温热的生命");
+                                Character.addMap(new restingYards());
+                                break;
+                            }
+                            case"去伽缝边境寻找善意的灵魂":{
+                                Character.addMission("去伽缝边境寻找善意的灵魂");
+                                Character.addMap(new limbo());
+                                break;
+                            }
+                            case"去机械之匣寻找完整的灵魂":{
+                                Character.addMission("去机械之匣寻找完整的灵魂");
+                                Character.addMap(new mechanus());
+                                break;
+                            }
+                            case"去潮湿海岸寻找干燥的鳞片":{
+                                Character.addMission("去潮湿海岸寻找干燥的鳞片");
+                                Character.addMap(new shore());
+                                break;
+                            }
+                            case"去贫民窟寻找健康的心脏":{
+                                Character.addMission("去贫民窟寻找健康的心脏");
+                                Character.addMap(new slum());
+                                break;
+                            }
+                            case"去磺芜平原寻找茁壮的幼苗":{
+                                Character.addMission("去磺芜平原寻找茁壮的幼苗");
+                                Character.addMap(new barrenPlain());
+                                break;
+                            }
+                            default: {
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                    case 2:{
+                        switch (options[2]){
+                            case "去真菌荒地寻找可食用的蘑菇":{
+                                Character.addMission("去真菌荒地寻找可食用的蘑菇");
+                                Character.addMap(new fungalWastes());
+                                break;
+                            }
+                            case"去安溪庭院寻找温热的生命":{
+                                Character.addMission("去安溪庭院寻找温热的生命");
+                                Character.addMap(new restingYards());
+                                break;
+                            }
+                            case"去伽缝边境寻找善意的灵魂":{
+                                Character.addMission("去伽缝边境寻找善意的灵魂");
+                                Character.addMap(new limbo());
+                                break;
+                            }
+                            case"去机械之匣寻找完整的灵魂":{
+                                Character.addMission("去机械之匣寻找完整的灵魂");
+                                Character.addMap(new mechanus());
+                                break;
+                            }
+                            case"去潮湿海岸寻找干燥的鳞片":{
+                                Character.addMission("去潮湿海岸寻找干燥的鳞片");
+                                Character.addMap(new shore());
+                                break;
+                            }
+                            case"去贫民窟寻找健康的心脏":{
+                                Character.addMission("去贫民窟寻找健康的心脏");
+                                Character.addMap(new slum());
+                                break;
+                            }
+                            case"去磺芜平原寻找茁壮的幼苗":{
+                                Character.addMission("去磺芜平原寻找茁壮的幼苗");
                                 Character.addMap(new barrenPlain());
                                 break;
                             }
                             default:
                                 break;
                         }
+                        break;
                     }
                 }
-                needChoose = false;
+                needChoose=false;
                 break;
-
             }
             case 6:{
                 switch (choice){
@@ -639,6 +770,24 @@ public class Town {
                     }
                 }
                 isFree=true;
+                needChoose=false;
+                break;
+            }
+            case 7:{
+                switch (choice) {
+                    case 0: {
+                        Character.addSpell(options[0].split(",")[0], options[0].split(",")[1]);
+                        break;
+                    }
+                    case 1: {
+                        Character.addSpell(options[1].split(",")[0], options[1].split(",")[1]);
+                        break;
+                    }
+                    case 2:{
+                        Character.addSpell(options[2].split(",")[0],options[2].split(",")[1]);
+                        break;
+                    }
+                }
                 needChoose=false;
                 break;
             }

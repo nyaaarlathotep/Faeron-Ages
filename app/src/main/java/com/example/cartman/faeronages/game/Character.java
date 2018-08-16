@@ -87,7 +87,7 @@ public class Character {
     }
 
     public static String showBag() {
-        if (!haveHarvested) {
+        if (!haveHarvested||bag.size()==0) {
             return "没能获得战利品";
         } else if (fullBag) {
             return "包裹满了！";
@@ -101,10 +101,7 @@ public class Character {
 
     }
 
-    public static int learnSpells() {
-        spells = data.getSpell(spells, level);
-        return 0;
-    }
+
 
     public static String[] getShownEquipments() {
         String[] asd=new String[]{helmet.split("\\.")[0], breastPlate.split("\\.")[0], leftHand.split("\\.")[0],rightHand.split("\\.")[0]
@@ -118,7 +115,7 @@ public class Character {
     }
 
     public static void addMission(String mission){
-        missionList.add(mission+" 未完成");
+        missionList.add(mission);
     }
 
     public static boolean strengthEquipment(int ww){
@@ -191,7 +188,7 @@ public class Character {
                 legArmor = "破旧的布甲.0";
                 neckLace = "祖传的精致哨子.0";
                 specialBag = new String[]{"鲁特琴", "", "", "", ""};
-                spells = data.getSpell(spells, level);
+                spells = new String[]{"","","","","","",""};
                 livingBag = new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把、附盖提灯".split("、")));
                 break;
             }
@@ -202,9 +199,9 @@ public class Character {
                 leftHand = "";
                 legArmor = "磨损的生皮甲.0";
                 neckLace = "新鲜的花环.0";
-                rings ="";
+                rings =" .0";
                 specialBag = new String[]{"鲁特琴", "", "", "", ""};
-                spells = data.getSpell(spells, level);
+                spells = new String[]{"","","","","","",""};
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把".split("、");
                 livingBag = new ArrayList<>(Arrays.asList(bornItems));
                 break;
@@ -215,9 +212,9 @@ public class Character {
                 leftHand = "老旧的木质节杖.0";
                 legArmor = "破旧的绑腿.0";
                 rings = "老旧的神圣戒指.0";
-                neckLace = "";
+                neckLace = " .0";
                 specialBag = new String[]{"木质圣徽", "", "", "", ""};
-                spells = data.getSpell(spells, level);
+                spells = new String[]{"","","","","","",""};
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把".split("、");
                 livingBag = new ArrayList<>(Arrays.asList(bornItems));
                 break;
@@ -229,7 +226,7 @@ public class Character {
                 leftHand = "";
                 legArmor = "破旧的皮甲.0";
                 rings = "老旧的潜行戒指.0";
-                neckLace = "";
+                neckLace = " .0";
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把、游荡者工具、附盖提灯".split("、");
                 livingBag = new ArrayList<>(Arrays.asList(bornItems));
                 break;
@@ -238,11 +235,11 @@ public class Character {
                 helmet = "破旧的头盔.0";
                 breastPlate = "破旧的鳞甲.0";
                 rightHand = "磨损的长剑.0";
-                leftHand = "";
+                leftHand = "磨损的小盾.0";
                 legArmor = "破旧的鳞甲.0";
                 rings = "老旧的勇气戒指.0";
                 neckLace = "祖传的重甲项链.0";
-                spells = data.getSpell(spells, level);
+                spells = new String[]{"","","","","","",""};
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把".split("、");
                 livingBag = new ArrayList<>(Arrays.asList(bornItems));
                 break;
@@ -254,7 +251,7 @@ public class Character {
                 legArmor = "破旧的绑腿.0";
                 rings = "老旧的法术默发戒指.0";
                 neckLace = "祖传的固定项链.0";
-                spells = data.getSpell(spells, level);
+                spells = new String[]{"","","","","","",""};
                 String[] bornItems = "水袋、口粮、睡袋、燧石与铁片、火把、墨水、墨水笔、法术材料包、法术书".split("、");
                 livingBag = new ArrayList<>(Arrays.asList(bornItems));
                 break;
@@ -309,6 +306,7 @@ public class Character {
             return false;
         }
     }
+
             public static String getBag(){
                 String items="";
                 for(String thing:bag){
@@ -325,18 +323,23 @@ public class Character {
         return "金币： "+gold+"g\n"+"特殊物品：  "+specials+"\n"+"冒险背包：  "+alwaysHave+"\n"+"战利品：  "+items;
     }
 
-    public static String getSpells(){
+    public static String showSpells(){
         String result="";
         int le=0;
         for(String spell:spells){
             if(!spell.equals("")){
                 result=result.concat(le+"级法术： "+spell+"\n");
             }
+            le=le+1;
         }
         return result;
     }
 
 
+    public static void addSpell(String spell,String index){
+        int aaa=Integer.parseInt(index);
+        spells[aaa]=spells[aaa]+"\n"+spell;
+    }
 
 //    这个函数完全按照town中事件与data中装备的index安排，千万别用
     public static int getEquipmentPoint(String index){
@@ -474,5 +477,8 @@ public class Character {
         }else {
             return prestige[index];
         }
+    }
+    public static String[] getSpells(){
+        return spells;
     }
 }

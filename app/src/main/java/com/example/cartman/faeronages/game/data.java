@@ -246,47 +246,182 @@ public class data {
     }
 
 
-    public static String[] getSpell(String[] spells,int level){
-        if(level!=lastLevel) {
-            lastLevel = level;
+    public static String getASpell(String[] spells,int level){
             if (level <= 3) {
-                spellTool(spells, 0);
-                return spellTool(spells, 0);
+                String spel = spell0[random.nextInt(spell0.length)];
+                boolean hasSame = false;
+                for (String s : spells[0].split("\n")) {
+                    if (s.equals(spel)) {
+                        hasSame = true;
+                    }
+                }
+                    if(hasSame){
+                        return getASpell(spells,level);
+                    }else {
+                        return spel+","+"0";
+                    }
             } else if (level < 10) {
-                spells = spellTool(spells, 0);
-                spells = spellTool(spells, 1);
-                return spells;
+                int as=random.nextInt(spell0.length);
+                String spel = spell0[as];
+                int index=random.nextInt(100);
+                if(index<=50){
+                    index=0;
+                }else if(index<=65){
+                    spel = spell1[random.nextInt(spell1.length)];
+                    index=1;
+                }else if(index<=74){
+                    spel = spell2[random.nextInt(spell2.length)];
+                    index=2;
+                }
+                boolean hasSame = false;
+                for (String s : spells[index].split("\n")) {
+                    if (s.equals(spel)) {
+                        hasSame = true;
+                    }
+                }
+                if(hasSame){
+                    return getASpell(spells,level);
+                }else {
+                    return spel+","+index;
+                }
             } else if (level < 18) {
-                spells=spellTool(spells,0);
-                spells=spellTool(spells,1);
-                spells=spellTool(spells,2);
-                return spells;
+                String spel = spell0[random.nextInt(spell0.length)];
+                int index=random.nextInt(100);
+                if(index<=50){
+                    index=0;
+                }else if(index<=65){
+                    spel = spell1[random.nextInt(spell1.length)];
+                    index=1;
+                }else if(index<=74){
+                    spel = spell2[random.nextInt(spell2.length)];
+                    index=2;
+                }else if(index<=82){
+                    spel = spell3[random.nextInt(spell3.length)];
+                    index=3;
+                }
+                boolean hasSame = false;
+                for (String s : spells[index].split("\n")) {
+                    if (s.equals(spel)) {
+                        hasSame = true;
+                    }
+                }
+                if(hasSame){
+                    return getASpell(spells,level);
+                }else {
+                    return spel+","+index;
+                }
             }else if(level<25){
-                spells=spellTool(spells,0);
-                spells=spellTool(spells,1);
-                spells=spellTool(spells,2);
-                spells=spellTool(spells,3);
-                return spells;
+                String spel = spell0[random.nextInt(spell0.length)];
+                int index=random.nextInt(100);
+                if(index<=50){
+                    index=0;
+                }else if(index<=65){
+                    spel = spell1[random.nextInt(spell1.length)];
+                    index=1;
+                }else if(index<=74){
+                    spel = spell2[random.nextInt(spell2.length)];
+                    index=2;
+                }else if(index<=82){
+                    spel = spell3[random.nextInt(spell3.length)];
+                    index=3;
+                }else if(index<=90){
+                    spel = spell4[random.nextInt(spell4.length)];
+                    index=4;
+                }
+                boolean hasSame = false;
+                for (String s : spells[index].split("\n")) {
+                    if (s.equals(spel)) {
+                        hasSame = true;
+                    }
+                }
+                if(hasSame){
+                    return getASpell(spells,level);
+                }else {
+                    return spel+","+index;
+                }
             }else if(level<36){
-                spells=spellTool(spells,0);
-                spells=spellTool(spells,1);
-                spells=spellTool(spells,2);
-                spells=spellTool(spells,3);
-                spells=spellTool(spells,4);
-                return spells;
+                String spel = spell0[random.nextInt(spell0.length)];
+                int index=random.nextInt(100);
+                if(index<=50){
+                    index=0;
+                }else if(index<=65){
+                    spel = spell1[random.nextInt(spell1.length)];
+                    index=1;
+                }else if(index<=74){
+                    spel = spell2[random.nextInt(spell2.length)];
+                    index=2;
+                }else if(index<=82){
+                    spel = spell3[random.nextInt(spell3.length)];
+                    index=3;
+                }else if(index<=90){
+                    spel = spell4[random.nextInt(spell4.length)];
+                    index=4;
+                }else if(index<=95){
+                    spel = spell5[random.nextInt(spell5.length)];
+                    index=5;
+                }
+                boolean hasSame = false;
+                for (String s : spells[index].split("\n")) {
+                    if (s.equals(spel)) {
+                        hasSame = true;
+                    }
+                }
+                if(hasSame){
+                    return getASpell(spells,level);
+                }else {
+                    return spel+","+index;
+                }
             }else if(level<48){
-                spells=spellTool(spells,1);
-                spells=spellTool(spells,2);
-                spells=spellTool(spells,3);
-                spells=spellTool(spells,4);
-                spells=spellTool(spells,5);
-                spells=spellTool(spells,6);
-                return spells;
+                String spel = spell0[random.nextInt(spell0.length)];
+                int index=random.nextInt(100);
+                if(index<=50){
+                    index=0;
+                }else if(index<=65){
+                    spel = spell1[random.nextInt(spell1.length)];
+                    index=1;
+                }else if(index<=74){
+                    spel = spell2[random.nextInt(spell2.length)];
+                    index=2;
+                }else if(index<=82){
+                    spel = spell3[random.nextInt(spell3.length)];
+                    index=3;
+                }else if(index<=90){
+                    spel = spell4[random.nextInt(spell4.length)];
+                    index=4;
+                }else if(index<=95){
+                    spel = spell5[random.nextInt(spell5.length)];
+                    index=5;
+                }else {
+                    spel = spell6[random.nextInt(spell6.length)];
+                    index=6;
+                }
+                boolean hasSame = false;
+                for (String s : spells[index].split("\n")) {
+                    if (s.equals(spel)) {
+                        hasSame = true;
+                    }
+                }
+                if(hasSame){
+                    return getASpell(spells,level);
+                }else {
+                    return spel+","+index;
+                }
             }else {
-                return spells;
+                String spel = spell0[random.nextInt(spell0.length)];
+                int index=0;
+
+                boolean hasSame = false;
+                for (String s : spells[index].split("\n")) {
+                    if (s.equals(spel)) {
+                        hasSame = true;
+                    }
+                }
+                if(hasSame){
+                    return getASpell(spells,level);
+                }else {
+                    return spel+","+index;
+                }
             }
-        }
-        else return spells;
     }
 
     public static String getMission(int level){
@@ -404,9 +539,9 @@ public class data {
     public static String showLastD20(){
         d20haveShown=true;
         if(d20==20){
-            return "[骰子]: 20 幸运女神在向你微笑";
+            return "[骰子]: 20 幸运女神迷恋你";
         }else if(d20==1){
-            return "[骰子]: 1 厄运女神如此厌恶你";
+            return "[骰子]: 1 厄运女神厌恶你";
         }else
         return "[骰子] "+d20;
     }
