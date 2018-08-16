@@ -269,7 +269,7 @@ public class data {
                 }else if(index<=65){
                     spel = spell1[random.nextInt(spell1.length)];
                     index=1;
-                }else if(index<=74){
+                }else {
                     spel = spell2[random.nextInt(spell2.length)];
                     index=2;
                 }
@@ -295,7 +295,7 @@ public class data {
                 }else if(index<=74){
                     spel = spell2[random.nextInt(spell2.length)];
                     index=2;
-                }else if(index<=82){
+                }else {
                     spel = spell3[random.nextInt(spell3.length)];
                     index=3;
                 }
@@ -324,7 +324,7 @@ public class data {
                 }else if(index<=82){
                     spel = spell3[random.nextInt(spell3.length)];
                     index=3;
-                }else if(index<=90){
+                }else {
                     spel = spell4[random.nextInt(spell4.length)];
                     index=4;
                 }
@@ -356,7 +356,7 @@ public class data {
                 }else if(index<=90){
                     spel = spell4[random.nextInt(spell4.length)];
                     index=4;
-                }else if(index<=95){
+                }else{
                     spel = spell5[random.nextInt(spell5.length)];
                     index=5;
                 }
@@ -539,9 +539,9 @@ public class data {
     public static String showLastD20(){
         d20haveShown=true;
         if(d20==20){
-            return "[骰子]: 20 幸运女神迷恋你";
+            return "[骰子]:20 幸运女神迷恋你";
         }else if(d20==1){
-            return "[骰子]: 1 厄运女神厌恶你";
+            return "[骰子]:1 厄运女神厌恶你";
         }else
         return "[骰子] "+d20;
     }

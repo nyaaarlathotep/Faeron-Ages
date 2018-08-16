@@ -411,6 +411,173 @@ public class Character {
         }
     }
 
+    private static void grow(){
+        switch (job){
+            case sorcerer:{
+                int rando=random.nextInt(3);
+                if(rando==0){
+                    intll=intll+1;
+                    break;
+                }else if(rando==1){
+                    con=con+1;
+                    break;
+                }else {
+                    rando=random.nextInt(3);
+                    if(rando==0){
+                        str=str+1;
+                        break;
+                    }else if(rando==1){
+                        cha=cha+1;
+                        break;
+                    }else if(rando==2){
+                        dex=dex+1;
+                    }
+                }
+                break;
+            }
+            case paladin:{
+                int rando=random.nextInt(4);
+                if(rando==0){
+                    str=str+1;
+                    break;
+                }else if(rando==1){
+                    con=con+1;
+                    break;
+                }else if(rando==2){
+                    dex=dex+1;
+                }else {
+                    rando=random.nextInt(3);
+                    if(rando==0){
+                        intll=intll+1;
+                        break;
+                    }else if(rando==1){
+                        cha=cha+1;
+                        break;
+                    }else if(rando==2){
+                        str=str+1;
+                    }
+                }
+                break;
+            }
+            case rogue:{
+                int rando=random.nextInt(3);
+                if(rando==0){
+                    dex=dex+1;
+                    break;
+                }else if(rando==1){
+                    str=str+1;
+                    break;
+                }else {
+                    rando=random.nextInt(3);
+                    if(rando==0){
+                        con=con+1;
+                        break;
+                    }else if(rando==1){
+                        cha=cha+1;
+                        break;
+                    }else if(rando==2){
+                        intll=intll+1;
+                    }
+                }
+                break;
+            }
+            case cleric:{
+                int rando=random.nextInt(3);
+                if(rando==0){
+                    intll=intll+1;
+                    break;
+                }else if(rando==1){
+                    cha=cha+1;
+                    break;
+                }else {
+                    rando=random.nextInt(3);
+                    if(rando==0){
+                        str=str+1;
+                        break;
+                    }else if(rando==1){
+                        con=con+1;
+                        break;
+                    }else if(rando==2){
+                        dex=dex+1;
+                    }
+                }
+                break;
+            }
+            case druid:{
+                int rando=random.nextInt(4);
+                if(rando==0){
+                    cha=cha+1;
+                    break;
+                }else if(rando==1){
+                    con=con+1;
+                    break;
+                }else if(rando==2){
+                    dex=dex+1;
+                }else {
+                    rando=random.nextInt(3);
+                    if(rando==0){
+                        intll=intll+1;
+                        break;
+                    }else if(rando==1){
+                        str=str+1;
+                        break;
+                    }else if(rando==2){
+                        dex=dex+1;
+                    }
+                }
+                break;
+            }
+            case bard:{
+                int rando=random.nextInt(4);
+                if(rando==0){
+                    cha=cha+1;
+                    break;
+                }else if(rando==1){
+                    con=con+1;
+                    break;
+                }else if(rando==2){
+                    dex=dex+1;
+                }else {
+                    rando=random.nextInt(3);
+                    if(rando==0){
+                        intll=intll+1;
+                        break;
+                    }else if(rando==1){
+                        str=str+1;
+                        break;
+                    }else if(rando==2){
+                        cha=cha+1;
+                    }
+                }
+                break;
+            }
+            case fighter:{
+                int rando=random.nextInt(4);
+                if(rando==0){
+                    str=str+1;
+                    break;
+                }else if(rando==1){
+                    con=con+1;
+                    break;
+                }else if(rando==2){
+                    dex=dex+1;
+                }else {
+                    rando=random.nextInt(3);
+                    if(rando==0){
+                        intll=intll+1;
+                        break;
+                    }else if(rando==1){
+                        cha=cha+1;
+                        break;
+                    }else if(rando==2){
+                        str=str+1;
+                    }
+                }
+                break;
+            }
+        }
+    }
+
     public static void setHelmet(String aHelmet){
         helmet=aHelmet;
     }
