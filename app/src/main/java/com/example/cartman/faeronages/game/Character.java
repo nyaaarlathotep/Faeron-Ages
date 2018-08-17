@@ -154,6 +154,10 @@ public class Character {
 
             // get set 方法
 
+    public static void setSpells(String[] aSpells){
+        spells=aSpells;
+    }
+
     public static void setAge(String aAge) {
         age = Integer.parseInt(aAge);
     }
