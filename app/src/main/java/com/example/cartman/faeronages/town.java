@@ -17,6 +17,11 @@ import com.example.cartman.faeronages.game.Character;
 import com.example.cartman.faeronages.game.Town;
 
 import java.lang.ref.WeakReference;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import static java.lang.reflect.Modifier.PRIVATE;
 
@@ -139,7 +144,7 @@ public class town extends BaseActivity {
                         ex.printStackTrace();
                     }
                 }
-
+                save();
                 Intent intent=new Intent(town.this,eventlogAndClock.class);
                 startActivity(intent);
                 finish();
@@ -183,6 +188,15 @@ public class town extends BaseActivity {
         }
     }
     private void save(){
+
+        Set<String> spells = new HashSet<>(Arrays.asList(Character.getSpells()));
+        Set<String> mission = new HashSet<>(Character.getMission());
+        Set<String> livingBag = new HashSet<>(Character.getLivingBag());
+        Set<String> specialBag = new HashSet<>(Arrays.asList(Character.getSpecialBag()));
+        float gold=Float.valueOf(String.valueOf(Character.getGold()));
+        String map=Character.getAdventure().getMap().toString();
+
+
         SharedPreferences.Editor editor=getSharedPreferences("data",MODE_PRIVATE).edit();
         editor.putString("name",Character.getName());
         editor.putString("job",Character.getJob().toString());
@@ -190,24 +204,28 @@ public class town extends BaseActivity {
         editor.putString("race",Character.getRace().toString());
         editor.putInt("camp0",Character.getCamp()[0]);
         editor.putInt("camp1",Character.getCamp()[1]);
-        editor.putInt("Prestige1",Character.getPrestige(0,false));
-        editor.putInt("Prestige2",Character.getPrestige(1,false));
-        editor.putInt("Prestige3",Character.getPrestige(2,false));
-        editor.putInt("Prestige4",Character.getPrestige(3,false));
-        editor.putInt("Prestige5",Character.getPrestige(4,false));
-        editor.putInt("Prestige6",Character.getPrestige(5,false));
-        editor.putInt("Prestige11",Character.getPrestige(0,true));
-        editor.putInt("Prestige21",Character.getPrestige(1,true));
-        editor.putInt("Prestige31",Character.getPrestige(2,true));
-        editor.putInt("Prestige41",Character.getPrestige(3,true));
-        editor.putInt("Prestige51",Character.getPrestige(4,true));
-        editor.putInt("Prestige61",Character.getPrestige(5,true));
         editor.putInt("age",Character.getAge());
         editor.putInt("level",Character.getLevel());
-        editor.putString("helmet","破旧的头盔.0");
-
-
+        editor.putString("helmet",Character.getHelmet());
+        editor.putString("breastPlate",Character.getBreastPlate());
+        editor.putString("leftHand",Character.getLeftHand());
+        editor.putString("rightHand",Character.getRightHand());
+        editor.putString("legArmor",Character.getLegArmor());
+        editor.putString("rings",Character.getRings());
+        editor.putString("neckLace",Character.getNeckLace());
+        editor.putInt("str",Character.getStr());
+        editor.putInt("con",Character.getCon());
+        editor.putInt("intll",Character.getIntell());
+        editor.putInt("dex",Character.getDex());
+        editor.putInt("cha",Character.getCha());
+        editor.putStringSet("spells",spells);
+        editor.putStringSet("mission",mission);
+        editor.putStringSet("livingBag",livingBag);
+        editor.putFloat("gold",gold);
+        editor.putStringSet("specialBag",specialBag);
+        editor.putString("adventure",map);
         editor.apply();
+        Log.d("save","save!!!");
 
     }
     public void setFree() {

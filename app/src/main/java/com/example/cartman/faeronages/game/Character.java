@@ -59,11 +59,11 @@ public class Character {
     public static ArrayList<String> livingBag=new ArrayList<>(Arrays.asList("水袋、口粮、睡袋、燧石与铁片、火把".split("、")));
     public static String[] specialBag = new String[]{"", "", "", "", ""};
     private static double gold = 1000.0;
+    private static Adventure nextAdventure = new Adventure(new beginnersGuide());
 
 
     public static boolean fullBag = false;
     public static boolean haveHarvested = false;
-    private static Adventure nextAdventure = new Adventure(new beginnersGuide());
     private static int levelMark=0;
     private static boolean hasChecked=false;
     private static boolean raceChecked=false;
@@ -403,17 +403,20 @@ public class Character {
     public static void experience(){
         if(level<5){
             level=level+1;
+            grow();
         }else if(level<10){
             levelMark=levelMark+1;
             if(levelMark>=3){
                 levelMark=0;
                 level=level+1;
+                grow();
             }
         }else {
             levelMark=levelMark+1;
             if(levelMark>=5){
                 levelMark=0;
                 level=level+1;
+                grow();
             }
         }
     }
@@ -626,8 +629,40 @@ public class Character {
     public static void setNextAdventure(Adventure adventure){
         nextAdventure=adventure;
     }
+    public static void setCamp0(int a){
+        camp[0]=a;
+    }
+    public static void setCamp1(int a){
+        camp[1]=a;
+    }
 
-
+    public static String getHelmet(){
+        return helmet;
+    }
+    public static String getBreastPlate(){
+        return breastPlate;
+    }
+    public static String getLeftHand(){
+        return leftHand;
+    }
+    public static String getRightHand(){
+        return rightHand;
+    }
+    public static String getLegArmor(){
+        return legArmor;
+    }
+    public static String getRings(){
+        return rings;
+    }
+    public static String getNeckLace(){
+        return neckLace;
+    }
+    public static ArrayList<String> getLivingBag(){
+        return livingBag;
+    }
+    public static String[] getSpecialBag(){
+        return specialBag;
+    }
     public static boolean getHasChecked(){
         return hasChecked;
     }
