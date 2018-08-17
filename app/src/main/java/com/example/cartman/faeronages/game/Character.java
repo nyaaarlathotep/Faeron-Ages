@@ -592,10 +592,25 @@ public class Character {
         return raceChecked&&faithChecked&&jobChecked;
     }
 
-    public static void save(){
+
+    public static void setStr(int aStr){
+        str=aStr;
     }
-
-
+    public static void setCon(int aCon){
+        con=aCon;
+    }
+    public static void setDex(int aDex){
+        dex=aDex;
+    }
+    public static void setCha(int aCha){
+        cha=aCha;
+    }
+    public static void setIntll(int aInt){
+        intll=aInt;
+    }
+    public static void setLevel(int aLevel){
+        level=aLevel;
+    }
     public static void setRaceChecked(){
         raceChecked=true;
     }
@@ -629,12 +644,7 @@ public class Character {
     public static void setNextAdventure(Adventure adventure){
         nextAdventure=adventure;
     }
-    public static void setCamp0(int a){
-        camp[0]=a;
-    }
-    public static void setCamp1(int a){
-        camp[1]=a;
-    }
+
 
     public static String getHelmet(){
         return helmet;

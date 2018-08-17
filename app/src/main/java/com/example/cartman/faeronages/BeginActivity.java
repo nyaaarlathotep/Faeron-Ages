@@ -12,6 +12,8 @@ import com.example.cartman.faeronages.game.faiths;
 import com.example.cartman.faeronages.game.jobs;
 import com.example.cartman.faeronages.game.races;
 
+import java.util.Set;
+
 public class BeginActivity extends BaseActivity {
 
     @Override
@@ -109,6 +111,8 @@ public class BeginActivity extends BaseActivity {
                         break;
                     }
                 }
+                Character.setAge(Integer.toString(preferences.getInt("age",18)));
+                Character.setLevel(preferences.getInt("level",0));
                 String faith=preferences.getString("faith","Pelor");
                 switch (faith){
                     case"Boccob":{
@@ -155,7 +159,14 @@ public class BeginActivity extends BaseActivity {
                 if(!preferences.getString("neckLace","").equals("")){
                     Character.setHelmet(preferences.getString("neckLace",""));
                 }
-                
+
+                Character.setStr(preferences.getInt("str",10));
+                Character.setCon(preferences.getInt("con",10));
+                Character.setCha(preferences.getInt("cha",10));
+                Character.setIntll(preferences.getInt("intll    ",10));
+                Character.setDex(preferences.getInt("dex",10));
+
+
             }
         });
     }
