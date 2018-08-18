@@ -39,7 +39,7 @@ public class slum extends Place {
 
     @Override
     public int adventureTime(){
-        return 20;
+        return 500;
     }
 
     @Override

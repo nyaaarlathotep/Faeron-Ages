@@ -39,7 +39,7 @@ public class shore extends Place {
 
     @Override
     public int adventureTime(){
-        return 20;
+        return 300;
     }
 
     @Override
