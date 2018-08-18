@@ -6,7 +6,7 @@ import com.example.cartman.faeronages.game.creatures.bigPig;
 import java.util.Random;
 
 public class limbo extends Place {
-    private static String[] monsters=new String[]{"罪人 被折磨的灵魂","屠夫 腐肉","镰刃行刑官 被折磨的灵魂",
+    private static String[] monsters=new String[]{"罪人 被折磨的灵魂","屠夫 腐肉","镰刃行刑官 被折磨的灵魂","绝望者 痛苦之页",
             "监牢守卫","恸哭之人 尖叫碎片","哀嚎者 悔恨","伪善者 谎言","鞭笞者 破碎的灵魂","深渊恶魔 恶之华","碎魂恶鬼","原罪学者 黑暗之环"};
     private String[] monsterDescription=new String[]{"仁慈的","营养不良的",
             "聪慧的","发育中的","发情的","正义的","垂暮的","垂死的","残缺的","善良的",
