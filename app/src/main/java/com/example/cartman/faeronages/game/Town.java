@@ -621,37 +621,36 @@ public class Town {
                         switch (options[0]){
                             case "去真菌荒地寻找可食用的蘑菇":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
-                                Character.addMap(new fungalWastes());
+
                                 break;
                             }
                             case"去安溪庭院寻找温热的生命":{
                                 Character.addMission("去安溪庭院寻找温热的生命");
-                                Character.addMap(new restingYards());
+
                                 break;
                             }
                             case"去伽缝边境寻找善意的灵魂":{
                                 Character.addMission("去伽缝边境寻找善意的灵魂");
-                                Character.addMap(new limbo());
+
                                 break;
                             }
                             case"去机械之匣寻找完整的灵魂":{
                                 Character.addMission("去机械之匣寻找完整的灵魂");
-                                Character.addMap(new mechanus());
                                 break;
                             }
                             case"去潮湿海岸寻找干燥的鳞片":{
                                 Character.addMission("去潮湿海岸寻找干燥的鳞片");
-                                Character.addMap(new shore());
+
                                 break;
                             }
                             case"去贫民窟寻找健康的心脏":{
                                 Character.addMission("去贫民窟寻找健康的心脏");
-                                Character.addMap(new slum());
+
                                 break;
                             }
                             case"去磺芜平原寻找茁壮的幼苗":{
                                 Character.addMission("去磺芜平原寻找茁壮的幼苗");
-                                Character.addMap(new barrenPlain());
+
                                 break;
                             }
                             default: {
@@ -664,37 +663,37 @@ public class Town {
                         switch (options[1]){
                             case "去真菌荒地寻找可食用的蘑菇":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
-                                Character.addMap(new fungalWastes());
+
                                 break;
                             }
                             case"去安溪庭院寻找温热的生命":{
                                 Character.addMission("去安溪庭院寻找温热的生命");
-                                Character.addMap(new restingYards());
+
                                 break;
                             }
                             case"去伽缝边境寻找善意的灵魂":{
                                 Character.addMission("去伽缝边境寻找善意的灵魂");
-                                Character.addMap(new limbo());
+
                                 break;
                             }
                             case"去机械之匣寻找完整的灵魂":{
                                 Character.addMission("去机械之匣寻找完整的灵魂");
-                                Character.addMap(new mechanus());
+
                                 break;
                             }
                             case"去潮湿海岸寻找干燥的鳞片":{
                                 Character.addMission("去潮湿海岸寻找干燥的鳞片");
-                                Character.addMap(new shore());
+
                                 break;
                             }
                             case"去贫民窟寻找健康的心脏":{
                                 Character.addMission("去贫民窟寻找健康的心脏");
-                                Character.addMap(new slum());
+
                                 break;
                             }
                             case"去磺芜平原寻找茁壮的幼苗":{
                                 Character.addMission("去磺芜平原寻找茁壮的幼苗");
-                                Character.addMap(new barrenPlain());
+
                                 break;
                             }
                             default: {
@@ -707,37 +706,37 @@ public class Town {
                         switch (options[2]){
                             case "去真菌荒地寻找可食用的蘑菇":{
                                 Character.addMission("去真菌荒地寻找可食用的蘑菇");
-                                Character.addMap(new fungalWastes());
+
                                 break;
                             }
                             case"去安溪庭院寻找温热的生命":{
                                 Character.addMission("去安溪庭院寻找温热的生命");
-                                Character.addMap(new restingYards());
+
                                 break;
                             }
                             case"去伽缝边境寻找善意的灵魂":{
                                 Character.addMission("去伽缝边境寻找善意的灵魂");
-                                Character.addMap(new limbo());
+
                                 break;
                             }
                             case"去机械之匣寻找完整的灵魂":{
                                 Character.addMission("去机械之匣寻找完整的灵魂");
-                                Character.addMap(new mechanus());
+
                                 break;
                             }
                             case"去潮湿海岸寻找干燥的鳞片":{
                                 Character.addMission("去潮湿海岸寻找干燥的鳞片");
-                                Character.addMap(new shore());
+
                                 break;
                             }
                             case"去贫民窟寻找健康的心脏":{
                                 Character.addMission("去贫民窟寻找健康的心脏");
-                                Character.addMap(new slum());
+
                                 break;
                             }
                             case"去磺芜平原寻找茁壮的幼苗":{
                                 Character.addMission("去磺芜平原寻找茁壮的幼苗");
-                                Character.addMap(new barrenPlain());
+
                                 break;
                             }
                             default:

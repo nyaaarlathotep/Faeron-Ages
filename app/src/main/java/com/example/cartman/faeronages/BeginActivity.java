@@ -3,6 +3,7 @@ package com.example.cartman.faeronages;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import com.example.cartman.faeronages.game.ActivityCollector;
@@ -61,11 +62,14 @@ public class BeginActivity extends BaseActivity {
         buttonAchieve.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 load();
+                Intent intent=new Intent(BeginActivity.this,eventlogAndClock.class);
+                startActivity(intent);
             }
         });
 
     }
     private void load(){
+        Log.d("load!!","!");
         SharedPreferences preferences=getSharedPreferences("data",MODE_PRIVATE);
         Character.setName(preferences.getString("name","Bhaal"));
         String race=preferences.getString("race","human");
@@ -156,7 +160,9 @@ public class BeginActivity extends BaseActivity {
             }
         }
         Character.check();
+        Log.d("check","helmet checked");
         if(!preferences.getString("helmet","").equals("")){
+            Log.d("loaded helmet",preferences.getString("helmet",""));
             Character.setHelmet(preferences.getString("helmet",""));
         }
         if(!preferences.getString("breastPlate","").equals("")){

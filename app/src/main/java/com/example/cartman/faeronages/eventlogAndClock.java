@@ -82,10 +82,7 @@ public class eventlogAndClock extends BaseActivity {
         setContentView(R.layout.activity_eventlog_and_clock);
 
 //        test character
-        Log.d("rrrrrace", Character.getRace().toString());
-        Log.d("nnnnname",Character.getName());
-        Log.d("ffffaith",Character.getFaith().toString());
-        Log.d("jjjjob",Character.getJob().toString());
+
 
         adventure=Character.getAdventure();
         adventureTime=adventure.getTime();

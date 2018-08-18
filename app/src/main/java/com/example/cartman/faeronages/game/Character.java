@@ -1,16 +1,11 @@
 package com.example.cartman.faeronages.game;
 
-import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.ProgressBar;
-
-import com.example.cartman.faeronages.game.maps.Place;
 import com.example.cartman.faeronages.game.maps.beginnersGuide;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import static java.lang.reflect.Modifier.PRIVATE;
 
 
 public class Character {
@@ -124,16 +119,104 @@ public class Character {
     }
 
     public static boolean strengthEquipment(int ww){
-        int index=random.nextInt(5);
+        int index=random.nextInt(7);
         switch (ww){
             case 1:{
                 if(data.d20(18)){
+                    switch (index){
+                        case 0:{
+                            if(helmet.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 1:{
+                            if(breastPlate.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 2:{
+                            if(leftHand.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 3:{
+                            if(rightHand.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 4:{
+                            if(legArmor.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 5:{
+                            if(rings.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 6:{
+                            if(neckLace.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                    }
                     strengthLevel[index]=strengthLevel[index]+1;
                     return true;
                 }
             }
             case 2:{
                 if(data.d20(15)){
+                    switch (index){
+                        case 0:{
+                            if(helmet.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 1:{
+                            if(breastPlate.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 2:{
+                            if(leftHand.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 3:{
+                            if(rightHand.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 4:{
+                            if(legArmor.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 5:{
+                            if(rings.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 6:{
+                            if(neckLace.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                    }
                     strengthLevel[index]=strengthLevel[index]+2;
                     return true;
 
@@ -141,6 +224,50 @@ public class Character {
             }
             case 5:{
                 if(data.d20(10)){
+                    switch (index){
+                        case 0:{
+                            if(helmet.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 1:{
+                            if(breastPlate.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 2:{
+                            if(leftHand.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 3:{
+                            if(rightHand.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 4:{
+                            if(legArmor.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 5:{
+                            if(rings.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                        case 6:{
+                            if(neckLace.equals("")){
+                                return false;
+                            }
+                            break;
+                        }
+                    }
                     strengthLevel[index]=strengthLevel[index]+5;
                     return true;
                 }
