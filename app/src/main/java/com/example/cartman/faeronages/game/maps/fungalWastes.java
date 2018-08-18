@@ -72,6 +72,6 @@ public class fungalWastes extends Place {
     }
 
     public String toString(){
-        return "beginnersGuide";
+        return "fungalWastes";
     }
 }

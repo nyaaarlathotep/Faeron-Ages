@@ -5,14 +5,20 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import com.example.cartman.faeronages.game.ActivityCollector;
 import com.example.cartman.faeronages.game.Adventure;
 import com.example.cartman.faeronages.game.Character;
 import com.example.cartman.faeronages.game.faiths;
 import com.example.cartman.faeronages.game.jobs;
+import com.example.cartman.faeronages.game.maps.barrenPlain;
+import com.example.cartman.faeronages.game.maps.beginnersGuide;
+import com.example.cartman.faeronages.game.maps.fungalWastes;
+import com.example.cartman.faeronages.game.maps.limbo;
+import com.example.cartman.faeronages.game.maps.mechanus;
+import com.example.cartman.faeronages.game.maps.restingYards;
+import com.example.cartman.faeronages.game.maps.shore;
+import com.example.cartman.faeronages.game.maps.slum;
 import com.example.cartman.faeronages.game.races;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -198,23 +204,29 @@ public class BeginActivity extends BaseActivity {
         Character.setGold(preferences.getFloat("gold",0));
         String map=preferences.getString("adventure","beginnersGuide");
         switch (map){
-            case "":{
-
+            case "barrenPlain":{
+                Character.setNextAdventure(new Adventure(new barrenPlain()));
             }
-            case "":{
-
+            case "beginnersGuide":{
+                Character.setNextAdventure(new Adventure(new beginnersGuide()));
             }
-            case "":{
-
+            case "fungalWastes":{
+                Character.setNextAdventure(new Adventure(new fungalWastes()));
             }
-            case "":{
-
+            case "limbo":{
+                Character.setNextAdventure(new Adventure(new limbo()));
             }
-            case "":{
-
+            case "mechanus":{
+                Character.setNextAdventure(new Adventure(new mechanus()));
             }
-            case "":{
-
+            case "restingYards":{
+                Character.setNextAdventure(new Adventure(new restingYards()));
+            }
+            case "shore":{
+                Character.setNextAdventure(new Adventure(new shore()));
+            }
+            case "slum":{
+                Character.setNextAdventure(new Adventure(new slum()));
             }
 
         }
