@@ -160,7 +160,7 @@ public class BeginActivity extends BaseActivity {
             }
         }
         Character.check();
-        Log.d("check","helmet checked");
+        Log.d("check  ","helmet checked");
         if(!preferences.getString("helmet","").equals("")){
             Log.d("loaded helmet",preferences.getString("helmet",""));
             Character.setHelmet(preferences.getString("helmet",""));

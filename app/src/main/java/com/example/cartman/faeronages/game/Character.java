@@ -155,13 +155,13 @@ public class Character {
                             break;
                         }
                         case 5:{
-                            if(rings.equals("")){
+                            if(rings.equals(" .0")){
                                 return false;
                             }
                             break;
                         }
                         case 6:{
-                            if(neckLace.equals("")){
+                            if(neckLace.equals(" .0")){
                                 return false;
                             }
                             break;
@@ -205,13 +205,13 @@ public class Character {
                             break;
                         }
                         case 5:{
-                            if(rings.equals("")){
+                            if(rings.equals(" .0")){
                                 return false;
                             }
                             break;
                         }
                         case 6:{
-                            if(neckLace.equals("")){
+                            if(neckLace.equals(" .0")){
                                 return false;
                             }
                             break;
@@ -256,13 +256,13 @@ public class Character {
                             break;
                         }
                         case 5:{
-                            if(rings.equals("")){
+                            if(rings.equals(" .0")){
                                 return false;
                             }
                             break;
                         }
                         case 6:{
-                            if(neckLace.equals("")){
+                            if(neckLace.equals(" .0")){
                                 return false;
                             }
                             break;
