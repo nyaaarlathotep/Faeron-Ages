@@ -234,7 +234,15 @@ public class BeginActivity extends BaseActivity {
             case "slum":{
                 Character.setNextAdventure(new Adventure(new slum()));
             }
-
+            int[] strengthLevel=new int[7];
+            strengthLevel[0]=preferences.getInt("strengthenLevel0",0);
+            strengthLevel[1]=preferences.getInt("strengthenLevel1",0);
+            strengthLevel[2]=preferences.getInt("strengthenLevel2",0);
+            strengthLevel[3]=preferences.getInt("strengthenLevel3",0);
+            strengthLevel[4]=preferences.getInt("strengthenLevel4",0);
+            strengthLevel[5]=preferences.getInt("strengthenLevel5",0);
+            strengthLevel[6]=preferences.getInt("strengthenLevel6",0);
+            Character.setStrengthLevel(strengthLevel);
         }
     }
 

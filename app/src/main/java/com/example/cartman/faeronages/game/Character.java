@@ -62,6 +62,7 @@ public class Character {
     private static boolean raceChecked=false;
     private static boolean faithChecked=false;
     private static boolean jobChecked=false;
+    private static boolean hasSaved=false;
 
     private static Random random = new Random();
 
@@ -710,6 +711,10 @@ public class Character {
         return raceChecked&&faithChecked&&jobChecked;
     }
 
+
+    public static void setStrengthLevel(int[] aStrengthLevel){
+        strengthLevel=aStrengthLevel;
+    }
     public static void setMissionList(ArrayList<String> aMissionList){
         missionList=aMissionList;
     }
@@ -767,8 +772,17 @@ public class Character {
     public static void setNextAdventure(Adventure adventure){
         nextAdventure=adventure;
     }
+    public static void setHasSaved(){
+        hasSaved=true;
+    }
 
 
+    public static boolean getHasSaved(){
+        return hasSaved;
+    }
+    public static int[] getStrengthLevel(){
+        return strengthLevel;
+    }
     public static String getHelmet(){
         return helmet;
     }

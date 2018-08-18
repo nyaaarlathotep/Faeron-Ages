@@ -111,7 +111,6 @@
         android:layout_marginTop="32dp"
         android:text="@string/B"
         app:layout_constraintEnd_toStartOf="@+id/C"
-        app:layout_constraintHorizontal_bias="0.361"
         app:layout_constraintStart_toEndOf="@+id/A"
         app:layout_constraintTop_toBottomOf="@+id/option3" />
 

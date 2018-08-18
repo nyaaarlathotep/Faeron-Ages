@@ -88,7 +88,7 @@ public class chooseRace extends BaseActivity {
             public void onClick(View v){
                 Intent intent=new Intent(chooseRace.this,RoleCreation.class);
                 startActivity(intent);
-
+                finish();
             }
         });
     }

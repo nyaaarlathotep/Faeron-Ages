@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.cartman.faeronages.game.Adventure;
 import com.example.cartman.faeronages.game.Character;
 import com.example.cartman.faeronages.game.data;
@@ -98,6 +100,10 @@ public class eventlogAndClock extends BaseActivity {
         handler.handleMessage(message);
 
 
+        if(Character.getHasSaved()){
+            Log.d("???",Character.getHasChecked()+"");
+            Toast.makeText(eventlogAndClock.this, "safely saved", Toast.LENGTH_SHORT).show();
+        }
         A.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 if(buttonAble){

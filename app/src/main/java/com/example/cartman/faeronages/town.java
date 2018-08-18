@@ -195,7 +195,7 @@ public class town extends BaseActivity {
         Set<String> specialBag = new HashSet<>(Arrays.asList(Character.getSpecialBag()));
         float gold=Float.valueOf(String.valueOf(Character.getGold()));
         String map=Character.getAdventure().getMap().toString();
-
+        int[] strengthenLevel=Character.getStrengthLevel();
 
         SharedPreferences.Editor editor=getSharedPreferences("data",MODE_PRIVATE).edit();
         editor.putString("name",Character.getName());
@@ -224,7 +224,15 @@ public class town extends BaseActivity {
         editor.putFloat("gold",gold);
         editor.putStringSet("specialBag",specialBag);
         editor.putString("adventure",map);
+        editor.putInt("strengthenLevel0",strengthenLevel[0]);
+        editor.putInt("strengthenLevel1",strengthenLevel[1]);
+        editor.putInt("strengthenLevel2",strengthenLevel[2]);
+        editor.putInt("strengthenLevel3",strengthenLevel[3]);
+        editor.putInt("strengthenLevel4",strengthenLevel[4]);
+        editor.putInt("strengthenLevel5",strengthenLevel[5]);
+        editor.putInt("strengthenLevel6",strengthenLevel[6]);
         editor.apply();
+        Character.setHasSaved();
         Log.d("save","save!!!");
 
     }
