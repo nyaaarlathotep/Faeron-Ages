@@ -71,4 +71,7 @@ public class fungalWastes extends Place {
         return "真菌荒地";
     }
 
+    public String toString(){
+        return "beginnersGuide";
+    }
 }

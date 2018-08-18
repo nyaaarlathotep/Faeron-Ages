@@ -71,4 +71,8 @@ public class slum extends Place {
         return "贫民窟";
     }
 
+    @Override
+    public String toString(){
+        return "slum";
+    }
 }

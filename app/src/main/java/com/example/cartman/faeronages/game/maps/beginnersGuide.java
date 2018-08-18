@@ -69,4 +69,8 @@ public class beginnersGuide extends Place {
     public String getName() {
         return "新手村";
     }
+
+    public String toString(){
+        return "beginnersGuide";
+    }
 }

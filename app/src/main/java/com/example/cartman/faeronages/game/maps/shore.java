@@ -71,4 +71,8 @@ public class shore extends Place {
         return "潮湿海岸";
     }
 
+    @Override
+    public String toString(){
+        return "shore";
+    }
 }

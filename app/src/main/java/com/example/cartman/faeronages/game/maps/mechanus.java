@@ -71,5 +71,7 @@ public class mechanus extends Place {
         return "机械之匣";
     }
 
-
+    public String toString(){
+        return "mechanus";
+    }
 }

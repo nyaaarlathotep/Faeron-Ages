@@ -71,4 +71,7 @@ public class limbo extends Place {
         return "伽缝边境";
     }
 
+    public String toString(){
+        return "limbo";
+    }
 }

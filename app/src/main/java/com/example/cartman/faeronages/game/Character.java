@@ -51,8 +51,6 @@ public class Character {
 
 //    任务列表
     private static ArrayList<String> missionList=new ArrayList<>();
-    private static ArrayList<Place> missionMap=new ArrayList<>();
-    private static ArrayList<String> missionFinished=new ArrayList<>();
 
 //    背包及金钱
     public static ArrayList<String> bag=new ArrayList<>();
@@ -385,24 +383,13 @@ public class Character {
         gold=gold+item*level;
         bag=new ArrayList<>();
     }
-    public static void addMap(Place map){
-        missionMap.add(map);
-    }
     public static void checkMission(){
-        ArrayList<String> temp=new ArrayList<>();
-        ArrayList<Place> ttemp=new ArrayList<>();
-        for(int i=0;i<missionMap.size();i++){
-            if(missionMap.get(i).equals(nextAdventure.getMap())){
-                for(int j=0;j<missionMap.size();j++) {
-                    if (j!=i) {
-                        temp.add(missionList.get(j));
-                        ttemp.add(missionMap.get(j));
-                    }
-                }
+        for(int i=0;i<missionList.size();i++) {
+            int ff = random.nextInt(11);
+            if (ff >7){
+                missionList.remove(i);
             }
         }
-        missionMap=ttemp;
-        missionList=temp;
     }
     public static void experience(){
         if(level<5){
@@ -596,7 +583,12 @@ public class Character {
         return raceChecked&&faithChecked&&jobChecked;
     }
 
-
+    public static void setMissionList(ArrayList<String> aMissionList){
+        missionList=aMissionList;
+    }
+    public static void setGold(float aGold){
+        gold=aGold;
+    }
     public static void setStr(int aStr){
         str=aStr;
     }

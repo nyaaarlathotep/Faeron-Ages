@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.cartman.faeronages.game.ActivityCollector;
+import com.example.cartman.faeronages.game.Adventure;
 import com.example.cartman.faeronages.game.Character;
 import com.example.cartman.faeronages.game.faiths;
 import com.example.cartman.faeronages.game.jobs;
 import com.example.cartman.faeronages.game.races;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -173,11 +175,49 @@ public class BeginActivity extends BaseActivity {
         Character.setIntll(preferences.getInt("intll    ",10));
         Character.setDex(preferences.getInt("dex",10));
 
-        Set<String> spells=new HashSet<>();
-        spells=preferences.getStringSet("spells", spells);
-        String[] sp=spells.toArray(new String[7]);
-        Character.setSpells(sp);
+        Set<String> temp=new HashSet<>();
+        temp=preferences.getStringSet("spells", temp);
+        String[] sp=temp.toArray(new String[7]);
+        for(int i=0;i<sp.length;i++){
+            if(sp[i]==null){
+                sp[i]="";
+            }
+        }
 
+        Character.setSpells(sp);
+        ArrayList<String> missionList=new ArrayList<>();
+        temp=preferences.getStringSet("mission",temp);
+        String[] missions=temp.toArray(new String[5]);
+        for(int i=0;i<missions.length;i++){
+            if(missions[i]!=null){
+                missionList.add(missions[i]);
+            }
+        }
+        Character.setMissionList(missionList);
+
+        Character.setGold(preferences.getFloat("gold",0));
+        String map=preferences.getString("adventure","beginnersGuide");
+        switch (map){
+            case "":{
+
+            }
+            case "":{
+
+            }
+            case "":{
+
+            }
+            case "":{
+
+            }
+            case "":{
+
+            }
+            case "":{
+
+            }
+
+        }
     }
 
 }

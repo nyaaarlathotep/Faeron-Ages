@@ -71,4 +71,8 @@ public class restingYards extends Place {
         return "安溪庭院";
     }
 
+    @Override
+    public String toString(){
+        return "restingYards";
+    }
 }

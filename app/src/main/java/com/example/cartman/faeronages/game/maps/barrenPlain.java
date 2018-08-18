@@ -71,4 +71,7 @@ public class barrenPlain extends Place {
         return "磺芜平原";
     }
 
+    public String toString(){
+        return "barrenPlain";
+    }
 }
